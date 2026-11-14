@@ -65,6 +65,12 @@
     return { value: v, label: s ? deOrEn(s.de || s.en, s.en) : codepoint(v) };
   }
 
+  /** Most used first; ties keep the given order (favorites: as pinned, recent: newest first). */
+  function byUse(list: string[]): string[] {
+    const u = pstate.uses ?? {};
+    return list.map((v, i) => [v, i] as const).sort((a, b) => (u[b[0]] ?? 0) - (u[a[0]] ?? 0) || a[1] - b[1]).map((x) => x[0]);
+  }
+
   let namesReady = $state(0);
   const sections = $derived.by<Section[]>(() => {
     void namesReady;
@@ -72,8 +78,8 @@
       if (query.trim()) return [{ key: "results", title: tr("Treffer", "Results"), cells: search(visibleEmoji(), query).map((e) => emojiCell(e)) }];
       const out: Section[] = [];
       const fav = pstate.favorites.filter((f) => !isSymbol(f));
-      if (fav.length) out.push({ key: "fav", title: tr("Favoriten", "Favorites"), cells: fav.map(anyCell) });
-      if (pstate.emojiRecent.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: pstate.emojiRecent.slice(0, recentMax).map(anyCell) });
+      if (fav.length) out.push({ key: "fav", title: tr("Favoriten", "Favorites"), cells: byUse(fav).map(anyCell) });
+      if (pstate.emojiRecent.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: byUse(pstate.emojiRecent.slice(0, recentMax)).map(anyCell) });
       for (const g of GROUPS) out.push({ key: g.key, title: groupName(g.id), cells: visibleEmoji().filter((e) => e.group === g.id).map((e) => emojiCell(e)) });
       return out;
     }
@@ -81,8 +87,8 @@
       if (query.trim()) return [{ key: "results", title: tr("Treffer", "Results"), cells: searchSymbols(query).map((s) => ({ value: s.char, label: deOrEn(s.de || s.en, s.en) })) }];
       const out: Section[] = [];
       const fav = pstate.favorites.filter((f) => isSymbol(f));
-      if (fav.length) out.push({ key: "fav", title: tr("Favoriten", "Favorites"), cells: fav.map(anyCell) });
-      if (pstate.symbolRecent.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: pstate.symbolRecent.slice(0, recentMax).map(anyCell) });
+      if (fav.length) out.push({ key: "fav", title: tr("Favoriten", "Favorites"), cells: byUse(fav).map(anyCell) });
+      if (pstate.symbolRecent.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: byUse(pstate.symbolRecent.slice(0, recentMax)).map(anyCell) });
       for (const c of SYMBOL_CATS) out.push({ key: c.key, title: tr(c.de, c.en), cells: SYMBOLS.filter((s) => s.cat === c.key).map((s) => ({ value: s.char, label: deOrEn(s.de || s.en, s.en) })) });
       return out;
     }

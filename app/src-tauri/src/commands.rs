@@ -500,6 +500,9 @@ pub async fn picker_paste(app: AppHandle, kind: String, items: Vec<String>, copy
         for it in items.iter().rev() {
             crate::picker::push_recent(list, it.clone(), max);
         }
+        for it in &items {
+            crate::picker::count_use(&mut p, it);
+        }
         p.save(&state.data_dir).map_err(err)?;
     }
     let content = ClipContent::text_only(items.concat());

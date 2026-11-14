@@ -135,6 +135,8 @@ export interface PickerState {
   symbolRecent: string[];
   gifRecent: GifRef[];
   favorites: string[];
+  /** how often each emoji/symbol was sent */
+  uses?: Record<string, number>;
 }
 
 export interface GifItem {

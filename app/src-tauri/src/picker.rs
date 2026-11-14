@@ -31,6 +31,8 @@ pub struct PickerState {
     pub gif_recent: Vec<GifRef>,
     /// Pinned emoji and symbols.
     pub favorites: Vec<String>,
+    /// How often each emoji/symbol was sent: favorites and recently used are shown most used first.
+    pub uses: std::collections::BTreeMap<String, u32>,
     /// Random install id, sent as `customer_id` / `random_id` (no personal data).
     pub customer_id: String,
     /// GIPHY's own anonymous id for this install (from /v1/randomid).
@@ -44,8 +46,20 @@ fn path(dir: &Path) -> std::path::PathBuf {
 impl PickerState {
     pub fn load(dir: &Path) -> Self {
         let mut s: PickerState = std::fs::read(path(dir)).ok().and_then(|b| serde_json::from_slice(&b).ok()).unwrap_or_default();
+        let mut dirty = false;
         if s.customer_id.is_empty() {
             s.customer_id = random_id();
+            dirty = true;
+        }
+        if s.uses.is_empty() {
+            // first start with usage counts: take them over from the statistics
+            let st = crate::stats::Stats::load(dir);
+            for (k, n) in st.emoji.into_iter().chain(st.symbols) {
+                s.uses.insert(k, n.min(u32::MAX as u64) as u32);
+            }
+            dirty |= !s.uses.is_empty();
+        }
+        if dirty {
             let _ = s.save(dir);
         }
         s
@@ -69,6 +83,12 @@ pub fn push_recent<T: PartialEq>(list: &mut Vec<T>, item: T, max: usize) {
     list.retain(|x| *x != item);
     list.insert(0, item);
     list.truncate(max.max(1));
+}
+
+/// Counts one use of an emoji/symbol.
+pub fn count_use(state: &mut PickerState, item: &str) {
+    let n = state.uses.entry(item.to_string()).or_default();
+    *n = n.saturating_add(1);
 }
 
 /// Opens the picker at the text caret, or closes it when it is already open.
@@ -169,6 +189,16 @@ mod tests {
         assert_eq!(l, ["c", "a", "b"]);
         push_recent(&mut l, "d".into(), 3);
         assert_eq!(l, ["d", "c", "a"]);
+    }
+
+    #[test]
+    fn counts_uses() {
+        let mut s = PickerState::default();
+        count_use(&mut s, "😀");
+        count_use(&mut s, "😀");
+        count_use(&mut s, "→");
+        assert_eq!(s.uses["😀"], 2);
+        assert_eq!(s.uses["→"], 1);
     }
 
     #[test]

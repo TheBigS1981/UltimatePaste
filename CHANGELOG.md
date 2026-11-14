@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Emoji & symbols: favorites and recently used are now sorted by how often you use them (most used first)
+
 ## 1.0.0 – first public release
 
 **Copy & paste**
