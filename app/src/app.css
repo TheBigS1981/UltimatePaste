@@ -1,0 +1,193 @@
+:root {
+  color-scheme: light;
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+
+  --bg: rgba(249, 249, 251, 0.86);
+  --bg-solid: #f6f6f8;
+  --panel: rgba(255, 255, 255, 0.7);
+  --border: rgba(0, 0, 0, 0.09);
+  --text: #1b1b1f;
+  --muted: #6b6b76;
+  --faint: #9a9aa5;
+  --accent: #5b4cf0;
+  --accent-soft: rgba(91, 76, 240, 0.12);
+  --sel: rgba(91, 76, 240, 0.14);
+  --danger: #c4314b;
+  --kbd: rgba(0, 0, 0, 0.06);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  --on-accent: #ffffff;
+  --radius: 8px;
+  --display: var(--font);
+}
+
+/* Theme: system (no attribute) follows Windows; data-theme="light"|"dark" forces one. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: rgba(30, 30, 36, 0.82);
+    --bg-solid: #1f1f25;
+    --panel: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #ececf1;
+    --muted: #a3a3b0;
+    --faint: #75757f;
+    --accent: #8f84ff;
+    --accent-soft: rgba(143, 132, 255, 0.16);
+    --sel: rgba(143, 132, 255, 0.2);
+    --danger: #ff6b81;
+    --kbd: rgba(255, 255, 255, 0.08);
+    --on-accent: #ffffff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+    --bg: rgba(30, 30, 36, 0.82);
+    --bg-solid: #1f1f25;
+    --panel: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #ececf1;
+    --muted: #a3a3b0;
+    --faint: #75757f;
+    --accent: #8f84ff;
+    --accent-soft: rgba(143, 132, 255, 0.16);
+    --sel: rgba(143, 132, 255, 0.2);
+    --danger: #ff6b81;
+    --kbd: rgba(255, 255, 255, 0.08);
+    --on-accent: #ffffff;
+    color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font: 14px/1.4 var(--font);
+  color: var(--text);
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+html[data-window="main"] body,
+html[data-window="picker"] body,
+html[data-window="toast"] body {
+  background: transparent;
+}
+html[data-window="settings"] body,
+html[data-window="translate"] body {
+  background: var(--bg-solid);
+  overflow: auto;
+  user-select: text;
+}
+
+#app {
+  height: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Native dropdown lists: solid colors from the theme, never translucent. */
+select option {
+  background: var(--bg-solid);
+  color: var(--text);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  outline: none;
+}
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  border-color: var(--accent);
+}
+
+button {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+button:hover {
+  border-color: var(--accent);
+}
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+button.danger {
+  color: var(--danger);
+}
+
+kbd {
+  font: 11px var(--font);
+  background: var(--kbd);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--muted);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--kbd);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Entries marked for pasting together (Ctrl+click / Shift+Space) */
+.marked {
+  position: relative;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.marked::after {
+  content: attr(data-mark);
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font: 600 11px/18px var(--font);
+  text-align: center;
+}
+
+/* Alt+number hint under every tab label (same in all windows) */
+.tabbtn {
+  display: inline-flex !important;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+}
+.tabhint {
+  font: 500 9.5px var(--mono);
+  opacity: 0.55;
+  font-weight: 500;
+}

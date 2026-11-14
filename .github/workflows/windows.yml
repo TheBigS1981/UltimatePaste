@@ -1,0 +1,65 @@
+name: windows
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: app/src-tauri
+
+      - name: Install frontend dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Type-check frontend
+        run: npx svelte-check --tsconfig ./tsconfig.json --fail-on-warnings
+
+      - name: Build frontend
+        run: npm run build
+
+      # Includes the Windows-only tests (real clipboard, DPAPI, elevation check).
+      - name: Rust tests
+        working-directory: app/src-tauri
+        run: cargo test --lib -- --test-threads=1
+
+      - name: Clippy
+        working-directory: app/src-tauri
+        run: cargo clippy --lib -- -D warnings
+
+      - name: Build installer
+        run: npx tauri build --bundles nsis
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: UltimatePaste-windows
+          path: |
+            app/src-tauri/target/release/ultimatepaste.exe
+            app/src-tauri/target/release/bundle/nsis/*.exe
+          retention-days: 14

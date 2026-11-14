@@ -1,0 +1,19 @@
+# build output
+/_out/
+node_modules/
+dist/
+target/
+app/src-tauri/gen/schemas/
+
+# local agent tooling
+/.agents/
+/.claude/
+skills-lock.json
+
+# editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+/_shots/

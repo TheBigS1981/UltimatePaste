@@ -1,0 +1,29 @@
+# Build-only environment. No ports, no proxy network.
+#   docker compose run --rm builder <command>
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: docker/builder.Dockerfile
+    image: ultimatepaste-builder:latest
+    user: "1000:1000"
+    working_dir: /work/app
+    volumes:
+      - ./:/work
+      - cache:/cache
+
+  # Screenshots of the UI via the dev preview harness (profile: tools)
+  shot:
+    profiles: [tools]
+    build:
+      context: .
+      dockerfile: docker/shot.Dockerfile
+    image: ultimatepaste-shot:latest
+    user: "1000:1000"
+    working_dir: /work/app
+    volumes:
+      - ./:/work
+      - cache:/cache
+
+volumes:
+  cache:

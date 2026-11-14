@@ -1,0 +1,16 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "settings",
+  "description": "Settings and welcome tour: may open file dialogs (export/import)",
+  "windows": [
+    "settings",
+    "tour"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:allow-hide",
+    "core:window:allow-close",
+    "dialog:allow-save",
+    "dialog:allow-open"
+  ]
+}

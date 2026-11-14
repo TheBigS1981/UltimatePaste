@@ -1,0 +1,29 @@
+# Changelog
+
+## 1.0.0 – first public release
+
+**Copy & paste**
+- Encrypted clipboard history for text, links, images (with local OCR), files and colors; instant, typo-tolerant search
+- Four window styles (Fluent, Board, Drawer, Compact), eight designs, light/dark
+- Paste as rich text, plain text, HTML or RTF; paste sequentially; pin, rename, edit; delete by time range
+- Snippets with placeholders and input fields, snippets while typing (`;keyword`)
+- Quick actions by content (JSON, colors, case, links without tracking, mail, phone, maps, parcel tracking)
+- Paste several entries together with a chosen separator; rules per program
+- AI actions with Claude or any OpenAI-compatible endpoint; inbox export as Markdown
+
+**Translate & correct**
+- Translate the selection with DeepL (Free/Pro) or AI: language detection, pairs, formality, direct replace
+- Correct or improve (style/tone) with DeepL Write, DeepL double translation or AI; word-by-word diff, accept/reject per change
+- History of the last 20 runs; costs per run and month
+
+**Emoji, GIF & symbols**
+- Picker at the text cursor that never steals the focus; search in 9 languages, skin tones, favorites, recently used
+- GIFs and stickers via GIPHY or KLIPY with your own key; ~500 special characters
+
+**Everything else**
+- Any shortcut, including `Win+V` and `Win+.`; conflict detection for Windows and PowerToys
+- Privacy: password managers ignored, short-lived secrets auto-removed, tracking stripped from links
+- Settings export/import (API keys optionally sealed with a password), statistics, welcome tour
+- Update check with verified self-update (installer and portable)
+- 9 UI languages: English, German, Spanish, French, Italian, Dutch, Polish, Portuguese (Brazil), Vietnamese
+- Security audit with fixes before release

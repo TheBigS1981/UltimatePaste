@@ -1,0 +1,19 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Popups and small windows: no file dialogs",
+  "windows": [
+    "main",
+    "picker",
+    "translate",
+    "toast",
+    "notice",
+    "update"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:allow-hide",
+    "core:window:allow-close",
+    "core:window:allow-start-dragging"
+  ]
+}

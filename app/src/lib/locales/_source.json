@@ -1,0 +1,3037 @@
+[
+ {
+  "key": "Seite öffnen und „DeepL API Free“ wählen – kostenlos, 500.000 Zeichen pro Monat.",
+  "de": "Seite öffnen und „DeepL API Free“ wählen – kostenlos, 500.000 Zeichen pro Monat.",
+  "en": "Open the page and choose “DeepL API Free” – free, 500,000 characters per month."
+ },
+ {
+  "key": "Konto anlegen. DeepL verlangt zur Prüfung eventuell eine Kreditkarte; der Free-Tarif kostet nichts.",
+  "de": "Konto anlegen. DeepL verlangt zur Prüfung eventuell eine Kreditkarte; der Free-Tarif kostet nichts.",
+  "en": "Create an account. DeepL may ask for a credit card for verification; the Free plan costs nothing."
+ },
+ {
+  "key": "Im Konto unter „API-Schlüssel“ den Schlüssel kopieren (endet auf „:fx“) und hier einfügen.",
+  "de": "Im Konto unter „API-Schlüssel“ den Schlüssel kopieren (endet auf „:fx“) und hier einfügen.",
+  "en": "In your account under “API keys”, copy the key (ends in “:fx”) and paste it here."
+ },
+ {
+  "key": "Seite öffnen und anmelden oder ein kostenloses Konto anlegen.",
+  "de": "Seite öffnen und anmelden oder ein kostenloses Konto anlegen.",
+  "en": "Open the page and sign in or create a free account."
+ },
+ {
+  "key": "„Create an API Key“ klicken und „API“ wählen – nicht „SDK“.",
+  "de": "„Create an API Key“ klicken und „API“ wählen – nicht „SDK“.",
+  "en": "Click “Create an API Key” and choose “API” – not “SDK”."
+ },
+ {
+  "key": "App-Namen und Beschreibung eingeben (z. B. „UltimatePaste privat“), Bedingungen akzeptieren.",
+  "de": "App-Namen und Beschreibung eingeben (z. B. „UltimatePaste privat“), Bedingungen akzeptieren.",
+  "en": "Enter an app name and description (e.g. “UltimatePaste personal”), accept the terms."
+ },
+ {
+  "key": "Den Schlüssel unter „Your API Keys“ kopieren und hier einfügen. Neue Schlüssel erlauben 100 Abfragen pro Stunde.",
+  "de": "Den Schlüssel unter „Your API Keys“ kopieren und hier einfügen. Neue Schlüssel erlauben 100 Abfragen pro Stunde.",
+  "en": "Copy the key under “Your API Keys” and paste it here. New keys allow 100 requests per hour."
+ },
+ {
+  "key": "Seite öffnen und kostenlos registrieren.",
+  "de": "Seite öffnen und kostenlos registrieren.",
+  "en": "Open the page and register for free."
+ },
+ {
+  "key": "Eine App anlegen (Name z. B. „UltimatePaste“).",
+  "de": "Eine App anlegen (Name z. B. „UltimatePaste“).",
+  "en": "Create an app (name e.g. “UltimatePaste”)."
+ },
+ {
+  "key": "Den API-Schlüssel der App kopieren und hier einfügen.",
+  "de": "Den API-Schlüssel der App kopieren und hier einfügen.",
+  "en": "Copy the app's API key and paste it here."
+ },
+ {
+  "key": "Seite öffnen und mit deinem Claude-Konto anmelden.",
+  "de": "Seite öffnen und mit deinem Claude-Konto anmelden.",
+  "en": "Open the page and sign in with your Claude account."
+ },
+ {
+  "key": "Unter „Billing“ Guthaben aufladen – die API wird nach Verbrauch abgerechnet, ein Claude-Abo gilt hier nicht.",
+  "de": "Unter „Billing“ Guthaben aufladen – die API wird nach Verbrauch abgerechnet, ein Claude-Abo gilt hier nicht.",
+  "en": "Add credit under “Billing” – the API is billed by usage; a Claude subscription does not apply here."
+ },
+ {
+  "key": "„Create Key“ klicken, den Schlüssel (beginnt mit „sk-ant-“) kopieren und hier einfügen.",
+  "de": "„Create Key“ klicken, den Schlüssel (beginnt mit „sk-ant-“) kopieren und hier einfügen.",
+  "en": "Click “Create Key”, copy the key (starts with “sk-ant-”) and paste it here."
+ },
+ {
+  "key": "Ollama installieren und ein Modell laden, z. B. „ollama pull llama3.2“.",
+  "de": "Ollama installieren und ein Modell laden, z. B. „ollama pull llama3.2“.",
+  "en": "Install Ollama and pull a model, e.g. “ollama pull llama3.2”."
+ },
+ {
+  "key": "Ein Schlüssel ist nicht nötig – alles läuft lokal auf deinem PC.",
+  "de": "Ein Schlüssel ist nicht nötig – alles läuft lokal auf deinem PC.",
+  "en": "No key needed – everything runs locally on your PC."
+ },
+ {
+  "key": "Für OpenAI: Seite öffnen, anmelden und unter „API keys“ einen Schlüssel erstellen.",
+  "de": "Für OpenAI: Seite öffnen, anmelden und unter „API keys“ einen Schlüssel erstellen.",
+  "en": "For OpenAI: open the page, sign in and create a key under “API keys”."
+ },
+ {
+  "key": "Andere Anbieter mit OpenAI-kompatibler Schnittstelle: Schlüssel und URL stehen in deren Dokumentation.",
+  "de": "Andere Anbieter mit OpenAI-kompatibler Schnittstelle: Schlüssel und URL stehen in deren Dokumentation.",
+  "en": "Other providers with an OpenAI-compatible API: key and URL are in their documentation."
+ },
+ {
+  "key": "So richtest du es ein",
+  "de": "So richtest du es ein",
+  "en": "How to set it up"
+ },
+ {
+  "key": "So bekommst du einen Schlüssel",
+  "de": "So bekommst du einen Schlüssel",
+  "en": "How to get a key"
+ },
+ {
+  "key": "Seite öffnen",
+  "de": "Seite öffnen",
+  "en": "Open page"
+ },
+ {
+  "key": "{0} markiert · ↵ alle einfügen · Esc hebt auf",
+  "de": "{0} markiert · ↵ alle einfügen · Esc hebt auf",
+  "en": "{0} marked · ↵ paste all · Esc clears"
+ },
+ {
+  "key": "Entf",
+  "de": "Entf",
+  "en": "Del"
+ },
+ {
+  "key": "{0} Einträge zusammen einfügen",
+  "de": "{0} Einträge zusammen einfügen",
+  "en": "Paste {0} entries together"
+ },
+ {
+  "key": "Untereinander",
+  "de": "Untereinander",
+  "en": "One per line"
+ },
+ {
+  "key": "Mit Leerzeile dazwischen",
+  "de": "Mit Leerzeile dazwischen",
+  "en": "With a blank line between"
+ },
+ {
+  "key": "Durch Komma getrennt",
+  "de": "Durch Komma getrennt",
+  "en": "Separated by commas"
+ },
+ {
+  "key": "Als Aufzählung (•)",
+  "de": "Als Aufzählung (•)",
+  "en": "As bullet list (•)"
+ },
+ {
+  "key": "Als nummerierte Liste",
+  "de": "Als nummerierte Liste",
+  "en": "As numbered list"
+ },
+ {
+  "key": "Markierung aufheben",
+  "de": "Markierung aufheben",
+  "en": "Clear marks"
+ },
+ {
+  "key": "Schnellaktionen",
+  "de": "Schnellaktionen",
+  "en": "Quick actions"
+ },
+ {
+  "key": "Treffer",
+  "de": "Treffer",
+  "en": "Results"
+ },
+ {
+  "key": "Favoriten",
+  "de": "Favoriten",
+  "en": "Favorites"
+ },
+ {
+  "key": "Zuletzt verwendet",
+  "de": "Zuletzt verwendet",
+  "en": "Recently used"
+ },
+ {
+  "key": "Stundenlimit erreicht (100 Abfragen pro Stunde beim kostenlosen Schlüssel). Spätestens in einer Stunde geht es weiter.",
+  "de": "Stundenlimit erreicht (100 Abfragen pro Stunde beim kostenlosen Schlüssel). Spätestens in einer Stunde geht es weiter.",
+  "en": "Hourly limit reached (100 requests per hour on the free key). It works again within an hour."
+ },
+ {
+  "key": "Der API-Schlüssel wird nicht akzeptiert. Bitte in den Einstellungen prüfen.",
+  "de": "Der API-Schlüssel wird nicht akzeptiert. Bitte in den Einstellungen prüfen.",
+  "en": "The API key was rejected. Please check it in the settings."
+ },
+ {
+  "key": "Zielprogramm läuft als Administrator – mit Strg + V einfügen.",
+  "de": "Zielprogramm läuft als Administrator – mit Strg + V einfügen.",
+  "en": "Target runs as administrator – paste with Ctrl + V."
+ },
+ {
+  "key": "GIF wird geladen …",
+  "de": "GIF wird geladen …",
+  "en": "Loading GIF …"
+ },
+ {
+  "key": "KLIPY durchsuchen",
+  "de": "KLIPY durchsuchen",
+  "en": "Search KLIPY"
+ },
+ {
+  "key": "GIPHY durchsuchen",
+  "de": "GIPHY durchsuchen",
+  "en": "Search GIPHY"
+ },
+ {
+  "key": "Sonderzeichen suchen (auch U+2192)",
+  "de": "Sonderzeichen suchen (auch U+2192)",
+  "en": "Search symbols (also U+2192)"
+ },
+ {
+  "key": "Emoji suchen",
+  "de": "Emoji suchen",
+  "en": "Search emoji"
+ },
+ {
+  "key": "Sonderzeichen",
+  "de": "Sonderzeichen",
+  "en": "Symbols"
+ },
+ {
+  "key": "Hautfarbe",
+  "de": "Hautfarbe",
+  "en": "Skin tone"
+ },
+ {
+  "key": "Standard",
+  "de": "Standard",
+  "en": "Default"
+ },
+ {
+  "key": "Hautton {0}",
+  "de": "Hautton {0}",
+  "en": "Skin tone {0}"
+ },
+ {
+  "key": "Für die GIF-Suche brauchst du einen kostenlosen API-Schlüssel von GIPHY oder KLIPY.",
+  "de": "Für die GIF-Suche brauchst du einen kostenlosen API-Schlüssel von GIPHY oder KLIPY.",
+  "en": "GIF search needs a free API key from GIPHY or KLIPY."
+ },
+ {
+  "key": "Zu den Einstellungen",
+  "de": "Zu den Einstellungen",
+  "en": "Open settings"
+ },
+ {
+  "key": "Angesagt",
+  "de": "Angesagt",
+  "en": "Trending"
+ },
+ {
+  "key": "Zu {0} wechseln",
+  "de": "Zu {0} wechseln",
+  "en": "Switch to {0}"
+ },
+ {
+  "key": "Noch keine GIFs verwendet. Einfach etwas suchen oder „Angesagt“ öffnen.",
+  "de": "Noch keine GIFs verwendet. Einfach etwas suchen oder „Angesagt“ öffnen.",
+  "en": "No GIFs used yet. Search for something or open “Trending”."
+ },
+ {
+  "key": "Nichts gefunden.",
+  "de": "Nichts gefunden.",
+  "en": "Nothing found."
+ },
+ {
+  "key": "Lädt …",
+  "de": "Lädt …",
+  "en": "Loading …"
+ },
+ {
+  "key": "Hautfarbe wählen",
+  "de": "Hautfarbe wählen",
+  "en": "Choose skin tone"
+ },
+ {
+  "key": "alle einfügen",
+  "de": "alle einfügen",
+  "en": "paste all"
+ },
+ {
+  "key": "verwerfen",
+  "de": "verwerfen",
+  "en": "discard"
+ },
+ {
+  "key": "einfügen",
+  "de": "einfügen",
+  "en": "paste"
+ },
+ {
+  "key": "kopieren",
+  "de": "kopieren",
+  "en": "copy"
+ },
+ {
+  "key": "sammeln",
+  "de": "sammeln",
+  "en": "collect"
+ },
+ {
+  "key": "Hautton",
+  "de": "Hautton",
+  "en": "tone"
+ },
+ {
+  "key": "Strg",
+  "de": "Strg",
+  "en": "Ctrl"
+ },
+ {
+  "key": "Willkommen",
+  "de": "Willkommen",
+  "en": "Welcome"
+ },
+ {
+  "key": "Kopieren & Einfügen",
+  "de": "Kopieren & Einfügen",
+  "en": "Copy & paste"
+ },
+ {
+  "key": "Übersetzen & Korrigieren",
+  "de": "Übersetzen & Korrigieren",
+  "en": "Translate & correct"
+ },
+ {
+  "key": "Datenschutz",
+  "de": "Datenschutz",
+  "en": "Privacy"
+ },
+ {
+  "key": "Fertig",
+  "de": "Fertig",
+  "en": "Done"
+ },
+ {
+  "key": "API-Schlüssel gespeichert ✓",
+  "de": "API-Schlüssel gespeichert ✓",
+  "en": "API key saved ✓"
+ },
+ {
+  "key": "Umschalt",
+  "de": "Umschalt",
+  "en": "Shift"
+ },
+ {
+  "key": "aus",
+  "de": "aus",
+  "en": "off"
+ },
+ {
+  "key": "Schritte",
+  "de": "Schritte",
+  "en": "Steps"
+ },
+ {
+  "key": "Willkommen bei UltimatePaste",
+  "de": "Willkommen bei UltimatePaste",
+  "en": "Welcome to UltimatePaste"
+ },
+ {
+  "key": "Drei Werkzeuge für jeden Tag – alle per Tastenkürzel, in jedem Programm:",
+  "de": "Drei Werkzeuge für jeden Tag – alle per Tastenkürzel, in jedem Programm:",
+  "en": "Three everyday tools – all by shortcut, in any program:"
+ },
+ {
+  "key": "Alles, was du kopierst, durchsuchbar wieder einfügen – auch Bilder, Dateien und Snippets.",
+  "de": "Alles, was du kopierst, durchsuchbar wieder einfügen – auch Bilder, Dateien und Snippets.",
+  "en": "Everything you copy, searchable and ready to paste again – images, files and snippets too."
+ },
+ {
+  "key": "Markierten Text übersetzen oder verbessern – mit DeepL oder KI.",
+  "de": "Markierten Text übersetzen oder verbessern – mit DeepL oder KI.",
+  "en": "Translate or improve selected text – with DeepL or AI."
+ },
+ {
+  "key": "Emojis, GIFs und Sonderzeichen suchen und einfügen.",
+  "de": "Emojis, GIFs und Sonderzeichen suchen und einfügen.",
+  "en": "Search and insert emoji, GIFs and symbols."
+ },
+ {
+  "key": "Sprache",
+  "de": "Sprache",
+  "en": "Language"
+ },
+ {
+  "key": "In ein paar Schritten ist alles eingerichtet. Jeder Schritt lässt sich überspringen – alles findest du später auch in den Einstellungen.",
+  "de": "In ein paar Schritten ist alles eingerichtet. Jeder Schritt lässt sich überspringen – alles findest du später auch in den Einstellungen.",
+  "en": "A few steps and you're set. Every step can be skipped – everything is in the settings later, too."
+ },
+ {
+  "key": "Mit diesem Kürzel öffnest du deinen Verlauf. Viele nehmen Win + V – das ersetzt dann die Zwischenablage von Windows.",
+  "de": "Mit diesem Kürzel öffnest du deinen Verlauf. Viele nehmen Win + V – das ersetzt dann die Zwischenablage von Windows.",
+  "en": "This shortcut opens your history. Many use Win + V – it then replaces the Windows clipboard."
+ },
+ {
+  "key": "Einfüge-Fenster öffnen",
+  "de": "Einfüge-Fenster öffnen",
+  "en": "Open paste window"
+ },
+ {
+  "key": "Win + V verwenden",
+  "de": "Win + V verwenden",
+  "en": "Use Win + V"
+ },
+ {
+  "key": "Windows' eigenes Win + V abschalten",
+  "de": "Windows' eigenes Win + V abschalten",
+  "en": "Switch off Windows' own Win + V"
+ },
+ {
+  "key": "Windows' Win + V ist abgeschaltet (wirkt ab der nächsten Anmeldung).",
+  "de": "Windows' Win + V ist abgeschaltet (wirkt ab der nächsten Anmeldung).",
+  "en": "Windows' Win + V is switched off (takes effect from the next sign-in)."
+ },
+ {
+  "key": "Empfohlen: Dann kann Windows nie dazwischenfunken. Wirkt ab der nächsten Windows-Anmeldung; rückgängig unter Einstellungen → Einfüge-Fenster.",
+  "de": "Empfohlen: Dann kann Windows nie dazwischenfunken. Wirkt ab der nächsten Windows-Anmeldung; rückgängig unter Einstellungen → Einfüge-Fenster.",
+  "en": "Recommended: then Windows can never get in the way. Takes effect from the next Windows sign-in; undo in Settings → Paste window."
+ },
+ {
+  "key": "als reiner Text",
+  "de": "als reiner Text",
+  "en": "as plain text"
+ },
+ {
+  "key": "direkt den n-ten Eintrag",
+  "de": "direkt den n-ten Eintrag",
+  "en": "the n-th entry directly"
+ },
+ {
+  "key": "Aktionen: Als … einfügen, KI, Schnellaktionen",
+  "de": "Aktionen: Als … einfügen, KI, Schnellaktionen",
+  "en": "actions: paste as …, AI, quick actions"
+ },
+ {
+  "key": "Reiter: Verlauf, Angeheftet, Text, Bilder, Snippets",
+  "de": "Reiter: Verlauf, Angeheftet, Text, Bilder, Snippets",
+  "en": "tabs: history, pinned, text, images, snippets"
+ },
+ {
+  "key": "Text markieren, Kürzel drücken – fertig. Ohne Markierung wird die Zwischenablage genommen.",
+  "de": "Text markieren, Kürzel drücken – fertig. Ohne Markierung wird die Zwischenablage genommen.",
+  "en": "Select text, press the shortcut – done. Without a selection, the clipboard is used."
+ },
+ {
+  "key": "Übersetzen",
+  "de": "Übersetzen",
+  "en": "Translate"
+ },
+ {
+  "key": "Korrigieren & verbessern",
+  "de": "Korrigieren & verbessern",
+  "en": "Correct & improve"
+ },
+ {
+  "key": "(gespeichert)",
+  "de": "(gespeichert)",
+  "en": "(stored)"
+ },
+ {
+  "key": "(optional, kostenlos)",
+  "de": "(optional, kostenlos)",
+  "en": "(optional, free)"
+ },
+ {
+  "key": "Speichern",
+  "de": "Speichern",
+  "en": "Save"
+ },
+ {
+  "key": "Statt DeepL geht auch eine KI (Claude oder ein OpenAI-kompatibler Dienst) – einzurichten unter Einstellungen → KI.",
+  "de": "Statt DeepL geht auch eine KI (Claude oder ein OpenAI-kompatibler Dienst) – einzurichten unter Einstellungen → KI.",
+  "en": "Instead of DeepL you can use an AI (Claude or an OpenAI-compatible service) – set up under Settings → AI."
+ },
+ {
+  "key": "Öffnet das Auswahlfenster direkt am Text-Cursor.",
+  "de": "Öffnet das Auswahlfenster direkt am Text-Cursor.",
+  "en": "Opens the picker right at the text caret."
+ },
+ {
+  "key": "Emoji, GIF & Sonderzeichen",
+  "de": "Emoji, GIF & Sonderzeichen",
+  "en": "Emoji, GIF & symbols"
+ },
+ {
+  "key": "Win + . verwenden (ersetzt das Emoji-Feld von Windows)",
+  "de": "Win + . verwenden (ersetzt das Emoji-Feld von Windows)",
+  "en": "Use Win + . (replaces the Windows emoji panel)"
+ },
+ {
+  "key": "Ohne Schlüssel funktionieren Emojis und Sonderzeichen ganz normal, nur der GIF-Reiter bleibt leer.",
+  "de": "Ohne Schlüssel funktionieren Emojis und Sonderzeichen ganz normal, nur der GIF-Reiter bleibt leer.",
+  "en": "Without a key, emoji and symbols work as usual; only the GIF tab stays empty."
+ },
+ {
+  "key": "Dein Verlauf bleibt auf diesem PC – verschlüsselt und an dein Windows-Konto gebunden.",
+  "de": "Dein Verlauf bleibt auf diesem PC – verschlüsselt und an dein Windows-Konto gebunden.",
+  "en": "Your history stays on this PC – encrypted and bound to your Windows account."
+ },
+ {
+  "key": "Passwort-Manager und gesperrte Programme werden nicht aufgenommen.",
+  "de": "Passwort-Manager und gesperrte Programme werden nicht aufgenommen.",
+  "en": "Password managers and blocked programs are not recorded."
+ },
+ {
+  "key": "Text geht nur an DeepL oder die KI, wenn du selbst übersetzt, korrigierst oder eine KI-Aktion startest.",
+  "de": "Text geht nur an DeepL oder die KI, wenn du selbst übersetzt, korrigierst oder eine KI-Aktion startest.",
+  "en": "Text only goes to DeepL or the AI when you translate, correct or start an AI action yourself."
+ },
+ {
+  "key": "Einmal-Codes, Kartennummern und API-Schlüssel nach {0} Minuten aus dem Verlauf löschen",
+  "de": "Einmal-Codes, Kartennummern und API-Schlüssel nach {0} Minuten aus dem Verlauf löschen",
+  "en": "Remove one-time codes, card numbers and API keys from the history after {0} minutes"
+ },
+ {
+  "key": "Tracking aus kopierten Links entfernen",
+  "de": "Tracking aus kopierten Links entfernen",
+  "en": "Remove tracking from copied links"
+ },
+ {
+  "key": "Snippets beim Tippen ersetzen (z. B. „;mfg“)",
+  "de": "Snippets beim Tippen ersetzen (z. B. „;mfg“)",
+  "en": "Replace snippets while typing (e.g. “;mfg”)"
+ },
+ {
+  "key": "Für die Snippet-Ersetzung merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt.",
+  "de": "Für die Snippet-Ersetzung merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt.",
+  "en": "For snippet replacement, UltimatePaste keeps the last ~40 typed characters in memory – nothing of it is stored or sent."
+ },
+ {
+  "key": "Alles bereit!",
+  "de": "Alles bereit!",
+  "en": "All set!"
+ },
+ {
+  "key": "Deine Tastenkürzel:",
+  "de": "Deine Tastenkürzel:",
+  "en": "Your shortcuts:"
+ },
+ {
+  "key": "Einfüge-Fenster",
+  "de": "Einfüge-Fenster",
+  "en": "Paste window"
+ },
+ {
+  "key": "Nacheinander einfügen",
+  "de": "Nacheinander einfügen",
+  "en": "Paste sequentially"
+ },
+ {
+  "key": "UltimatePaste läuft im Infobereich der Taskleiste. Rechtsklick auf das Symbol öffnet Einstellungen, Übersetzen und mehr. Die Tour startest du unter Einstellungen → Allgemein erneut.",
+  "de": "UltimatePaste läuft im Infobereich der Taskleiste. Rechtsklick auf das Symbol öffnet Einstellungen, Übersetzen und mehr. Die Tour startest du unter Einstellungen → Allgemein erneut.",
+  "en": "UltimatePaste runs in the notification area of the taskbar. Right-click the icon for settings, translate and more. Restart the tour under Settings → General."
+ },
+ {
+  "key": "Tour überspringen",
+  "de": "Tour überspringen",
+  "en": "Skip tour"
+ },
+ {
+  "key": "Zurück",
+  "de": "Zurück",
+  "en": "Back"
+ },
+ {
+  "key": "Weiter",
+  "de": "Weiter",
+  "en": "Next"
+ },
+ {
+  "key": "Los geht's",
+  "de": "Los geht's",
+  "en": "Let's go"
+ },
+ {
+  "key": "Das Passwort braucht mindestens 6 Zeichen.",
+  "de": "Das Passwort braucht mindestens 6 Zeichen.",
+  "en": "The password needs at least 6 characters."
+ },
+ {
+  "key": "Die Passwörter stimmen nicht überein.",
+  "de": "Die Passwörter stimmen nicht überein.",
+  "en": "The passwords don't match."
+ },
+ {
+  "key": "Gespeichert: Einstellungen, {0} Snippets, {1} API-Schlüssel.",
+  "de": "Gespeichert: Einstellungen, {0} Snippets, {1} API-Schlüssel.",
+  "en": "Saved: settings, {0} snippets, {1} API keys."
+ },
+ {
+  "key": "Das ist keine Export-Datei von UltimatePaste.",
+  "de": "Das ist keine Export-Datei von UltimatePaste.",
+  "en": "This is not an UltimatePaste export file."
+ },
+ {
+  "key": "Importiert: Einstellungen, {0} Snippets, {1} API-Schlüssel.",
+  "de": "Importiert: Einstellungen, {0} Snippets, {1} API-Schlüssel.",
+  "en": "Imported: settings, {0} snippets, {1} API keys."
+ },
+ {
+  "key": "Das Passwort stimmt nicht.",
+  "de": "Das Passwort stimmt nicht.",
+  "en": "Wrong password."
+ },
+ {
+  "key": "Exportieren",
+  "de": "Exportieren",
+  "en": "Export"
+ },
+ {
+  "key": "Einstellungen, Snippets, KI-Aktionen und Programm-Regeln in eine Datei – z. B. für einen neuen PC. Der Verlauf kommt nicht mit.",
+  "de": "Einstellungen, Snippets, KI-Aktionen und Programm-Regeln in eine Datei – z. B. für einen neuen PC. Der Verlauf kommt nicht mit.",
+  "en": "Settings, snippets, AI actions and program rules in one file – e.g. for a new PC. The history is not included."
+ },
+ {
+  "key": "API-Schlüssel mitnehmen (mit Passwort verschlüsselt)",
+  "de": "API-Schlüssel mitnehmen (mit Passwort verschlüsselt)",
+  "en": "Include API keys (encrypted with a password)"
+ },
+ {
+  "key": "Passwort",
+  "de": "Passwort",
+  "en": "Password"
+ },
+ {
+  "key": "Passwort wiederholen",
+  "de": "Passwort wiederholen",
+  "en": "Repeat password"
+ },
+ {
+  "key": "Ohne dieses Passwort lassen sich die Schlüssel nicht wiederherstellen.",
+  "de": "Ohne dieses Passwort lassen sich die Schlüssel nicht wiederherstellen.",
+  "en": "The keys can't be restored without this password."
+ },
+ {
+  "key": "Exportieren …",
+  "de": "Exportieren …",
+  "en": "Export …"
+ },
+ {
+  "key": "Importieren",
+  "de": "Importieren",
+  "en": "Import"
+ },
+ {
+  "key": "Datei wählen …",
+  "de": "Datei wählen …",
+  "en": "Choose file …"
+ },
+ {
+  "key": "Export vom {0} (Version {1}) · {2} Snippets",
+  "de": "Export vom {0} (Version {1}) · {2} Snippets",
+  "en": "Export from {0} (version {1}) · {2} snippets"
+ },
+ {
+  "key": "enthält API-Schlüssel",
+  "de": "enthält API-Schlüssel",
+  "en": "contains API keys"
+ },
+ {
+  "key": "Ergänzen",
+  "de": "Ergänzen",
+  "en": "Merge"
+ },
+ {
+  "key": "Ersetzen",
+  "de": "Ersetzen",
+  "en": "Replace"
+ },
+ {
+  "key": "Einstellungen werden übernommen, vorhandene Snippets, KI-Aktionen und Regeln durch die aus der Datei ersetzt.",
+  "de": "Einstellungen werden übernommen, vorhandene Snippets, KI-Aktionen und Regeln durch die aus der Datei ersetzt.",
+  "en": "Settings are taken over; existing snippets, AI actions and rules are replaced by those in the file."
+ },
+ {
+  "key": "Einstellungen werden übernommen, Snippets, KI-Aktionen und Regeln aus der Datei kommen zu deinen hinzu.",
+  "de": "Einstellungen werden übernommen, Snippets, KI-Aktionen und Regeln aus der Datei kommen zu deinen hinzu.",
+  "en": "Settings are taken over; snippets, AI actions and rules from the file are added to yours."
+ },
+ {
+  "key": "Passwort für die API-Schlüssel (leer = ohne Schlüssel)",
+  "de": "Passwort für die API-Schlüssel (leer = ohne Schlüssel)",
+  "en": "Password for the API keys (empty = without keys)"
+ },
+ {
+  "key": "Abbrechen",
+  "de": "Abbrechen",
+  "en": "Cancel"
+ },
+ {
+  "key": "Ohne Stilvorgabe",
+  "de": "Ohne Stilvorgabe",
+  "en": "No style"
+ },
+ {
+  "key": "Stil: einfach",
+  "de": "Stil: einfach",
+  "en": "Style: simple"
+ },
+ {
+  "key": "Stil: geschäftlich",
+  "de": "Stil: geschäftlich",
+  "en": "Style: business"
+ },
+ {
+  "key": "Stil: akademisch",
+  "de": "Stil: akademisch",
+  "en": "Style: academic"
+ },
+ {
+  "key": "Stil: locker",
+  "de": "Stil: locker",
+  "en": "Style: casual"
+ },
+ {
+  "key": "Ton: freundlich",
+  "de": "Ton: freundlich",
+  "en": "Tone: friendly"
+ },
+ {
+  "key": "Ton: selbstbewusst",
+  "de": "Ton: selbstbewusst",
+  "en": "Tone: confident"
+ },
+ {
+  "key": "Ton: diplomatisch",
+  "de": "Ton: diplomatisch",
+  "en": "Tone: diplomatic"
+ },
+ {
+  "key": "Ton: begeistert",
+  "de": "Ton: begeistert",
+  "en": "Tone: enthusiastic"
+ },
+ {
+  "key": "Kein DeepL-Schlüssel hinterlegt.",
+  "de": "Kein DeepL-Schlüssel hinterlegt.",
+  "en": "No DeepL key set."
+ },
+ {
+  "key": "Kein API-Schlüssel für den KI-Anbieter hinterlegt.",
+  "de": "Kein API-Schlüssel für den KI-Anbieter hinterlegt.",
+  "en": "No API key set for the AI provider."
+ },
+ {
+  "key": "Das DeepL-Monatskontingent ist aufgebraucht.",
+  "de": "Das DeepL-Monatskontingent ist aufgebraucht.",
+  "en": "The DeepL monthly quota is used up."
+ },
+ {
+  "key": "Der API-Schlüssel wird nicht akzeptiert.",
+  "de": "Der API-Schlüssel wird nicht akzeptiert.",
+  "en": "The API key was rejected."
+ },
+ {
+  "key": "Zu viele Anfragen – bitte kurz warten.",
+  "de": "Zu viele Anfragen – bitte kurz warten.",
+  "en": "Too many requests – please wait a moment."
+ },
+ {
+  "key": "Kein Text zum Korrigieren. Markiere Text oder kopiere ihn vorher.",
+  "de": "Kein Text zum Korrigieren. Markiere Text oder kopiere ihn vorher.",
+  "en": "No text to correct. Select or copy some text first."
+ },
+ {
+  "key": "Kein Text zum Übersetzen. Markiere Text oder kopiere ihn vorher.",
+  "de": "Kein Text zum Übersetzen. Markiere Text oder kopiere ihn vorher.",
+  "en": "No text to translate. Select or copy some text first."
+ },
+ {
+  "key": "Übersetzt",
+  "de": "Übersetzt",
+  "en": "Translated"
+ },
+ {
+  "key": "Verbessert",
+  "de": "Verbessert",
+  "en": "Improved"
+ },
+ {
+  "key": "Korrigiert",
+  "de": "Korrigiert",
+  "en": "Corrected"
+ },
+ {
+  "key": "Korrigieren",
+  "de": "Korrigieren",
+  "en": "Correct"
+ },
+ {
+  "key": "Verlauf",
+  "de": "Verlauf",
+  "en": "History"
+ },
+ {
+  "key": "Noch kein Verlauf.",
+  "de": "Noch kein Verlauf.",
+  "en": "No history yet."
+ },
+ {
+  "key": "Verlauf löschen",
+  "de": "Verlauf löschen",
+  "en": "Clear history"
+ },
+ {
+  "key": "Automatisch",
+  "de": "Automatisch",
+  "en": "Detect"
+ },
+ {
+  "key": "Art",
+  "de": "Art",
+  "en": "Kind"
+ },
+ {
+  "key": "Nur Fehler",
+  "de": "Nur Fehler",
+  "en": "Errors only"
+ },
+ {
+  "key": "Verbessern",
+  "de": "Verbessern",
+  "en": "Improve"
+ },
+ {
+  "key": "Stil",
+  "de": "Stil",
+  "en": "Style"
+ },
+ {
+  "key": "Dienst",
+  "de": "Dienst",
+  "en": "Service"
+ },
+ {
+  "key": "KI",
+  "de": "KI",
+  "en": "AI"
+ },
+ {
+  "key": "Von",
+  "de": "Von",
+  "en": "From"
+ },
+ {
+  "key": "Richtung tauschen",
+  "de": "Richtung tauschen",
+  "en": "Swap direction"
+ },
+ {
+  "key": "Nach",
+  "de": "Nach",
+  "en": "To"
+ },
+ {
+  "key": "Anrede",
+  "de": "Anrede",
+  "en": "Address form"
+ },
+ {
+  "key": "Du",
+  "de": "Du",
+  "en": "Informal"
+ },
+ {
+  "key": "Sie",
+  "de": "Sie",
+  "en": "Formal"
+ },
+ {
+  "key": "Text zum Korrigieren",
+  "de": "Text zum Korrigieren",
+  "en": "Text to correct"
+ },
+ {
+  "key": "Text zum Übersetzen",
+  "de": "Text zum Übersetzen",
+  "en": "Text to translate"
+ },
+ {
+  "key": "Wörter",
+  "de": "Wörter",
+  "en": "words"
+ },
+ {
+  "key": "Zeichen",
+  "de": "Zeichen",
+  "en": "characters"
+ },
+ {
+  "key": "Neu korrigieren",
+  "de": "Neu korrigieren",
+  "en": "Correct again"
+ },
+ {
+  "key": "Neu übersetzen",
+  "de": "Neu übersetzen",
+  "en": "Translate again"
+ },
+ {
+  "key": "Übersetze …",
+  "de": "Übersetze …",
+  "en": "Translating …"
+ },
+ {
+  "key": "Änderungen",
+  "de": "Änderungen",
+  "en": "Changes"
+ },
+ {
+  "key": "Klicken: Änderung ablehnen",
+  "de": "Klicken: Änderung ablehnen",
+  "en": "Click: reject change"
+ },
+ {
+  "key": "Klicken: Änderung übernehmen",
+  "de": "Klicken: Änderung übernehmen",
+  "en": "Click: accept change"
+ },
+ {
+  "key": "Hier erscheint der korrigierte Text.",
+  "de": "Hier erscheint der korrigierte Text.",
+  "en": "The corrected text appears here."
+ },
+ {
+  "key": "Keine Änderungen",
+  "de": "Keine Änderungen",
+  "en": "No changes"
+ },
+ {
+  "key": "Änderung",
+  "de": "Änderung",
+  "en": "change"
+ },
+ {
+  "key": "Gestrichenes",
+  "de": "Gestrichenes",
+  "en": "Removed"
+ },
+ {
+  "key": "Alle übernehmen",
+  "de": "Alle übernehmen",
+  "en": "Accept all"
+ },
+ {
+  "key": "Alle ablehnen",
+  "de": "Alle ablehnen",
+  "en": "Reject all"
+ },
+ {
+  "key": "Bearbeiten",
+  "de": "Bearbeiten",
+  "en": "Edit"
+ },
+ {
+  "key": "Prüfe …",
+  "de": "Prüfe …",
+  "en": "Checking …"
+ },
+ {
+  "key": "Mit KI übersetzen",
+  "de": "Mit KI übersetzen",
+  "en": "Translate with AI"
+ },
+ {
+  "key": "Mit KI korrigieren",
+  "de": "Mit KI korrigieren",
+  "en": "Correct with AI"
+ },
+ {
+  "key": "Einstellungen",
+  "de": "Einstellungen",
+  "en": "Settings"
+ },
+ {
+  "key": "DeepL (Doppelübersetzung)",
+  "de": "DeepL (Doppelübersetzung)",
+  "en": "DeepL (double translation)"
+ },
+ {
+  "key": "Zeichen berechnet",
+  "de": "Zeichen berechnet",
+  "en": "characters billed"
+ },
+ {
+  "key": "Monat",
+  "de": "Monat",
+  "en": "Month"
+ },
+ {
+  "key": "Änderungen anzeigen",
+  "de": "Änderungen anzeigen",
+  "en": "Show changes"
+ },
+ {
+  "key": "Kopieren",
+  "de": "Kopieren",
+  "en": "Copy"
+ },
+ {
+  "key": "Einfügen",
+  "de": "Einfügen",
+  "en": "Paste"
+ },
+ {
+  "key": "Leertaste",
+  "de": "Leertaste",
+  "en": "Space"
+ },
+ {
+  "key": "Einfg",
+  "de": "Einfg",
+  "en": "Insert"
+ },
+ {
+  "key": "Pos1",
+  "de": "Pos1",
+  "en": "Home"
+ },
+ {
+  "key": "Ende",
+  "de": "Ende",
+  "en": "End"
+ },
+ {
+  "key": "Bild ↑",
+  "de": "Bild ↑",
+  "en": "Page Up"
+ },
+ {
+  "key": "Bild ↓",
+  "de": "Bild ↓",
+  "en": "Page Down"
+ },
+ {
+  "key": "Eingabe ↵",
+  "de": "Eingabe ↵",
+  "en": "Enter ↵"
+ },
+ {
+  "key": "Tasten drücken … (Esc bricht ab)",
+  "de": "Tasten drücken … (Esc bricht ab)",
+  "en": "Press keys … (Esc cancels)"
+ },
+ {
+  "key": "● Aufnehmen",
+  "de": "● Aufnehmen",
+  "en": "● Record"
+ },
+ {
+  "key": "Deaktivieren",
+  "de": "Deaktivieren",
+  "en": "Disable"
+ },
+ {
+  "key": "deaktiviert",
+  "de": "deaktiviert",
+  "en": "disabled"
+ },
+ {
+  "key": "Noch keine Veröffentlichung auf GitHub.",
+  "de": "Noch keine Veröffentlichung auf GitHub.",
+  "en": "No release on GitHub yet."
+ },
+ {
+  "key": "Prüfung fehlgeschlagen.",
+  "de": "Prüfung fehlgeschlagen.",
+  "en": "Check failed."
+ },
+ {
+  "key": "Nach Updates suchen",
+  "de": "Nach Updates suchen",
+  "en": "Check for updates"
+ },
+ {
+  "key": "portabel",
+  "de": "portabel",
+  "en": "portable"
+ },
+ {
+  "key": "installiert",
+  "de": "installiert",
+  "en": "installed"
+ },
+ {
+  "key": "Suche …",
+  "de": "Suche …",
+  "en": "Checking …"
+ },
+ {
+  "key": "Update auf {0}",
+  "de": "Update auf {0}",
+  "en": "Update to {0}"
+ },
+ {
+  "key": "Aktuell",
+  "de": "Aktuell",
+  "en": "Up to date"
+ },
+ {
+  "key": "Pinnwand",
+  "de": "Pinnwand",
+  "en": "Board"
+ },
+ {
+  "key": "Schublade",
+  "de": "Schublade",
+  "en": "Drawer"
+ },
+ {
+  "key": "Kompakt",
+  "de": "Kompakt",
+  "en": "Compact"
+ },
+ {
+  "key": "Koralle",
+  "de": "Koralle",
+  "en": "Coral"
+ },
+ {
+  "key": "Salbei",
+  "de": "Salbei",
+  "en": "Sage"
+ },
+ {
+  "key": "Violett",
+  "de": "Violett",
+  "en": "Violet"
+ },
+ {
+  "key": "Graphit",
+  "de": "Graphit",
+  "en": "Graphite"
+ },
+ {
+  "key": "Ozean",
+  "de": "Ozean",
+  "en": "Ocean"
+ },
+ {
+  "key": "Bernstein",
+  "de": "Bernstein",
+  "en": "Amber"
+ },
+ {
+  "key": "Keiner – nur flüssiger",
+  "de": "Keiner – nur flüssiger",
+  "en": "None – just smoother"
+ },
+ {
+  "key": "Gespeichert ✓",
+  "de": "Gespeichert ✓",
+  "en": "Saved ✓"
+ },
+ {
+  "key": "API-Key gespeichert ✓",
+  "de": "API-Key gespeichert ✓",
+  "en": "API key saved ✓"
+ },
+ {
+  "key": "Neuer Anbieter",
+  "de": "Neuer Anbieter",
+  "en": "New provider"
+ },
+ {
+  "key": "Neue Aktion",
+  "de": "Neue Aktion",
+  "en": "New action"
+ },
+ {
+  "key": "Alle nicht angehefteten Einträge löschen?",
+  "de": "Alle nicht angehefteten Einträge löschen?",
+  "en": "Delete all unpinned entries?"
+ },
+ {
+  "key": "{0} Einträge gelöscht",
+  "de": "{0} Einträge gelöscht",
+  "en": "{0} entries deleted"
+ },
+ {
+  "key": "Allgemein",
+  "de": "Allgemein",
+  "en": "General"
+ },
+ {
+  "key": "Verlauf & Datenschutz",
+  "de": "Verlauf & Datenschutz",
+  "en": "History & privacy"
+ },
+ {
+  "key": "Regeln je Programm",
+  "de": "Regeln je Programm",
+  "en": "Rules per program"
+ },
+ {
+  "key": "Texterkennung & Inbox",
+  "de": "Texterkennung & Inbox",
+  "en": "OCR & inbox"
+ },
+ {
+  "key": "Dienste & Sprachen",
+  "de": "Dienste & Sprachen",
+  "en": "Services & languages"
+ },
+ {
+  "key": "Auswahlfenster",
+  "de": "Auswahlfenster",
+  "en": "Picker"
+ },
+ {
+  "key": "Weiteres",
+  "de": "Weiteres",
+  "en": "More"
+ },
+ {
+  "key": "Statistik",
+  "de": "Statistik",
+  "en": "Statistics"
+ },
+ {
+  "key": "Info",
+  "de": "Info",
+  "en": "About"
+ },
+ {
+  "key": "Windows' eigenes Win + V (Zwischenablage) ist abgeschaltet.",
+  "de": "Windows' eigenes Win + V (Zwischenablage) ist abgeschaltet.",
+  "en": "Windows' own Win + V (clipboard) is switched off."
+ },
+ {
+  "key": "Windows-Kürzel wiederherstellen",
+  "de": "Windows-Kürzel wiederherstellen",
+  "en": "Restore Windows shortcut"
+ },
+ {
+  "key": "Windows nutzt Win + V selbst (Zwischenablage). UltimatePaste fängt das Kürzel ab – zuverlässiger ist es, das Windows-Kürzel abzuschalten.",
+  "de": "Windows nutzt Win + V selbst (Zwischenablage). UltimatePaste fängt das Kürzel ab – zuverlässiger ist es, das Windows-Kürzel abzuschalten.",
+  "en": "Windows uses Win + V itself (clipboard). UltimatePaste intercepts it – switching off the Windows shortcut is more reliable."
+ },
+ {
+  "key": "In Windows abschalten",
+  "de": "In Windows abschalten",
+  "en": "Switch off in Windows"
+ },
+ {
+  "key": "Das wirkt ab der nächsten Windows-Anmeldung (abmelden und wieder anmelden oder neu starten).",
+  "de": "Das wirkt ab der nächsten Windows-Anmeldung (abmelden und wieder anmelden oder neu starten).",
+  "en": "This takes effect from the next Windows sign-in (sign out and in again, or restart)."
+ },
+ {
+  "key": "Windows' Win + Umschalt + V wird ebenfalls frei.",
+  "de": "Windows' Win + Umschalt + V wird ebenfalls frei.",
+  "en": "Windows' Win + Shift + V is freed as well."
+ },
+ {
+  "key": "Jetzt abschalten",
+  "de": "Jetzt abschalten",
+  "en": "Switch off now"
+ },
+ {
+  "key": "Jetzt wiederherstellen",
+  "de": "Jetzt wiederherstellen",
+  "en": "Restore now"
+ },
+ {
+  "key": "Windows nutzt dieses Kürzel selbst für sein Emoji-Feld. UltimatePaste fängt es ab; das Auswahlfenster übernimmt dabei bewusst nicht den Fokus, damit Windows nicht dazwischenkommt.",
+  "de": "Windows nutzt dieses Kürzel selbst für sein Emoji-Feld. UltimatePaste fängt es ab; das Auswahlfenster übernimmt dabei bewusst nicht den Fokus, damit Windows nicht dazwischenkommt.",
+  "en": "Windows uses this shortcut for its own emoji panel. UltimatePaste intercepts it; the picker deliberately doesn't take the focus so Windows can't get in the way."
+ },
+ {
+  "key": "Auch PowerToys nutzt dieses Kürzel ({0}). Bitte in den PowerToys-Einstellungen ändern oder das Modul abschalten.",
+  "de": "Auch PowerToys nutzt dieses Kürzel ({0}). Bitte in den PowerToys-Einstellungen ändern oder das Modul abschalten.",
+  "en": "PowerToys uses this shortcut too ({0}). Please change it in the PowerToys settings or switch the module off."
+ },
+ {
+  "key": "Sprache, Darstellung und Start mit Windows.",
+  "de": "Sprache, Darstellung und Start mit Windows.",
+  "en": "Language, appearance and starting with Windows."
+ },
+ {
+  "key": "Darstellung",
+  "de": "Darstellung",
+  "en": "Appearance"
+ },
+ {
+  "key": "Hell",
+  "de": "Hell",
+  "en": "Light"
+ },
+ {
+  "key": "Dunkel",
+  "de": "Dunkel",
+  "en": "Dark"
+ },
+ {
+  "key": "Mit Windows starten",
+  "de": "Mit Windows starten",
+  "en": "Start with Windows"
+ },
+ {
+  "key": "Automatisch nach neuen Versionen suchen (beim Start und täglich, nur Abfrage bei GitHub)",
+  "de": "Automatisch nach neuen Versionen suchen (beim Start und täglich, nur Abfrage bei GitHub)",
+  "en": "Check for new versions automatically (at start and daily, only a request to GitHub)"
+ },
+ {
+  "key": "Einführungstour erneut starten",
+  "de": "Einführungstour erneut starten",
+  "en": "Restart the welcome tour"
+ },
+ {
+  "key": "Einstellungen sichern & übertragen",
+  "de": "Einstellungen sichern & übertragen",
+  "en": "Back up & transfer settings"
+ },
+ {
+  "key": "Dein Zwischenablage-Verlauf: Kürzel, Aussehen und was beim Einfügen passiert.",
+  "de": "Dein Zwischenablage-Verlauf: Kürzel, Aussehen und was beim Einfügen passiert.",
+  "en": "Your clipboard history: shortcut, look and what happens when you paste."
+ },
+ {
+  "key": "Auch Kombinationen, die Windows selbst benutzt (z. B. Win + V), sind möglich – UltimatePaste übernimmt sie dann.",
+  "de": "Auch Kombinationen, die Windows selbst benutzt (z. B. Win + V), sind möglich – UltimatePaste übernimmt sie dann.",
+  "en": "Combinations Windows uses itself (e.g. Win + V) work too – UltimatePaste takes them over."
+ },
+ {
+  "key": "Aktionsmenü im Einfüge-Fenster",
+  "de": "Aktionsmenü im Einfüge-Fenster",
+  "en": "Actions menu in the paste window"
+ },
+ {
+  "key": "Gilt nur im Fenster. Nur kopieren (ohne Einfügen) liegt auf Alt + Eingabe.",
+  "de": "Gilt nur im Fenster. Nur kopieren (ohne Einfügen) liegt auf Alt + Eingabe.",
+  "en": "Only inside the window. Copy only (without pasting) is Alt + Enter."
+ },
+ {
+  "key": "Fensterstil",
+  "de": "Fensterstil",
+  "en": "Window style"
+ },
+ {
+  "key": "Passend",
+  "de": "Passend",
+  "en": "Matching"
+ },
+ {
+  "key": "Gehört zum Fensterstil",
+  "de": "Gehört zum Fensterstil",
+  "en": "Belongs to the window style"
+ },
+ {
+  "key": "Fensterposition",
+  "de": "Fensterposition",
+  "en": "Window position"
+ },
+ {
+  "key": "Mitte des aktiven Bildschirms",
+  "de": "Mitte des aktiven Bildschirms",
+  "en": "Center of active screen"
+ },
+ {
+  "key": "An der Maus",
+  "de": "An der Maus",
+  "en": "At mouse cursor"
+ },
+ {
+  "key": "Enter bewirkt",
+  "de": "Enter bewirkt",
+  "en": "Enter does"
+ },
+ {
+  "key": "Nur kopieren",
+  "de": "Nur kopieren",
+  "en": "Copy only"
+ },
+ {
+  "key": "Standardmäßig als reinen Text einfügen (Shift+Enter = mit Formatierung)",
+  "de": "Standardmäßig als reinen Text einfügen (Shift+Enter = mit Formatierung)",
+  "en": "Paste as plain text by default (Shift+Enter = with formatting)"
+ },
+ {
+  "key": "Eingefügte Einträge nach oben verschieben",
+  "de": "Eingefügte Einträge nach oben verschieben",
+  "en": "Move pasted entries to the top"
+ },
+ {
+  "key": "Das Auswahlfenster für Emojis, GIFs und Sonderzeichen.",
+  "de": "Das Auswahlfenster für Emojis, GIFs und Sonderzeichen.",
+  "en": "The picker for emoji, GIFs and symbols."
+ },
+ {
+  "key": "„Zuletzt verwendet“ zeigt",
+  "de": "„Zuletzt verwendet“ zeigt",
+  "en": "“Recently used” shows"
+ },
+ {
+  "key": "Einträge",
+  "de": "Einträge",
+  "en": "entries"
+ },
+ {
+  "key": "Standard-Hautfarbe",
+  "de": "Standard-Hautfarbe",
+  "en": "Default skin tone"
+ },
+ {
+  "key": "GIF-Reiter anzeigen",
+  "de": "GIF-Reiter anzeigen",
+  "en": "Show GIF tab"
+ },
+ {
+  "key": "Die Suche läuft über GIPHY oder KLIPY mit deinem eigenen, kostenlosen Schlüssel (100 Abfragen pro Stunde). Suchbegriffe gehen nur an den Dienst, wenn du im GIF-Reiter suchst.",
+  "de": "Die Suche läuft über GIPHY oder KLIPY mit deinem eigenen, kostenlosen Schlüssel (100 Abfragen pro Stunde). Suchbegriffe gehen nur an den Dienst, wenn du im GIF-Reiter suchst.",
+  "en": "Search runs via GIPHY or KLIPY with your own free key (100 requests per hour). Search terms only go to the service when you search in the GIF tab."
+ },
+ {
+  "key": "Key speichern",
+  "de": "Key speichern",
+  "en": "Save key"
+ },
+ {
+  "key": "Jugendschutz",
+  "de": "Jugendschutz",
+  "en": "Content rating"
+ },
+ {
+  "key": "für alle",
+  "de": "für alle",
+  "en": "everyone"
+ },
+ {
+  "key": "unbedenklich, auch im Büro",
+  "de": "unbedenklich, auch im Büro",
+  "en": "safe, also at work"
+ },
+ {
+  "key": "keine Einschränkung",
+  "de": "keine Einschränkung",
+  "en": "no restriction"
+ },
+ {
+  "key": "In Originalgröße einfügen (sonst bis ca. 2 MB, passt in jeden Chat)",
+  "de": "In Originalgröße einfügen (sonst bis ca. 2 MB, passt in jeden Chat)",
+  "en": "Paste in original size (otherwise up to ~2 MB, fits every chat)"
+ },
+ {
+  "key": "Dem Dienst melden, welches GIF verschickt wurde (anonyme Geräte-ID, keine persönlichen Daten)",
+  "de": "Dem Dienst melden, welches GIF verschickt wurde (anonyme Geräte-ID, keine persönlichen Daten)",
+  "en": "Tell the service which GIF was sent (anonymous device id, no personal data)"
+ },
+ {
+  "key": "Tipp: Lass Werbung für deinen KLIPY-Schlüssel im KLIPY-Portal ausgeschaltet. UltimatePaste zeigt ohnehin keine an.",
+  "de": "Tipp: Lass Werbung für deinen KLIPY-Schlüssel im KLIPY-Portal ausgeschaltet. UltimatePaste zeigt ohnehin keine an.",
+  "en": "Tip: keep ads switched off for your KLIPY key in the KLIPY portal. UltimatePaste never shows them anyway."
+ },
+ {
+  "key": "Markierten Text per Tastenkürzel übersetzen oder korrigieren – mit DeepL oder einem KI-Anbieter. Text wird nur gesendet, wenn du es auslöst.",
+  "de": "Markierten Text per Tastenkürzel übersetzen oder korrigieren – mit DeepL oder einem KI-Anbieter. Text wird nur gesendet, wenn du es auslöst.",
+  "en": "Translate or correct selected text with a shortcut – via DeepL or an AI provider. Text is only sent when you trigger it."
+ },
+ {
+  "key": "direkt ersetzen",
+  "de": "direkt ersetzen",
+  "en": "replace directly"
+ },
+ {
+  "key": "mit Fenster",
+  "de": "mit Fenster",
+  "en": "with window"
+ },
+ {
+  "key": "Ablauf",
+  "de": "Ablauf",
+  "en": "Mode"
+ },
+ {
+  "key": "Fenster öffnen",
+  "de": "Fenster öffnen",
+  "en": "Open window"
+ },
+ {
+  "key": "Direkt ersetzen",
+  "de": "Direkt ersetzen",
+  "en": "Replace directly"
+ },
+ {
+  "key": "Die Markierung wird sofort ersetzt, unten rechts erscheint ein kurzer Hinweis. Rückgängig mit Strg + Z. Ohne Markierung öffnet sich das Fenster.",
+  "de": "Die Markierung wird sofort ersetzt, unten rechts erscheint ein kurzer Hinweis. Rückgängig mit Strg + Z. Ohne Markierung öffnet sich das Fenster.",
+  "en": "The selection is replaced right away, a short notice appears at the bottom right. Undo with Ctrl + Z. Without a selection the window opens."
+ },
+ {
+  "key": "Original und Übersetzung nebeneinander; Sprachen, Dienst und Anrede lassen sich dort spontan ändern.",
+  "de": "Original und Übersetzung nebeneinander; Sprachen, Dienst und Anrede lassen sich dort spontan ändern.",
+  "en": "Original and translation side by side; languages, service and address form can be changed there."
+ },
+ {
+  "key": "Richtung",
+  "de": "Richtung",
+  "en": "Direction"
+ },
+ {
+  "key": "Sprachpaar",
+  "de": "Sprachpaar",
+  "en": "Language pair"
+ },
+ {
+  "key": "Immer nach …",
+  "de": "Immer nach …",
+  "en": "Always to …"
+ },
+ {
+  "key": "Sprache A",
+  "de": "Sprache A",
+  "en": "Language A"
+ },
+ {
+  "key": "Sprache B",
+  "de": "Sprache B",
+  "en": "Language B"
+ },
+ {
+  "key": "Wird Sprache A erkannt, geht es nach B – alles andere wird nach A übersetzt.",
+  "de": "Wird Sprache A erkannt, geht es nach B – alles andere wird nach A übersetzt.",
+  "en": "If language A is detected, it goes to B – everything else is translated to A."
+ },
+ {
+  "key": "Zielsprache",
+  "de": "Zielsprache",
+  "en": "Target language"
+ },
+ {
+  "key": "Anrede (Standard)",
+  "de": "Anrede (Standard)",
+  "en": "Address form (default)"
+ },
+ {
+  "key": "KI-Anbieter",
+  "de": "KI-Anbieter",
+  "en": "AI provider"
+ },
+ {
+  "key": "Free- und Pro-Schlüssel werden automatisch erkannt (Free-Schlüssel enden auf „:fx“, 500.000 Zeichen pro Monat).",
+  "de": "Free- und Pro-Schlüssel werden automatisch erkannt (Free-Schlüssel enden auf „:fx“, 500.000 Zeichen pro Monat).",
+  "en": "Free and Pro keys are detected automatically (Free keys end in “:fx”, 500,000 characters per month)."
+ },
+ {
+  "key": "Anbieter",
+  "de": "Anbieter",
+  "en": "Provider"
+ },
+ {
+  "key": "Modell",
+  "de": "Modell",
+  "en": "Model"
+ },
+ {
+  "key": "Preis",
+  "de": "Preis",
+  "en": "Price"
+ },
+ {
+  "key": "pro Million Tokens (Eingabe / Ausgabe)",
+  "de": "pro Million Tokens (Eingabe / Ausgabe)",
+  "en": "per million tokens (input / output)"
+ },
+ {
+  "key": "Preis Eingabe ($ / Mio. Tokens)",
+  "de": "Preis Eingabe ($ / Mio. Tokens)",
+  "en": "Input price ($ / M tokens)"
+ },
+ {
+  "key": "Preis Ausgabe ($ / Mio. Tokens)",
+  "de": "Preis Ausgabe ($ / Mio. Tokens)",
+  "en": "Output price ($ / M tokens)"
+ },
+ {
+  "key": "Für dieses Modell sind keine Preise eingebaut. Lokale Modelle kosten nichts – dann einfach 0 lassen.",
+  "de": "Für dieses Modell sind keine Preise eingebaut. Lokale Modelle kosten nichts – dann einfach 0 lassen.",
+  "en": "No built-in prices for this model. Local models are free – just leave 0."
+ },
+ {
+  "key": "Anbieter und API-Schlüssel verwaltest du unter „KI“.",
+  "de": "Anbieter und API-Schlüssel verwaltest du unter „KI“.",
+  "en": "Manage providers and API keys under “AI”."
+ },
+ {
+  "key": "DeepL Write braucht einen Pro-Schlüssel. Mit Free-Schlüssel korrigiert DeepL per Doppelübersetzung (z. B. Deutsch → Englisch → Deutsch) – das formuliert oft stärker um. Die KI nutzt denselben Anbieter und dasselbe Modell wie die Übersetzung.",
+  "de": "DeepL Write braucht einen Pro-Schlüssel. Mit Free-Schlüssel korrigiert DeepL per Doppelübersetzung (z. B. Deutsch → Englisch → Deutsch) – das formuliert oft stärker um. Die KI nutzt denselben Anbieter und dasselbe Modell wie die Übersetzung.",
+  "en": "DeepL Write needs a Pro key. With a Free key, DeepL corrects via a double translation (e.g. German → English → German), which often rephrases more. The AI uses the same provider and model as translation."
+ },
+ {
+  "key": "Stil beim Verbessern (Standard)",
+  "de": "Stil beim Verbessern (Standard)",
+  "en": "Style when improving (default)"
+ },
+ {
+  "key": "Beim Tippen im Fenster automatisch neu übersetzen / korrigieren (nach 1 Sekunde Pause)",
+  "de": "Beim Tippen im Fenster automatisch neu übersetzen / korrigieren (nach 1 Sekunde Pause)",
+  "en": "Re-run automatically while typing in the window (after a 1 second pause)"
+ },
+ {
+  "key": "Verbrauch diesen Monat",
+  "de": "Verbrauch diesen Monat",
+  "en": "Usage this month"
+ },
+ {
+  "key": "Zeichen (über UltimatePaste)",
+  "de": "Zeichen (über UltimatePaste)",
+  "en": "characters (via UltimatePaste)"
+ },
+ {
+  "key": "Was aufgenommen wird und wie lange es bleibt.",
+  "de": "Was aufgenommen wird und wie lange es bleibt.",
+  "en": "What gets recorded and how long it is kept."
+ },
+ {
+  "key": "Aufnahme pausiert",
+  "de": "Aufnahme pausiert",
+  "en": "Recording paused"
+ },
+ {
+  "key": "Aufbewahrung",
+  "de": "Aufbewahrung",
+  "en": "Keep history for"
+ },
+ {
+  "key": "Angeheftete Einträge bleiben immer erhalten.",
+  "de": "Angeheftete Einträge bleiben immer erhalten.",
+  "en": "Pinned entries are always kept."
+ },
+ {
+  "key": "Max. Textgröße (MB)",
+  "de": "Max. Textgröße (MB)",
+  "en": "Max. text size (MB)"
+ },
+ {
+  "key": "Max. Bildgröße (MB)",
+  "de": "Max. Bildgröße (MB)",
+  "en": "Max. image size (MB)"
+ },
+ {
+  "key": "Nie aufnehmen von (Programmname, eine Zeile pro Programm)",
+  "de": "Nie aufnehmen von (Programmname, eine Zeile pro Programm)",
+  "en": "Never record from (executable, one per line)"
+ },
+ {
+  "key": "Zusätzlich werden Inhalte ignoriert, die Passwort-Manager als vertraulich markieren.",
+  "de": "Zusätzlich werden Inhalte ignoriert, die Passwort-Manager als vertraulich markieren.",
+  "en": "Content marked as confidential by password managers is always ignored."
+ },
+ {
+  "key": "Verlauf leeren (außer Angeheftetem)",
+  "de": "Verlauf leeren (außer Angeheftetem)",
+  "en": "Clear history (except pinned)"
+ },
+ {
+  "key": "Sensible Einträge automatisch löschen",
+  "de": "Sensible Einträge automatisch löschen",
+  "en": "Remove sensitive entries automatically"
+ },
+ {
+  "key": "Erkennt solche Inhalte beim Kopieren und entfernt sie nach der eingestellten Zeit wieder aus dem Verlauf. Angeheftetes bleibt.",
+  "de": "Erkennt solche Inhalte beim Kopieren und entfernt sie nach der eingestellten Zeit wieder aus dem Verlauf. Angeheftetes bleibt.",
+  "en": "Recognizes such content when copied and removes it from the history after the set time. Pinned entries stay."
+ },
+ {
+  "key": "Einmal-Codes (2FA, 6–8 Ziffern)",
+  "de": "Einmal-Codes (2FA, 6–8 Ziffern)",
+  "en": "One-time codes (2FA, 6–8 digits)"
+ },
+ {
+  "key": "Kreditkartennummern",
+  "de": "Kreditkartennummern",
+  "en": "Credit card numbers"
+ },
+ {
+  "key": "API-Schlüssel und Tokens",
+  "de": "API-Schlüssel und Tokens",
+  "en": "API keys and tokens"
+ },
+ {
+  "key": "Löschen nach",
+  "de": "Löschen nach",
+  "en": "Remove after"
+ },
+ {
+  "key": "{0} Minuten",
+  "de": "{0} Minuten",
+  "en": "{0} minutes"
+ },
+ {
+  "key": "Tracking aus kopierten Links automatisch entfernen (utm_…, fbclid, gclid …)",
+  "de": "Tracking aus kopierten Links automatisch entfernen (utm_…, fbclid, gclid …)",
+  "en": "Remove tracking from copied links automatically (utm_…, fbclid, gclid …)"
+ },
+ {
+  "key": "Der gesäuberte Link landet in der Zwischenablage, das Original bleibt im Verlauf. Einzeln geht es auch über „Ohne Tracking einfügen“ im Aktionsmenü.",
+  "de": "Der gesäuberte Link landet in der Zwischenablage, das Original bleibt im Verlauf. Einzeln geht es auch über „Ohne Tracking einfügen“ im Aktionsmenü.",
+  "en": "The cleaned link goes to the clipboard, the original stays in the history. One by one it also works via “Paste without tracking” in the actions menu."
+ },
+ {
+  "key": "Die letzten 20 Vorgänge des Übersetzungsfensters liegen verschlüsselt auf diesem PC.",
+  "de": "Die letzten 20 Vorgänge des Übersetzungsfensters liegen verschlüsselt auf diesem PC.",
+  "en": "The last 20 runs of the translate window are stored encrypted on this PC."
+ },
+ {
+  "key": "Verlauf gelöscht ✓",
+  "de": "Verlauf gelöscht ✓",
+  "en": "History cleared ✓"
+ },
+ {
+  "key": "Übersetzungsverlauf löschen",
+  "de": "Übersetzungsverlauf löschen",
+  "en": "Clear translation history"
+ },
+ {
+  "key": "Jeder Druck auf das Tastenkürzel fügt den nächstälteren Eintrag ein – ohne Fenster.",
+  "de": "Jeder Druck auf das Tastenkürzel fügt den nächstälteren Eintrag ein – ohne Fenster.",
+  "en": "Each press of the shortcut pastes the next older entry – without opening the window."
+ },
+ {
+  "key": "Das Tastenkürzel stellst du unter „Tastenkürzel“ ein.",
+  "de": "Das Tastenkürzel stellst du unter „Tastenkürzel“ ein.",
+  "en": "Set the shortcut under “Shortcuts”."
+ },
+ {
+  "key": "Neustart nach (Sekunden ohne Druck)",
+  "de": "Neustart nach (Sekunden ohne Druck)",
+  "en": "Restart after (seconds idle)"
+ },
+ {
+  "key": "Nach jedem Eintrag Zeilenumbruch einfügen",
+  "de": "Nach jedem Eintrag Zeilenumbruch einfügen",
+  "en": "Add a line break after each entry"
+ },
+ {
+  "key": "Textbausteine legst du im Einfüge-Fenster im Reiter „Snippets“ an (Strg + N). Hier stellst du ein, wie sie sich verhalten.",
+  "de": "Textbausteine legst du im Einfüge-Fenster im Reiter „Snippets“ an (Strg + N). Hier stellst du ein, wie sie sich verhalten.",
+  "en": "You create text snippets in the paste window, tab “Snippets” (Ctrl + N). Here you set how they behave."
+ },
+ {
+  "key": "Snippets beim Tippen ersetzen",
+  "de": "Snippets beim Tippen ersetzen",
+  "en": "Replace snippets while typing"
+ },
+ {
+  "key": "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.",
+  "de": "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.",
+  "en": "If you type a snippet's keyword with a leading semicolon anywhere – e.g. “;mfg” –, it is replaced by the text right away. If the snippet has input fields, the form opens first."
+ },
+ {
+  "key": "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.",
+  "de": "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.",
+  "en": "For this, UltimatePaste keeps the last ~40 typed characters in memory – nothing of it is stored or sent. It is off in password fields, blocked programs and administrator windows."
+ },
+ {
+  "key": "Platzhalter",
+  "de": "Platzhalter",
+  "en": "Placeholders"
+ },
+ {
+  "key": "Datum und Uhrzeit",
+  "de": "Datum und Uhrzeit",
+  "en": "date and time"
+ },
+ {
+  "key": "der neueste Text aus dem Verlauf",
+  "de": "der neueste Text aus dem Verlauf",
+  "en": "the newest text from the history"
+ },
+ {
+  "key": "hier steht danach der Cursor",
+  "de": "hier steht danach der Cursor",
+  "en": "the cursor ends up here"
+ },
+ {
+  "key": "Eingabefeld, optional mit Vorgabe",
+  "de": "Eingabefeld, optional mit Vorgabe",
+  "en": "input field, optionally with a default"
+ },
+ {
+  "key": "Auswahlliste",
+  "de": "Auswahlliste",
+  "en": "choice list"
+ },
+ {
+  "key": "Englische Schreibweisen funktionieren ebenso: {input:…} und {select:…}.",
+  "de": "Englische Schreibweisen funktionieren ebenso: {input:…} und {select:…}.",
+  "en": "English forms work as well: {input:…} and {select:…}."
+ },
+ {
+  "key": "Wie in bestimmte Programme eingefügt wird – z. B. in Outlook immer als reiner Text. Gilt für normales Einfügen und „Nacheinander einfügen“.",
+  "de": "Wie in bestimmte Programme eingefügt wird – z. B. in Outlook immer als reiner Text. Gilt für normales Einfügen und „Nacheinander einfügen“.",
+  "en": "How content is pasted into specific programs – e.g. always plain text in Outlook. Applies to normal pasting and “Paste sequentially”."
+ },
+ {
+  "key": "Programm",
+  "de": "Programm",
+  "en": "Program"
+ },
+ {
+  "key": "Einfügen als",
+  "de": "Einfügen als",
+  "en": "Paste as"
+ },
+ {
+  "key": "Reiner Text",
+  "de": "Reiner Text",
+  "en": "Plain text"
+ },
+ {
+  "key": "Mit Formatierung",
+  "de": "Mit Formatierung",
+  "en": "With formatting"
+ },
+ {
+  "key": "Eine Zeile (Umbrüche entfernen)",
+  "de": "Eine Zeile (Umbrüche entfernen)",
+  "en": "One line (remove line breaks)"
+ },
+ {
+  "key": "Ohne Leerzeichen am Anfang/Ende",
+  "de": "Ohne Leerzeichen am Anfang/Ende",
+  "en": "Without leading/trailing spaces"
+ },
+ {
+  "key": "Noch keine Regeln.",
+  "de": "Noch keine Regeln.",
+  "en": "No rules yet."
+ },
+ {
+  "key": "Regel hinzufügen",
+  "de": "Regel hinzufügen",
+  "en": "Add rule"
+ },
+ {
+  "key": "Vorschläge stammen aus den Programmen, in die du zuletzt eingefügt hast. „Als … einfügen“ aus dem Aktionsmenü geht immer vor.",
+  "de": "Vorschläge stammen aus den Programmen, in die du zuletzt eingefügt hast. „Als … einfügen“ aus dem Aktionsmenü geht immer vor.",
+  "en": "Suggestions come from the programs you pasted into recently. “Paste as …” from the actions menu always wins."
+ },
+ {
+  "key": "Text in Bildern erkennen und Einträge in einem Ordner ablegen.",
+  "de": "Text in Bildern erkennen und Einträge in einem Ordner ablegen.",
+  "en": "Recognize text in images and save entries to a folder."
+ },
+ {
+  "key": "Text in Bildern automatisch erkennen (lokal, Windows-Texterkennung)",
+  "de": "Text in Bildern automatisch erkennen (lokal, Windows-Texterkennung)",
+  "en": "Recognize text in images automatically (local, Windows OCR)"
+ },
+ {
+  "key": "Benötigt ein installiertes Windows-Sprachpaket mit Texterkennung (Einstellungen → Zeit und Sprache).",
+  "de": "Benötigt ein installiertes Windows-Sprachpaket mit Texterkennung (Einstellungen → Zeit und Sprache).",
+  "en": "Requires a Windows language pack with OCR (Settings → Time & language)."
+ },
+ {
+  "key": "Inbox-Ordner",
+  "de": "Inbox-Ordner",
+  "en": "Inbox folder"
+ },
+ {
+  "key": "Strg+I legt den Eintrag dort ab: Text als Markdown mit Front-Matter, Bilder als PNG, Dateien als Kopie.",
+  "de": "Strg+I legt den Eintrag dort ab: Text als Markdown mit Front-Matter, Bilder als PNG, Dateien als Kopie.",
+  "en": "Ctrl+I saves the entry there: text as Markdown with front matter, images as PNG, files as copies."
+ },
+ {
+  "key": "Tags (kommagetrennt)",
+  "de": "Tags (kommagetrennt)",
+  "en": "Tags (comma separated)"
+ },
+ {
+  "key": "KI-Anbieter, API-Schlüssel und eigene KI-Aktionen für das Einfüge-Fenster.",
+  "de": "KI-Anbieter, API-Schlüssel und eigene KI-Aktionen für das Einfüge-Fenster.",
+  "en": "AI providers, API keys and your own AI actions for the paste window."
+ },
+ {
+  "key": "KI-Aktionen anzeigen (Inhalte werden nur bei Auswahl einer Aktion gesendet)",
+  "de": "KI-Aktionen anzeigen (Inhalte werden nur bei Auswahl einer Aktion gesendet)",
+  "en": "Show AI actions (content is only sent when you pick an action)"
+ },
+ {
+  "key": "Typ",
+  "de": "Typ",
+  "en": "Type"
+ },
+ {
+  "key": "OpenAI-kompatibel",
+  "de": "OpenAI-kompatibel",
+  "en": "OpenAI-compatible"
+ },
+ {
+  "key": "Anbieter hinzufügen",
+  "de": "Anbieter hinzufügen",
+  "en": "Add provider"
+ },
+ {
+  "key": "API-Keys liegen in der Windows-Anmeldeinformationsverwaltung. Für Claude wird ein API-Key von platform.claude.com benötigt – ein Claude-Abo reicht dafür nicht.",
+  "de": "API-Keys liegen in der Windows-Anmeldeinformationsverwaltung. Für Claude wird ein API-Key von platform.claude.com benötigt – ein Claude-Abo reicht dafür nicht.",
+  "en": "API keys are stored in Windows Credential Manager. Claude needs an API key from platform.claude.com – a Claude subscription does not work for this."
+ },
+ {
+  "key": "Aktionen",
+  "de": "Aktionen",
+  "en": "Actions"
+ },
+ {
+  "key": "Aktion hinzufügen",
+  "de": "Aktion hinzufügen",
+  "en": "Add action"
+ },
+ {
+  "key": "Version, Projektseite, Datenschutz und Lizenzen.",
+  "de": "Version, Projektseite, Datenschutz und Lizenzen.",
+  "en": "Version, project page, privacy and licenses."
+ },
+ {
+  "key": "Einträge im Verlauf",
+  "de": "Einträge im Verlauf",
+  "en": "Entries in history"
+ },
+ {
+  "key": "Lizenz",
+  "de": "Lizenz",
+  "en": "License"
+ },
+ {
+  "key": "Projekt auf GitHub",
+  "de": "Projekt auf GitHub",
+  "en": "Project on GitHub"
+ },
+ {
+  "key": "Fehler melden / Idee vorschlagen",
+  "de": "Fehler melden / Idee vorschlagen",
+  "en": "Report a bug / suggest an idea"
+ },
+ {
+  "key": "Datenordner öffnen",
+  "de": "Datenordner öffnen",
+  "en": "Open data folder"
+ },
+ {
+  "key": "Log-Datei öffnen",
+  "de": "Log-Datei öffnen",
+  "en": "Open log file"
+ },
+ {
+  "key": "Verlauf, Snippets, Statistik und Übersetzungsverlauf bleiben auf diesem PC – verschlüsselt, gebunden an dein Windows-Konto.",
+  "de": "Verlauf, Snippets, Statistik und Übersetzungsverlauf bleiben auf diesem PC – verschlüsselt, gebunden an dein Windows-Konto.",
+  "en": "History, snippets, statistics and translation history stay on this PC – encrypted and bound to your Windows account."
+ },
+ {
+  "key": "Inhalte von Passwort-Managern und aus gesperrten Programmen werden nicht aufgenommen.",
+  "de": "Inhalte von Passwort-Managern und aus gesperrten Programmen werden nicht aufgenommen.",
+  "en": "Content from password managers and blocked programs is not recorded."
+ },
+ {
+  "key": "An DeepL oder den KI-Anbieter geht Text nur, wenn du übersetzt, korrigierst oder eine KI-Aktion startest.",
+  "de": "An DeepL oder den KI-Anbieter geht Text nur, wenn du übersetzt, korrigierst oder eine KI-Aktion startest.",
+  "en": "Text only goes to DeepL or the AI provider when you translate, correct or start an AI action."
+ },
+ {
+  "key": "An GIPHY oder KLIPY gehen nur Suchbegriffe im GIF-Reiter – mit einer anonymen Geräte-ID, wenn die Rückmeldung eingeschaltet ist.",
+  "de": "An GIPHY oder KLIPY gehen nur Suchbegriffe im GIF-Reiter – mit einer anonymen Geräte-ID, wenn die Rückmeldung eingeschaltet ist.",
+  "en": "Only search terms in the GIF tab go to GIPHY or KLIPY – with an anonymous device ID if feedback is on."
+ },
+ {
+  "key": "API-Schlüssel liegen in der Windows-Anmeldeinformationsverwaltung.",
+  "de": "API-Schlüssel liegen in der Windows-Anmeldeinformationsverwaltung.",
+  "en": "API keys are stored in Windows Credential Manager."
+ },
+ {
+  "key": "Verwendete Daten und Bibliotheken",
+  "de": "Verwendete Daten und Bibliotheken",
+  "en": "Third-party data and libraries"
+ },
+ {
+  "key": "Emoji-Namen und Suchbegriffe",
+  "de": "Emoji-Namen und Suchbegriffe",
+  "en": "emoji names and keywords"
+ },
+ {
+  "key": "Flaggen in den Sprachlisten",
+  "de": "Flaggen in den Sprachlisten",
+  "en": "flags in the language lists"
+ },
+ {
+  "key": "GIF-Suche über GIPHY und KLIPY mit deinem eigenen Schlüssel",
+  "de": "GIF-Suche über GIPHY und KLIPY mit deinem eigenen Schlüssel",
+  "en": "GIF search via GIPHY and KLIPY with your own key"
+ },
+ {
+  "key": "und viele weitere Open-Source-Bibliotheken",
+  "de": "und viele weitere Open-Source-Bibliotheken",
+  "en": "and many more open-source libraries"
+ },
+ {
+  "key": "Verlauf, Snippets und Bilder sind verschlüsselt gespeichert (AES-256-GCM, Schlüssel per DPAPI an dein Windows-Konto gebunden).",
+  "de": "Verlauf, Snippets und Bilder sind verschlüsselt gespeichert (AES-256-GCM, Schlüssel per DPAPI an dein Windows-Konto gebunden).",
+  "en": "History, snippets and images are stored encrypted (AES-256-GCM, key bound to your Windows account via DPAPI)."
+ },
+ {
+  "key": "Wie Windows 11: Liste, Vorschau, Befehlsleiste",
+  "de": "Wie Windows 11: Liste, Vorschau, Befehlsleiste",
+  "en": "Like Windows 11: list, preview, command bar"
+ },
+ {
+  "key": "Inhalte als Karten im Raster",
+  "de": "Inhalte als Karten im Raster",
+  "en": "Content as cards in a grid"
+ },
+ {
+  "key": "Zeitleiste am rechten Bildschirmrand",
+  "de": "Zeitleiste am rechten Bildschirmrand",
+  "en": "Timeline at the right screen edge"
+ },
+ {
+  "key": "Kleines Popup am Text-Cursor",
+  "de": "Kleines Popup am Text-Cursor",
+  "en": "Small popup at the text caret"
+ },
+ {
+  "key": "Segoe, Windows-Blau",
+  "de": "Segoe, Windows-Blau",
+  "en": "Segoe, Windows blue"
+ },
+ {
+  "key": "Warm, rundlich",
+  "de": "Warm, rundlich",
+  "en": "Warm, rounded"
+ },
+ {
+  "key": "Ruhig, IBM Plex",
+  "de": "Ruhig, IBM Plex",
+  "en": "Calm, IBM Plex"
+ },
+ {
+  "key": "Klar, Inter",
+  "de": "Klar, Inter",
+  "en": "Crisp, Inter"
+ },
+ {
+  "key": "Schwarz-weiß, kontrastreich",
+  "de": "Schwarz-weiß, kontrastreich",
+  "en": "Monochrome, high contrast"
+ },
+ {
+  "key": "Petrol und Tiefblau",
+  "de": "Petrol und Tiefblau",
+  "en": "Teal and deep blue"
+ },
+ {
+  "key": "Beere und Rosa",
+  "de": "Beere und Rosa",
+  "en": "Berry and pink"
+ },
+ {
+  "key": "Papier und Honig",
+  "de": "Papier und Honig",
+  "en": "Paper and honey"
+ },
+ {
+  "key": "1 Tag",
+  "de": "1 Tag",
+  "en": "1 day"
+ },
+ {
+  "key": "3 Tage",
+  "de": "3 Tage",
+  "en": "3 days"
+ },
+ {
+  "key": "1 Woche",
+  "de": "1 Woche",
+  "en": "1 week"
+ },
+ {
+  "key": "2 Wochen",
+  "de": "2 Wochen",
+  "en": "2 weeks"
+ },
+ {
+  "key": "3 Wochen",
+  "de": "3 Wochen",
+  "en": "3 weeks"
+ },
+ {
+  "key": "1 Monat",
+  "de": "1 Monat",
+  "en": "1 month"
+ },
+ {
+  "key": "3 Monate",
+  "de": "3 Monate",
+  "en": "3 months"
+ },
+ {
+  "key": "6 Monate",
+  "de": "6 Monate",
+  "en": "6 months"
+ },
+ {
+  "key": "1 Jahr",
+  "de": "1 Jahr",
+  "en": "1 year"
+ },
+ {
+  "key": "Unbegrenzt",
+  "de": "Unbegrenzt",
+  "en": "Unlimited"
+ },
+ {
+  "key": "Die heruntergeladene Datei ist beschädigt (Prüfsumme stimmt nicht). Bitte später erneut versuchen.",
+  "de": "Die heruntergeladene Datei ist beschädigt (Prüfsumme stimmt nicht). Bitte später erneut versuchen.",
+  "en": "The downloaded file is damaged (checksum mismatch). Please try again later."
+ },
+ {
+  "key": "Für diese Installation gibt es keine passende Datei im Release.",
+  "de": "Für diese Installation gibt es keine passende Datei im Release.",
+  "en": "The release has no file for this kind of installation."
+ },
+ {
+  "key": "UltimatePaste {0} ist da",
+  "de": "UltimatePaste {0} ist da",
+  "en": "UltimatePaste {0} is available"
+ },
+ {
+  "key": "Du hast {0}.",
+  "de": "Du hast {0}.",
+  "en": "You have {0}."
+ },
+ {
+  "key": "Veröffentlicht am {0}.",
+  "de": "Veröffentlicht am {0}.",
+  "en": "Released on {0}."
+ },
+ {
+  "key": "Was ist neu?",
+  "de": "Was ist neu?",
+  "en": "What's new?"
+ },
+ {
+  "key": "Das Update wird heruntergeladen, geprüft und installiert; danach startet UltimatePaste neu.",
+  "de": "Das Update wird heruntergeladen, geprüft und installiert; danach startet UltimatePaste neu.",
+  "en": "The update is downloaded, verified and installed; UltimatePaste restarts afterwards."
+ },
+ {
+  "key": "Die portable Datei wird heruntergeladen, geprüft und ersetzt; danach startet UltimatePaste neu.",
+  "de": "Die portable Datei wird heruntergeladen, geprüft und ersetzt; danach startet UltimatePaste neu.",
+  "en": "The portable file is downloaded, verified and replaced; UltimatePaste restarts afterwards."
+ },
+ {
+  "key": "Windows kann dabei eine Sicherheitswarnung zeigen, weil die App noch nicht signiert ist.",
+  "de": "Windows kann dabei eine Sicherheitswarnung zeigen, weil die App noch nicht signiert ist.",
+  "en": "Windows may show a security warning because the app isn't signed yet."
+ },
+ {
+  "key": "Auf GitHub ansehen",
+  "de": "Auf GitHub ansehen",
+  "en": "View on GitHub"
+ },
+ {
+  "key": "Später",
+  "de": "Später",
+  "en": "Later"
+ },
+ {
+  "key": "Wird geladen …",
+  "de": "Wird geladen …",
+  "en": "Downloading …"
+ },
+ {
+  "key": "Jetzt aktualisieren",
+  "de": "Jetzt aktualisieren",
+  "en": "Update now"
+ },
+ {
+  "key": "Kein Update gefunden.",
+  "de": "Kein Update gefunden.",
+  "en": "No update found."
+ },
+ {
+  "key": "Tastenkürzel doppelt belegt",
+  "de": "Tastenkürzel doppelt belegt",
+  "en": "Shortcut used twice"
+ },
+ {
+  "key": "{0} öffnet auch die Zwischenablage von Windows. UltimatePaste fängt das Kürzel ab, aber Windows kann gelegentlich dazwischenfunken.",
+  "de": "{0} öffnet auch die Zwischenablage von Windows. UltimatePaste fängt das Kürzel ab, aber Windows kann gelegentlich dazwischenfunken.",
+  "en": "{0} also opens the Windows clipboard. UltimatePaste intercepts it, but Windows can occasionally get in the way."
+ },
+ {
+  "key": "Am zuverlässigsten ist es, das Windows-Kürzel abzuschalten.",
+  "de": "Am zuverlässigsten ist es, das Windows-Kürzel abzuschalten.",
+  "en": "Switching off the Windows shortcut is the most reliable fix."
+ },
+ {
+  "key": "Das wirkt ab der nächsten Windows-Anmeldung. Rückgängig jederzeit unter Einstellungen → Einfüge-Fenster.",
+  "de": "Das wirkt ab der nächsten Windows-Anmeldung. Rückgängig jederzeit unter Einstellungen → Einfüge-Fenster.",
+  "en": "This takes effect from the next Windows sign-in. Undo any time in Settings → Paste window."
+ },
+ {
+  "key": "{0} nutzt auch PowerToys ({1}). Bitte dort ändern oder das Modul abschalten.",
+  "de": "{0} nutzt auch PowerToys ({1}). Bitte dort ändern oder das Modul abschalten.",
+  "en": "{0} is also used by PowerToys ({1}). Please change it there or switch the module off."
+ },
+ {
+  "key": "Nicht mehr fragen",
+  "de": "Nicht mehr fragen",
+  "en": "Don't ask again"
+ },
+ {
+  "key": "Eingefügt",
+  "de": "Eingefügt",
+  "en": "Pasted"
+ },
+ {
+  "key": "Nacheinander eingefügt",
+  "de": "Nacheinander eingefügt",
+  "en": "Pasted sequentially"
+ },
+ {
+  "key": "Emojis",
+  "de": "Emojis",
+  "en": "Emoji"
+ },
+ {
+  "key": "Heute",
+  "de": "Heute",
+  "en": "Today"
+ },
+ {
+  "key": "Diese Woche",
+  "de": "Diese Woche",
+  "en": "This week"
+ },
+ {
+  "key": "Dieser Monat",
+  "de": "Dieser Monat",
+  "en": "This month"
+ },
+ {
+  "key": "Insgesamt",
+  "de": "Insgesamt",
+  "en": "Total"
+ },
+ {
+  "key": "Wie oft du UltimatePaste nutzt. Gezählt wird nur, nie der Inhalt – alles bleibt auf diesem PC.",
+  "de": "Wie oft du UltimatePaste nutzt. Gezählt wird nur, nie der Inhalt – alles bleibt auf diesem PC.",
+  "en": "How often you use UltimatePaste. Only counts are kept, never the content – everything stays on this PC."
+ },
+ {
+  "key": "Erfasst seit {0}",
+  "de": "Erfasst seit {0}",
+  "en": "Recorded since {0}"
+ },
+ {
+  "key": "Letzte 30 Tage",
+  "de": "Letzte 30 Tage",
+  "en": "Last 30 days"
+ },
+ {
+  "key": "Nutzung der letzten 30 Tage",
+  "de": "Nutzung der letzten 30 Tage",
+  "en": "Usage over the last 30 days"
+ },
+ {
+  "key": "Top-Emojis",
+  "de": "Top-Emojis",
+  "en": "Top emoji"
+ },
+ {
+  "key": "Noch keine.",
+  "de": "Noch keine.",
+  "en": "None yet."
+ },
+ {
+  "key": "Top-Sonderzeichen",
+  "de": "Top-Sonderzeichen",
+  "en": "Top symbols"
+ },
+ {
+  "key": "Eingefügt in",
+  "de": "Eingefügt in",
+  "en": "Pasted into"
+ },
+ {
+  "key": "Übersetzt (Zeichen)",
+  "de": "Übersetzt (Zeichen)",
+  "en": "Translated (characters)"
+ },
+ {
+  "key": "KI-Kosten pro Monat",
+  "de": "KI-Kosten pro Monat",
+  "en": "AI costs per month"
+ },
+ {
+  "key": "Alle Zähler löschen?",
+  "de": "Alle Zähler löschen?",
+  "en": "Delete all counters?"
+ },
+ {
+  "key": "Ja, löschen",
+  "de": "Ja, löschen",
+  "en": "Yes, delete"
+ },
+ {
+  "key": "Statistik zurücksetzen",
+  "de": "Statistik zurücksetzen",
+  "en": "Reset statistics"
+ },
+ {
+  "key": "Strg + . nutzen auch VS Code und Visual Studio (Schnellkorrektur) – dort greift dann UltimatePaste.",
+  "de": "Strg + . nutzen auch VS Code und Visual Studio (Schnellkorrektur) – dort greift dann UltimatePaste.",
+  "en": "Ctrl + . is also used by VS Code and Visual Studio (quick fix) – UltimatePaste takes it over there."
+ },
+ {
+  "key": "Strg + Umschalt + V fügt in Chrome, Edge, Teams und Word als reinen Text ein – dort greift dann UltimatePaste.",
+  "de": "Strg + Umschalt + V fügt in Chrome, Edge, Teams und Word als reinen Text ein – dort greift dann UltimatePaste.",
+  "en": "Ctrl + Shift + V pastes plain text in Chrome, Edge, Teams and Word – UltimatePaste takes it over there."
+ },
+ {
+  "key": "Strg + Alt + V öffnet in Word und Excel „Inhalte einfügen“ – dort greift dann UltimatePaste.",
+  "de": "Strg + Alt + V öffnet in Word und Excel „Inhalte einfügen“ – dort greift dann UltimatePaste.",
+  "en": "Ctrl + Alt + V opens “Paste special” in Word and Excel – UltimatePaste takes it over there."
+ },
+ {
+  "key": "Strg + Umschalt + T öffnet im Browser den zuletzt geschlossenen Tab wieder.",
+  "de": "Strg + Umschalt + T öffnet im Browser den zuletzt geschlossenen Tab wieder.",
+  "en": "Ctrl + Shift + T reopens the last closed tab in browsers."
+ },
+ {
+  "key": "Strg + Leertaste nutzen Eingabemethoden und Code-Editoren (Vorschläge).",
+  "de": "Strg + Leertaste nutzen Eingabemethoden und Code-Editoren (Vorschläge).",
+  "en": "Ctrl + Space is used by input methods and code editors (suggestions)."
+ },
+ {
+  "key": "Alt + Leertaste öffnet das Fenstermenü bzw. PowerToys Run.",
+  "de": "Alt + Leertaste öffnet das Fenstermenü bzw. PowerToys Run.",
+  "en": "Alt + Space opens the window menu or PowerToys Run."
+ },
+ {
+  "key": "Strg + Umschalt + C öffnet im Browser die Entwicklertools.",
+  "de": "Strg + Umschalt + C öffnet im Browser die Entwicklertools.",
+  "en": "Ctrl + Shift + C opens the developer tools in browsers."
+ },
+ {
+  "key": "Der API-Schlüssel wird nicht unverschlüsselt (http://) an einen anderen Rechner geschickt. Bitte eine https://-Adresse eintragen.",
+  "de": "Der API-Schlüssel wird nicht unverschlüsselt (http://) an einen anderen Rechner geschickt. Bitte eine https://-Adresse eintragen.",
+  "en": "The API key is not sent unencrypted (http://) to another computer. Please use an https:// address."
+ },
+ {
+  "key": "Kein KI-Anbieter gefunden. Lege unter Einstellungen → KI einen Anbieter an und wähle ihn als Standard.",
+  "de": "Kein KI-Anbieter gefunden. Lege unter Einstellungen → KI einen Anbieter an und wähle ihn als Standard.",
+  "en": "No AI provider found. Add one under Settings → AI and make it the default."
+ },
+ {
+  "key": "Sendung verfolgen: {0}",
+  "de": "Sendung verfolgen: {0}",
+  "en": "Track parcel: {0}"
+ },
+ {
+  "key": "JSON formatieren",
+  "de": "JSON formatieren",
+  "en": "Format JSON"
+ },
+ {
+  "key": "JSON verkleinern",
+  "de": "JSON verkleinern",
+  "en": "Minify JSON"
+ },
+ {
+  "key": "Als {0} einfügen",
+  "de": "Als {0} einfügen",
+  "en": "Paste as {0}"
+ },
+ {
+  "key": "Ohne Tracking einfügen",
+  "de": "Ohne Tracking einfügen",
+  "en": "Paste without tracking"
+ },
+ {
+  "key": "Im Browser öffnen",
+  "de": "Im Browser öffnen",
+  "en": "Open in browser"
+ },
+ {
+  "key": "E-Mail schreiben",
+  "de": "E-Mail schreiben",
+  "en": "Write e-mail"
+ },
+ {
+  "key": "Anrufen",
+  "de": "Anrufen",
+  "en": "Call"
+ },
+ {
+  "key": "In Karten öffnen",
+  "de": "In Karten öffnen",
+  "en": "Open in maps"
+ },
+ {
+  "key": "GROSSBUCHSTABEN",
+  "de": "GROSSBUCHSTABEN",
+  "en": "UPPERCASE"
+ },
+ {
+  "key": "kleinbuchstaben",
+  "de": "kleinbuchstaben",
+  "en": "lowercase"
+ },
+ {
+  "key": "Satzanfang groß",
+  "de": "Satzanfang groß",
+  "en": "Sentence case"
+ },
+ {
+  "key": "Jedes Wort Groß",
+  "de": "Jedes Wort Groß",
+  "en": "Title Case"
+ },
+ {
+  "key": "UltimatePaste – Übersetzen & Korrigieren",
+  "de": "UltimatePaste – Übersetzen & Korrigieren",
+  "en": "UltimatePaste – Translate & correct"
+ },
+ {
+  "key": "{0} Wörter",
+  "de": "{0} Wörter",
+  "en": "{0} words"
+ },
+ {
+  "key": "{0} Zeichen",
+  "de": "{0} Zeichen",
+  "en": "{0} characters"
+ },
+ {
+  "key": "Übersetzung: kein API-Schlüssel hinterlegt (Einstellungen → Übersetzen & Korrigieren)",
+  "de": "Übersetzung: kein API-Schlüssel hinterlegt (Einstellungen → Übersetzen & Korrigieren)",
+  "en": "Translation: no API key set (Settings → Translate & correct)"
+ },
+ {
+  "key": "DeepL: Monatskontingent aufgebraucht",
+  "de": "DeepL: Monatskontingent aufgebraucht",
+  "en": "DeepL: monthly quota used up"
+ },
+ {
+  "key": "Übersetzung: API-Schlüssel ungültig",
+  "de": "Übersetzung: API-Schlüssel ungültig",
+  "en": "Translation: invalid API key"
+ },
+ {
+  "key": "Übersetzung fehlgeschlagen: {0}",
+  "de": "Übersetzung fehlgeschlagen: {0}",
+  "en": "Translation failed: {0}"
+ },
+ {
+  "key": "„{0}“ ist schon belegt – von Windows oder einem anderen Programm. Bitte eine andere Kombination wählen.",
+  "de": "„{0}“ ist schon belegt – von Windows oder einem anderen Programm. Bitte eine andere Kombination wählen.",
+  "en": "“{0}” is already taken by Windows or another program. Please choose a different combination."
+ },
+ {
+  "key": "„{0}“ ließ sich nicht einrichten: {1}",
+  "de": "„{0}“ ließ sich nicht einrichten: {1}",
+  "en": "“{0}” could not be registered: {1}"
+ },
+ {
+  "key": "„{0}“ ist kein gültiges Tastenkürzel.",
+  "de": "„{0}“ ist kein gültiges Tastenkürzel.",
+  "en": "“{0}” is not a valid shortcut."
+ },
+ {
+  "key": "„{0}“ ist schon für eine andere UltimatePaste-Funktion vergeben.",
+  "de": "„{0}“ ist schon für eine andere UltimatePaste-Funktion vergeben.",
+  "en": "“{0}” is already used for another UltimatePaste function."
+ },
+ {
+  "key": "Öffnen",
+  "de": "Öffnen",
+  "en": "Open"
+ },
+ {
+  "key": "Aufnahme pausieren",
+  "de": "Aufnahme pausieren",
+  "en": "Pause recording"
+ },
+ {
+  "key": "Einstellungen…",
+  "de": "Einstellungen…",
+  "en": "Settings…"
+ },
+ {
+  "key": "Übersetzen…",
+  "de": "Übersetzen…",
+  "en": "Translate…"
+ },
+ {
+  "key": "Korrigieren…",
+  "de": "Korrigieren…",
+  "en": "Correct…"
+ },
+ {
+  "key": "Emoji, GIF & Sonderzeichen…",
+  "de": "Emoji, GIF & Sonderzeichen…",
+  "en": "Emoji, GIF & symbols…"
+ },
+ {
+  "key": "Update auf {0} verfügbar…",
+  "de": "Update auf {0} verfügbar…",
+  "en": "Update to {0} available…"
+ },
+ {
+  "key": "Beenden",
+  "de": "Beenden",
+  "en": "Quit"
+ },
+ {
+  "key": "UltimatePaste läuft von einem Netzlaufwerk – Tastenkürzel können dadurch verzögert reagieren. Besser lokal ablegen.",
+  "de": "UltimatePaste läuft von einem Netzlaufwerk – Tastenkürzel können dadurch verzögert reagieren. Besser lokal ablegen.",
+  "en": "UltimatePaste runs from a network drive – shortcuts may react late. Better keep it on a local drive."
+ },
+ {
+  "key": "UltimatePaste – Einstellungen",
+  "de": "UltimatePaste – Einstellungen",
+  "en": "UltimatePaste – Settings"
+ },
+ {
+  "key": "@searchPlaceholder",
+  "de": "Verlauf durchsuchen…",
+  "en": "Search history…"
+ },
+ {
+  "key": "@snippetPlaceholder",
+  "de": "Snippets durchsuchen…",
+  "en": "Search snippets…"
+ },
+ {
+  "key": "@tabAll",
+  "de": "Verlauf",
+  "en": "History"
+ },
+ {
+  "key": "@tabPinned",
+  "de": "Angeheftet",
+  "en": "Pinned"
+ },
+ {
+  "key": "@tabText",
+  "de": "Text",
+  "en": "Text"
+ },
+ {
+  "key": "@tabImages",
+  "de": "Bilder",
+  "en": "Images"
+ },
+ {
+  "key": "@image",
+  "de": "Bild",
+  "en": "Image"
+ },
+ {
+  "key": "@tabSnippets",
+  "de": "Snippets",
+  "en": "Snippets"
+ },
+ {
+  "key": "@empty",
+  "de": "Nichts gefunden",
+  "en": "Nothing found"
+ },
+ {
+  "key": "@emptyHistory",
+  "de": "Noch nichts kopiert. Kopiere etwas mit Strg+C.",
+  "en": "Nothing copied yet. Copy something with Ctrl+C."
+ },
+ {
+  "key": "@emptySnippets",
+  "de": "Noch keine Snippets. Mit Strg+N anlegen.",
+  "en": "No snippets yet. Press Ctrl+N to create one."
+ },
+ {
+  "key": "@paste",
+  "de": "Einfügen",
+  "en": "Paste"
+ },
+ {
+  "key": "@pastePlain",
+  "de": "Als reinen Text einfügen",
+  "en": "Paste as plain text"
+ },
+ {
+  "key": "@pasteFormatted",
+  "de": "Mit Formatierung einfügen",
+  "en": "Paste with formatting"
+ },
+ {
+  "key": "@pasteHtml",
+  "de": "Als HTML einfügen",
+  "en": "Paste as HTML"
+ },
+ {
+  "key": "@pasteRtf",
+  "de": "Als RTF einfügen",
+  "en": "Paste as RTF"
+ },
+ {
+  "key": "@copyOnly",
+  "de": "Nur kopieren",
+  "en": "Copy only"
+ },
+ {
+  "key": "@pin",
+  "de": "Anheften",
+  "en": "Pin"
+ },
+ {
+  "key": "@unpin",
+  "de": "Lösen",
+  "en": "Unpin"
+ },
+ {
+  "key": "@rename",
+  "de": "Umbenennen",
+  "en": "Rename"
+ },
+ {
+  "key": "@edit",
+  "de": "Bearbeiten",
+  "en": "Edit"
+ },
+ {
+  "key": "@remove",
+  "de": "Löschen",
+  "en": "Delete"
+ },
+ {
+  "key": "@ocrCopy",
+  "de": "Text aus Bild kopieren",
+  "en": "Copy text from image"
+ },
+ {
+  "key": "@ocrRun",
+  "de": "Texterkennung ausführen",
+  "en": "Run text recognition"
+ },
+ {
+  "key": "@inbox",
+  "de": "In Inbox ablegen",
+  "en": "Send to inbox"
+ },
+ {
+  "key": "@actions",
+  "de": "Aktionen",
+  "en": "Actions"
+ },
+ {
+  "key": "@actionFilter",
+  "de": "Aktion suchen…",
+  "en": "Search actions…"
+ },
+ {
+  "key": "@aiPrefix",
+  "de": "KI",
+  "en": "AI"
+ },
+ {
+  "key": "@bulkDelete",
+  "de": "Verlauf löschen",
+  "en": "Clear history"
+ },
+ {
+  "key": "@last5",
+  "de": "Letzte 5 Minuten löschen",
+  "en": "Delete last 5 minutes"
+ },
+ {
+  "key": "@last15",
+  "de": "Letzte 15 Minuten löschen",
+  "en": "Delete last 15 minutes"
+ },
+ {
+  "key": "@last30",
+  "de": "Letzte 30 Minuten löschen",
+  "en": "Delete last 30 minutes"
+ },
+ {
+  "key": "@last60",
+  "de": "Letzte Stunde löschen",
+  "en": "Delete last hour"
+ },
+ {
+  "key": "@last1440",
+  "de": "Letzte 24 Stunden löschen",
+  "en": "Delete last 24 hours"
+ },
+ {
+  "key": "@allUnpinned",
+  "de": "Alles außer Angeheftetem löschen",
+  "en": "Delete everything except pinned"
+ },
+ {
+  "key": "@pause",
+  "de": "Aufnahme pausieren",
+  "en": "Pause recording"
+ },
+ {
+  "key": "@resume",
+  "de": "Aufnahme fortsetzen",
+  "en": "Resume recording"
+ },
+ {
+  "key": "@paused",
+  "de": "Pausiert",
+  "en": "Paused"
+ },
+ {
+  "key": "@settings",
+  "de": "Einstellungen",
+  "en": "Settings"
+ },
+ {
+  "key": "@newSnippet",
+  "de": "Neues Snippet",
+  "en": "New snippet"
+ },
+ {
+  "key": "@editSnippet",
+  "de": "Snippet bearbeiten",
+  "en": "Edit snippet"
+ },
+ {
+  "key": "@deleteSnippet",
+  "de": "Snippet löschen",
+  "en": "Delete snippet"
+ },
+ {
+  "key": "@name",
+  "de": "Name",
+  "en": "Name"
+ },
+ {
+  "key": "@keyword",
+  "de": "Kürzel",
+  "en": "Keyword"
+ },
+ {
+  "key": "@body",
+  "de": "Inhalt",
+  "en": "Content"
+ },
+ {
+  "key": "@placeholdersHelp",
+  "de": "Platzhalter: {date} {time} {datetime} {date:%Y-%m-%d} {clipboard} {cursor} · Eingabefelder: {eingabe:Name} {eingabe:Ort|Stuttgart} {auswahl:Anrede|Herr|Frau}",
+  "en": "Placeholders: {date} {time} {datetime} {date:%Y-%m-%d} {clipboard} {cursor} · Input fields: {input:Name} {input:City|London} {select:Title|Mr|Ms}"
+ },
+ {
+  "key": "@save",
+  "de": "Speichern",
+  "en": "Save"
+ },
+ {
+  "key": "@saveAndPaste",
+  "de": "Speichern & einfügen",
+  "en": "Save & paste"
+ },
+ {
+  "key": "@pasteOnce",
+  "de": "Nur einfügen",
+  "en": "Paste only"
+ },
+ {
+  "key": "@cancel",
+  "de": "Abbrechen",
+  "en": "Cancel"
+ },
+ {
+  "key": "@title",
+  "de": "Titel",
+  "en": "Title"
+ },
+ {
+  "key": "@source",
+  "de": "Quelle",
+  "en": "Source"
+ },
+ {
+  "key": "@copied",
+  "de": "Kopiert",
+  "en": "Copied"
+ },
+ {
+  "key": "@lastUsed",
+  "de": "Zuletzt benutzt",
+  "en": "Last used"
+ },
+ {
+  "key": "@formats",
+  "de": "Formate",
+  "en": "Formats"
+ },
+ {
+  "key": "@size",
+  "de": "Größe",
+  "en": "Size"
+ },
+ {
+  "key": "@dimensions",
+  "de": "Abmessungen",
+  "en": "Dimensions"
+ },
+ {
+  "key": "@recognizedText",
+  "de": "Erkannter Text",
+  "en": "Recognized text"
+ },
+ {
+  "key": "@files",
+  "de": "Dateien",
+  "en": "Files"
+ },
+ {
+  "key": "@truncated",
+  "de": "(gekürzt angezeigt)",
+  "en": "(shown truncated)"
+ },
+ {
+  "key": "@elevatedHint",
+  "de": "Kopiert. Das Zielfenster läuft als Administrator – bitte selbst Strg+V drücken.",
+  "en": "Copied. The target window runs as administrator – press Ctrl+V yourself."
+ },
+ {
+  "key": "@aiWorking",
+  "de": "KI arbeitet …",
+  "en": "AI is working …"
+ },
+ {
+  "key": "@escCancel",
+  "de": "Esc bricht ab",
+  "en": "Esc cancels"
+ },
+ {
+  "key": "@deleted",
+  "de": "Gelöscht",
+  "en": "Deleted"
+ },
+ {
+  "key": "@deletedN",
+  "de": "{n} Einträge gelöscht",
+  "en": "{n} entries deleted"
+ },
+ {
+  "key": "@exported",
+  "de": "Abgelegt: {path}",
+  "en": "Saved: {path}"
+ },
+ {
+  "key": "@copiedOcr",
+  "de": "Erkannter Text kopiert",
+  "en": "Recognized text copied"
+ },
+ {
+  "key": "@noOcr",
+  "de": "Kein Text erkannt",
+  "en": "No text recognized"
+ },
+ {
+  "key": "@confirmAll",
+  "de": "Wirklich alle nicht angehefteten Einträge löschen? Enter = Ja",
+  "en": "Really delete all unpinned entries? Enter = yes"
+ },
+ {
+  "key": "@footerPaste",
+  "de": "Einfügen",
+  "en": "Paste"
+ },
+ {
+  "key": "@footerAlt",
+  "de": "Nur Text",
+  "en": "Plain"
+ },
+ {
+  "key": "@footerCopy",
+  "de": "Kopieren",
+  "en": "Copy"
+ },
+ {
+  "key": "@footerActions",
+  "de": "Aktionen",
+  "en": "Actions"
+ },
+ {
+  "key": "@footerTabs",
+  "de": "Reiter",
+  "en": "Tabs"
+ },
+ {
+  "key": "@today",
+  "de": "Heute",
+  "en": "Today"
+ },
+ {
+  "key": "@ctrlShort",
+  "de": "Strg",
+  "en": "Ctrl"
+ },
+ {
+  "key": "@spaceShort",
+  "de": "Leer",
+  "en": "Space"
+ },
+ {
+  "key": "@translate",
+  "de": "Übersetzen …",
+  "en": "Translate …"
+ },
+ {
+  "key": "@correct",
+  "de": "Korrigieren …",
+  "en": "Correct …"
+ },
+ {
+  "key": "@contentLabel",
+  "de": "Umfang",
+  "en": "Length"
+ },
+ {
+  "key": "@statsLine",
+  "de": "{words} Wörter · {chars} Zeichen",
+  "en": "{words} words · {chars} characters"
+ },
+ {
+  "key": "@filesMissing",
+  "de": "Datei nicht mehr vorhanden: {names}",
+  "en": "File no longer exists: {names}"
+ },
+ {
+  "key": "@filesPartlyMissing",
+  "de": "Eingefügt – nicht mehr vorhanden: {names}",
+  "en": "Pasted – no longer exists: {names}"
+ },
+ {
+  "key": "@fileGone",
+  "de": "nicht mehr vorhanden",
+  "en": "no longer exists"
+ },
+ {
+  "key": "@allActions",
+  "de": "Alle Aktionen",
+  "en": "All actions"
+ },
+ {
+  "key": "@file",
+  "de": "Datei",
+  "en": "file"
+ },
+ {
+  "key": "@pinsShort",
+  "de": "Pins",
+  "en": "Pins"
+ },
+ {
+  "key": "@searchShort",
+  "de": "suchen …",
+  "en": "search …"
+ },
+ {
+  "key": "@yesterday",
+  "de": "Gestern",
+  "en": "Yesterday"
+ },
+ {
+  "key": "@more",
+  "de": "Mehr",
+  "en": "More"
+ },
+ {
+  "key": "@entries",
+  "de": "Einträge",
+  "en": "entries"
+ },
+ {
+  "key": "@move",
+  "de": "Bewegen",
+  "en": "Move"
+ },
+ {
+  "key": "@close",
+  "de": "Schließen",
+  "en": "Close"
+ },
+ {
+  "key": "@justNow",
+  "de": "gerade eben",
+  "en": "just now"
+ },
+ {
+  "key": "@minAgo",
+  "de": "vor {n} Min.",
+  "en": "{n} min ago"
+ },
+ {
+  "key": "@hAgo",
+  "de": "vor {n} Std.",
+  "en": "{n} h ago"
+ },
+ {
+  "key": "@dAgo",
+  "de": "vor {n} Tg.",
+  "en": "{n} d ago"
+ },
+ {
+  "key": "Typografie",
+  "de": "Typografie",
+  "en": "Typography"
+ },
+ {
+  "key": "Pfeile",
+  "de": "Pfeile",
+  "en": "Arrows"
+ },
+ {
+  "key": "Mathematik",
+  "de": "Mathematik",
+  "en": "Math"
+ },
+ {
+  "key": "Währungen",
+  "de": "Währungen",
+  "en": "Currency"
+ },
+ {
+  "key": "Büro & Recht",
+  "de": "Büro & Recht",
+  "en": "Office & legal"
+ },
+ {
+  "key": "Griechisch",
+  "de": "Griechisch",
+  "en": "Greek"
+ },
+ {
+  "key": "Buchstaben",
+  "de": "Buchstaben",
+  "en": "Letters"
+ }
+]

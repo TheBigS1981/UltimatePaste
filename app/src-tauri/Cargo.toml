@@ -1,0 +1,52 @@
+[package]
+name = "ultimatepaste"
+version = "1.0.0"
+description = "Fast clipboard & paste manager for Windows"
+authors = ["TheBigS1981"]
+license = "MIT"
+edition = "2021"
+rust-version = "1.85"
+
+[lib]
+name = "ultimatepaste_lib"
+crate-type = ["rlib"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[dependencies]
+aes-gcm = "0.11.1"
+anyhow = "1.0.104"
+base64 = "0.23.1"
+chrono = "0.4.45"
+hmac = "0.13.0"
+image = { version = "0.25.9", default-features = false, features = ["png", "bmp"] }
+log = "0.4.35"
+nucleo-matcher = "0.3.1"
+parking_lot = "0.12.5"
+rand = "0.10.3"
+rusqlite = { version = "0.42.0", features = ["bundled"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+sha2 = "0.11.0"
+simplelog = "0.12.2"
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-single-instance = "2"
+unicode-normalization = "0.1.26"
+whatlang = "0.18"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[target."cfg(windows)".dependencies]
+clipboard-win = { version = "5.4.3", features = ["monitor"] }
+keyring = { version = "3.6.3", features = ["windows-native"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "native-tls", "http2"] }
+windows = { version = "0.62.2", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Win32_UI_Input_KeyboardAndMouse", "Win32_System_Threading", "Win32_System_DataExchange", "Win32_System_Memory", "Win32_System_Ole", "Win32_UI_Shell", "Win32_System_LibraryLoader", "Win32_System_Registry", "Win32_Globalization", "Win32_Storage_FileSystem", "Win32_UI_Accessibility", "Win32_System_SystemInformation", "Win32_Security", "Win32_Security_Cryptography", "Win32_Graphics_Gdi", "Win32_Graphics_Dwm", "Media_Ocr", "Graphics_Imaging", "Storage_Streams", "Foundation", "Globalization"] }
