@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Autostart: an autostart entry that still pointed to another copy of the app (an old portable exe, a network drive or a deleted file) is now corrected, so UltimatePaste starts reliably after a reboot
+
 ## 1.0.1
 
 - Emoji & symbols: favorites and recently used are now sorted by how often you use them (most used first)

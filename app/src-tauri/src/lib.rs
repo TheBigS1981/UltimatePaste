@@ -302,14 +302,46 @@ pub fn apply_autostart(app: &AppHandle) {
     let want = app.state::<AppState>().settings.read().autostart;
     let al = app.autolaunch();
     let is = al.is_enabled().unwrap_or(false);
+    let exe = std::env::current_exe().unwrap_or_default();
+    let registered = platform::autostart_command(&app.package_info().name);
+    // An existing entry may point to another copy (an old portable exe, one on a network drive
+    // that isn't there yet at sign-in, or a deleted file): the installed copy always takes over,
+    // and an entry whose file is gone is replaced.
+    let stale = registered.as_deref().is_some_and(|cmd| autostart_needs_update(cmd, &exe, updater::is_installed(&exe)));
     let r = match (want, is) {
         (true, false) => al.enable(),
+        (true, true) if stale => {
+            log::info!("autostart: entry pointed to {registered:?}, now {}", exe.display());
+            al.enable()
+        }
         (false, true) => al.disable(),
         _ => Ok(()),
     };
     if let Err(e) = r {
         log::warn!("autostart: {e}");
     }
+}
+
+/// The program path of a Run command line (`"C:\\x\\a.exe" --autostart` or unquoted).
+fn run_target(cmd: &str) -> &str {
+    let c = cmd.trim();
+    if let Some(rest) = c.strip_prefix('"') {
+        return rest.split('"').next().unwrap_or("");
+    }
+    match c.to_ascii_lowercase().find(".exe") {
+        Some(i) => &c[..i + 4],
+        None => c,
+    }
+}
+
+/// Whether the autostart entry `cmd` should be rewritten to start `exe`.
+fn autostart_needs_update(cmd: &str, exe: &std::path::Path, exe_installed: bool) -> bool {
+    let target = run_target(cmd);
+    let same = target.eq_ignore_ascii_case(&exe.to_string_lossy());
+    if same {
+        return false;
+    }
+    exe_installed || !std::path::Path::new(target).exists()
 }
 
 fn tr(app: &AppHandle, de: &str, en: &str) -> String {
@@ -590,4 +622,26 @@ pub fn run() {
         ])
         .run(tauri::generate_context!())
         .expect("error while running UltimatePaste");
+}
+
+#[cfg(test)]
+mod autostart_tests {
+    use super::*;
+
+    #[test]
+    fn parses_run_target() {
+        assert_eq!(run_target(r#""C:\Apps\UltimatePaste.exe" --autostart"#), r"C:\Apps\UltimatePaste.exe");
+        assert_eq!(run_target(r"C:\Apps\UltimatePaste.exe --autostart"), r"C:\Apps\UltimatePaste.exe");
+    }
+
+    #[test]
+    fn stale_entries_are_replaced() {
+        let exe = std::path::Path::new(r"C:\Users\x\AppData\Local\UltimatePaste\ultimatepaste.exe");
+        let same = r#""C:\Users\X\AppData\Local\UltimatePaste\UltimatePaste.exe" --autostart"#;
+        assert!(!autostart_needs_update(same, exe, true));
+        // installed copy takes over from another copy
+        assert!(autostart_needs_update(r#""Z:\old\UltimatePaste-0.13.6-portable.exe" --autostart"#, exe, true));
+        // a portable copy replaces an entry whose file is gone
+        assert!(autostart_needs_update(r#""Z:\does-not-exist\up.exe" --autostart"#, exe, false));
+    }
 }

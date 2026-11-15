@@ -1045,6 +1045,32 @@ pub fn open_url(url: &str) -> Result<()> {
     }
 }
 
+// ---------------------------------------------------------------- autostart
+
+/// The command line registered under HKCU\...\Run for `name` (written by the autostart plugin).
+pub fn autostart_command(name: &str) -> Option<String> {
+    use windows::Win32::System::Registry::{RegGetValueW, HKEY_CURRENT_USER, RRF_RT_REG_EXPAND_SZ, RRF_RT_REG_SZ};
+    let wide: Vec<u16> = name.encode_utf16().chain(std::iter::once(0)).collect();
+    let mut buf = [0u16; 1024];
+    let mut len = (buf.len() * 2) as u32;
+    let r = unsafe {
+        RegGetValueW(
+            HKEY_CURRENT_USER,
+            w!("Software\\Microsoft\\Windows\\CurrentVersion\\Run"),
+            windows::core::PCWSTR(wide.as_ptr()),
+            RRF_RT_REG_SZ | RRF_RT_REG_EXPAND_SZ,
+            None,
+            Some(buf.as_mut_ptr() as *mut c_void),
+            Some(&mut len),
+        )
+    };
+    if r.is_err() {
+        return None;
+    }
+    let n = (len as usize / 2).min(buf.len());
+    Some(String::from_utf16_lossy(&buf[..n]).trim_end_matches('\0').to_string())
+}
+
 // ---------------------------------------------------------------- Explorer hotkeys
 
 const EXPLORER_ADVANCED: windows::core::PCWSTR = w!("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced");

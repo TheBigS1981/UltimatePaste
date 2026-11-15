@@ -67,6 +67,10 @@ pub fn send_copy() -> bool {
 }
 pub fn show_no_activate(_hwnd: isize) {}
 
+pub fn autostart_command(_name: &str) -> Option<String> {
+    None
+}
+
 pub fn shell_disabled_hotkeys() -> String {
     String::new()
 }
