@@ -100,6 +100,8 @@ export interface Settings {
 
 export interface PickerSettings {
   recentCount: number;
+  /** "caret" | "cursor" (mouse) | "center" */
+  position: string;
   skinTone: number;
   gifEnabled: boolean;
   gifProvider: "giphy" | "klipy";
@@ -122,6 +124,8 @@ export interface TranslateSettings {
   correctEngine: "deepl" | "ai";
   improveStyle: string;
   live: boolean;
+  /** "center" | "caret" | "cursor" (mouse) */
+  position: string;
 }
 
 export interface GifRef {

@@ -4942,7 +4942,7 @@ dependencies = [
 
 [[package]]
 name = "ultimatepaste"
-version = "1.0.2"
+version = "1.1.0"
 dependencies = [
  "aes-gcm",
  "anyhow",

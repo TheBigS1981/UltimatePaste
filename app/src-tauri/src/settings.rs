@@ -17,7 +17,7 @@ pub struct Settings {
     pub layout: String,
     /// Color/font design: "auto" (matches the layout) or a design name
     pub design: String,
-    /// "center" | "cursor" (fluent and board layouts)
+    /// "center" | "caret" | "cursor" (= mouse; fluent and board layouts)
     pub position: String,
     pub autostart: bool,
     pub paused: bool,
@@ -93,6 +93,8 @@ pub struct PickerSettings {
     pub gif_original_size: bool,
     /// Tell the provider which GIF was sent (anonymous random id).
     pub gif_feedback: bool,
+    /// Where the picker opens: "caret" | "mouse" | "center"
+    pub position: String,
 }
 
 impl Default for PickerSettings {
@@ -105,6 +107,7 @@ impl Default for PickerSettings {
             gif_rating: "pg".into(),
             gif_original_size: false,
             gif_feedback: true,
+            position: "caret".into(),
         }
     }
 }
@@ -136,6 +139,8 @@ pub struct TranslateSettings {
     pub improve_style: String,
     /// Re-run automatically one second after typing in the window.
     pub live: bool,
+    /// Where the window opens: "center" | "caret" | "mouse"
+    pub position: String,
 }
 
 impl Default for TranslateSettings {
@@ -154,6 +159,7 @@ impl Default for TranslateSettings {
             correct_engine: "deepl".into(),
             improve_style: String::new(),
             live: true,
+            position: "center".into(),
         }
     }
 }

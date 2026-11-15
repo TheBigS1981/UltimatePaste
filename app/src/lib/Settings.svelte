@@ -386,6 +386,7 @@
           <span>{tr("Fensterposition", "Window position")}</span>
           <select bind:value={s.position} onchange={changed}>
             <option value="center">{tr("Mitte des aktiven Bildschirms", "Center of active screen")}</option>
+            <option value="caret">{tr("Am Text-Cursor", "At the text cursor")}</option>
             <option value="cursor">{tr("An der Maus", "At mouse cursor")}</option>
           </select>
         </label>
@@ -408,6 +409,15 @@
           {#if appShortcutHint(s.pickerHotkey)}<small class="apphint">⚠ {appShortcutHint(s.pickerHotkey)}</small>{/if}
           {@render conflictNote(2)}
         </div>
+        <label class="field">
+          <span>{tr("Fensterposition", "Window position")}</span>
+          <select bind:value={s.picker.position} onchange={changed}>
+            <option value="caret">{tr("Am Text-Cursor", "At the text cursor")}</option>
+            <option value="cursor">{tr("An der Maus", "At mouse cursor")}</option>
+            <option value="center">{tr("Mitte des aktiven Bildschirms", "Center of active screen")}</option>
+          </select>
+          <small>{tr("Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.", "If the text cursor can't be found in a program, the window opens at the mouse.")}</small>
+        </label>
         <div class="row">
           <label class="field">
             <span>{tr("„Zuletzt verwendet“ zeigt", "“Recently used” shows")}</span>
@@ -485,6 +495,14 @@
           </div>
           <small>{s.translate.mode === "direct" ? tr("Die Markierung wird sofort ersetzt, unten rechts erscheint ein kurzer Hinweis. Rückgängig mit Strg + Z. Ohne Markierung öffnet sich das Fenster.", "The selection is replaced right away, a short notice appears at the bottom right. Undo with Ctrl + Z. Without a selection the window opens.") : tr("Original und Übersetzung nebeneinander; Sprachen, Dienst und Anrede lassen sich dort spontan ändern.", "Original and translation side by side; languages, service and address form can be changed there.")}</small>
         </div>
+        <label class="field">
+          <span>{tr("Fensterposition", "Window position")}</span>
+          <select bind:value={s.translate.position} onchange={changed}>
+            <option value="center">{tr("Mitte des aktiven Bildschirms", "Center of active screen")}</option>
+            <option value="caret">{tr("Am Text-Cursor", "At the text cursor")}</option>
+            <option value="cursor">{tr("An der Maus", "At mouse cursor")}</option>
+          </select>
+        </label>
         <div class="field">
           <span>{tr("Richtung", "Direction")}</span>
           <div class="seg" role="group">

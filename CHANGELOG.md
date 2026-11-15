@@ -1,7 +1,9 @@
 # Changelog
 
-## 1.0.2
+## 1.1.0
 
+- Window position can be chosen for each window – paste window, emoji picker and translate window: center of the screen, at the text cursor or at the mouse
+- The text cursor is now also found in browsers and apps like Teams, WhatsApp, Slack, VS Code and the new Outlook (via the Windows accessibility interfaces)
 - Autostart: an autostart entry that still pointed to another copy of the app (an old portable exe, a network drive or a deleted file) is now corrected, so UltimatePaste starts reliably after a reboot
 
 ## 1.0.1

@@ -121,9 +121,30 @@ fn caret_rect(w: &tauri::WebviewWindow, fg: isize, lw: f64, lh: f64) -> Option<(
     Some((a, ax - margin - (8.0 * s) as i32, y, sw, sh))
 }
 
-/// Places a popup window at the caret of `fg` with the given logical size.
-pub fn place_at_caret(app: &AppHandle, w: &tauri::WebviewWindow, fg: isize, lw: f64, lh: f64) {
-    let Some((area, x, y, sw, sh)) = caret_rect(w, fg, lw, lh) else { return };
+/// Window rectangle (work area, x, y, physical width, height) for a window of logical size
+/// `lw` × `lh` opened for the program `fg`: `position` is "caret" (text cursor, mouse if it
+/// can't be found), "mouse"/"cursor" or "center" (screen of `fg`).
+pub fn position_rect(w: &tauri::WebviewWindow, fg: isize, lw: f64, lh: f64, position: &str) -> Option<(platform::Rect, i32, i32, i32, i32)> {
+    match position {
+        "caret" => caret_rect(w, fg, lw, lh),
+        "mouse" | "cursor" => {
+            let (a, cx, cy) = platform::work_area_at_cursor()?;
+            let s = scale_at(w, cx, cy);
+            let (sw, sh) = ((lw * s) as i32, (lh * s) as i32);
+            Some((a, cx - sw / 2, cy - (40.0 * s) as i32, sw, sh))
+        }
+        _ => {
+            let a = platform::work_area_for_window(fg).or_else(|| platform::work_area_at_cursor().map(|(a, _, _)| a))?;
+            let s = scale_at(w, a.x + a.w / 2, a.y + a.h / 3);
+            let (sw, sh) = ((lw * s) as i32, (lh * s) as i32);
+            Some((a, a.x + (a.w - sw) / 2, a.y + (a.h - sh) / 3, sw, sh))
+        }
+    }
+}
+
+/// Places a window with the given logical size by `position` (see [`position_rect`]).
+pub fn place_window(app: &AppHandle, w: &tauri::WebviewWindow, fg: isize, lw: f64, lh: f64, position: &str) {
+    let Some((area, x, y, sw, sh)) = position_rect(w, fg, lw, lh, position) else { return };
     app.state::<AppState>().placing.store(true, Ordering::Release);
     let (x, y) = clamp_to(area, x, y, sw.min(area.w), sh.min(area.h));
     let _ = w.set_size(PhysicalSize::new(sw.clamp(200, area.w.max(200)) as u32, sh.clamp(200, area.h.max(200)) as u32));
@@ -185,21 +206,10 @@ fn place(app: &AppHandle, w: &tauri::WebviewWindow, fg: isize, layout: &str, pos
             Some(v) => v,
             None => return,
         },
-        _ => {
-            let (a, cx, cy) = if position == "cursor" {
-                match platform::work_area_at_cursor() {
-                    Some(v) => v,
-                    None => return,
-                }
-            } else {
-                let Some(a) = platform::work_area_for_window(fg).or_else(fallback_area) else { return };
-                (a, a.x + a.w / 2, a.y + a.h / 3)
-            };
-            let s = scale_at(w, cx, cy);
-            let (sw, sh) = ((lw * s) as i32, (lh * s) as i32);
-            let (x, y) = if position == "cursor" { (cx - sw / 2, cy - (40.0 * s) as i32) } else { (a.x + (a.w - sw) / 2, a.y + (a.h - sh) / 3) };
-            (a, x, y, sw, sh)
-        }
+        _ => match position_rect(w, fg, lw, lh, position) {
+            Some(v) => v,
+            None => return,
+        },
     };
     let (x, y) = clamp_to(area, x, y, sw.min(area.w), sh.min(area.h));
     let _ = w.set_size(PhysicalSize::new(sw.clamp(200, area.w.max(200)) as u32, sh.clamp(200, area.h.max(200)) as u32));

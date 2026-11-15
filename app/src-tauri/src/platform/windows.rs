@@ -1186,18 +1186,120 @@ pub fn caret_screen_pos(h: isize) -> Option<(i32, i32)> {
     if w.0.is_null() {
         return None;
     }
-    let tid = unsafe { GetWindowThreadProcessId(w, None) };
+    let mut pid = 0u32;
+    let tid = unsafe { GetWindowThreadProcessId(w, Some(&mut pid)) };
     let mut gti = GUITHREADINFO { cbSize: std::mem::size_of::<GUITHREADINFO>() as u32, ..Default::default() };
-    unsafe { GetGUIThreadInfo(tid, &mut gti) }.ok()?;
-    if gti.hwndCaret.0.is_null() {
+    let have_gti = unsafe { GetGUIThreadInfo(tid, &mut gti) }.is_ok();
+    if have_gti && !gti.hwndCaret.0.is_null() {
+        let r = gti.rcCaret;
+        if r.right - r.left > 0 || r.bottom - r.top > 0 {
+            let mut p = POINT { x: r.left, y: r.bottom };
+            if unsafe { ClientToScreen(gti.hwndCaret, &mut p) }.as_bool() {
+                return Some((p.x, p.y));
+            }
+        }
+    }
+    // Browsers, Electron apps, new Outlook … have no system caret: ask the accessibility
+    // interfaces. Never for our own windows (the calls would wait for this very thread).
+    if pid == std::process::id() {
         return None;
     }
-    let r = gti.rcCaret;
-    if r.right - r.left <= 0 && r.bottom - r.top <= 0 {
+    let focus = if have_gti && !gti.hwndFocus.0.is_null() { gti.hwndFocus.0 as isize } else { h };
+    let (tx, rx) = std::sync::mpsc::channel();
+    std::thread::spawn(move || {
+        let _ = tx.send(caret_accessible(focus));
+    });
+    let t = std::time::Instant::now();
+    let r = rx.recv_timeout(std::time::Duration::from_millis(250)).ok().flatten();
+    log::info!("caret: accessibility lookup {:?} in {} ms", r, t.elapsed().as_millis());
+    r.map(|(p, _)| p)
+}
+
+/// Caret position via MSAA (OBJID_CARET) or UI Automation (TextPattern2 caret range).
+/// Runs on its own thread (MTA).
+fn caret_accessible(focus: isize) -> Option<((i32, i32), &'static str)> {
+    use windows::Win32::System::Com::{CoInitializeEx, CoUninitialize, COINIT_MULTITHREADED};
+    unsafe {
+        let init = CoInitializeEx(None, COINIT_MULTITHREADED).is_ok();
+        let r = caret_msaa(focus).map(|p| (p, "msaa")).or_else(|| caret_uia().map(|p| (p, "uia")));
+        if init {
+            CoUninitialize();
+        }
+        r
+    }
+}
+
+unsafe fn caret_msaa(focus: isize) -> Option<(i32, i32)> {
+    use windows::core::Interface;
+    use windows::Win32::System::Variant::{VARIANT, VT_I4};
+    use windows::Win32::UI::Accessibility::{AccessibleObjectFromWindow, IAccessible};
+    use windows::Win32::UI::WindowsAndMessaging::OBJID_CARET;
+    let mut ptr: *mut c_void = std::ptr::null_mut();
+    AccessibleObjectFromWindow(hwnd(focus), OBJID_CARET.0 as u32, &IAccessible::IID, &mut ptr).ok()?;
+    if ptr.is_null() {
         return None;
     }
-    let mut p = POINT { x: r.left, y: r.bottom };
-    unsafe { ClientToScreen(gti.hwndCaret, &mut p) }.as_bool().then_some((p.x, p.y))
+    let acc = IAccessible::from_raw(ptr);
+    let (mut x, mut y, mut w, mut h) = (0, 0, 0, 0);
+    // CHILDID_SELF: VT_I4 with value 0
+    let mut child = VARIANT::default();
+    (*child.Anonymous.Anonymous).vt = VT_I4;
+    (*child.Anonymous.Anonymous).Anonymous.lVal = 0;
+    acc.accLocation(&mut x, &mut y, &mut w, &mut h, &child).ok()?;
+    (h > 0 && (x != 0 || y != 0)).then_some((x, y + h))
+}
+
+unsafe fn caret_uia() -> Option<(i32, i32)> {
+    use windows::core::Interface;
+    use windows::Win32::System::Com::{CoCreateInstance, CLSCTX_INPROC_SERVER};
+    use windows::Win32::UI::Accessibility::{
+        CUIAutomation, IUIAutomation, IUIAutomationTextPattern, IUIAutomationTextPattern2, IUIAutomationTextRange, TextPatternRangeEndpoint_Start, TextUnit_Character,
+        UIA_TextPattern2Id, UIA_TextPatternId,
+    };
+    let uia: IUIAutomation = CoCreateInstance(&CUIAutomation, None, CLSCTX_INPROC_SERVER).ok()?;
+    let el = uia.GetFocusedElement().ok()?;
+    let range: IUIAutomationTextRange = if let Some(p2) = el.GetCurrentPattern(UIA_TextPattern2Id).ok().and_then(|u| u.cast::<IUIAutomationTextPattern2>().ok()) {
+        let mut active = windows::core::BOOL(0);
+        p2.GetCaretRange(&mut active).ok()?
+    } else {
+        let p: IUIAutomationTextPattern = el.GetCurrentPattern(UIA_TextPatternId).ok()?.cast().ok()?;
+        p.GetSelection().ok()?.GetElement(0).ok()?
+    };
+    // A collapsed range has no rectangle: measure the character after it, else the one before.
+    if let Some((x, y, _w, h)) = first_rect(&range) {
+        return Some((x, y + h));
+    }
+    let after = range.Clone().ok()?;
+    if after.ExpandToEnclosingUnit(TextUnit_Character).is_ok() {
+        if let Some((x, y, _w, h)) = first_rect(&after) {
+            return Some((x, y + h));
+        }
+    }
+    let before = range.Clone().ok()?;
+    before.MoveEndpointByUnit(TextPatternRangeEndpoint_Start, TextUnit_Character, -1).ok()?;
+    first_rect(&before).map(|(x, y, w, h)| (x + w, y + h))
+}
+
+/// First bounding rectangle of a text range (left, top, width, height in screen pixels).
+unsafe fn first_rect(r: &windows::Win32::UI::Accessibility::IUIAutomationTextRange) -> Option<(i32, i32, i32, i32)> {
+    use windows::Win32::System::Ole::{SafeArrayAccessData, SafeArrayDestroy, SafeArrayGetUBound, SafeArrayUnaccessData};
+    let sa = r.GetBoundingRectangles().ok()?;
+    if sa.is_null() {
+        return None;
+    }
+    let mut out = None;
+    if let Ok(ub) = SafeArrayGetUBound(sa, 1) {
+        let mut data: *mut c_void = std::ptr::null_mut();
+        if ub >= 3 && SafeArrayAccessData(sa, &mut data).is_ok() {
+            let v = std::slice::from_raw_parts(data as *const f64, 4);
+            if v[3] > 0.0 {
+                out = Some((v[0] as i32, v[1] as i32, v[2] as i32, v[3] as i32));
+            }
+            let _ = SafeArrayUnaccessData(sa);
+        }
+    }
+    let _ = SafeArrayDestroy(sa);
+    out
 }
 
 // ---------------------------------------------------------------- OCR

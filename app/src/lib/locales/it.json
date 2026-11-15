@@ -605,5 +605,7 @@
  "Wird geladen …": "Download in corso …",
  "Jetzt aktualisieren": "Aggiorna ora",
  "Kein Update gefunden.": "Nessun aggiornamento trovato.",
- "Update auf {0} verfügbar…": "Aggiornamento a {0} disponibile…"
+ "Update auf {0} verfügbar…": "Aggiornamento a {0} disponibile…",
+ "Am Text-Cursor": "Al cursore di testo",
+ "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Se in un programma il cursore di testo non viene trovato, la finestra si apre vicino al mouse."
 }

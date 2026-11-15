@@ -41,8 +41,8 @@ const settings = {
   blockedApps: ["keepass.exe", "1password.exe"], ocrEnabled: true, inboxDir: null, inboxTags: ["clipboard"],
   sequentialTimeoutSecs: 60, sequentialNewline: false,
   pickerHotkey: "Ctrl+Period", translateHotkey: "Ctrl+Alt+T", translateAltHotkey: "", correctHotkey: "Ctrl+Alt+K", notifiedConflicts: [], appRules: [{ app: "outlook.exe", mode: "plain" }], sensitive: { otp: true, cards: true, keys: true, iban: false, minutes: 5 }, cleanLinks: false, snippetExpand: false, tourDone: true, updateCheck: true,
-  picker: { recentCount: 24, skinTone: Number(q.get("tone") ?? 0), gifEnabled: true, gifProvider: "giphy", gifRating: "pg", gifOriginalSize: false, gifFeedback: true },
-  translate: { mode: "window", rule: "pair", primary: "DE", secondary: "EN-US", fixedTarget: "EN-US", engine: q.get("engine") ?? "deepl", aiProvider: "", aiModel: "claude-sonnet-5-5", formality: "auto", customPrices: {}, correctEngine: "deepl", improveStyle: "", live: true },
+  picker: { recentCount: 24, skinTone: Number(q.get("tone") ?? 0), gifEnabled: true, gifProvider: "giphy", gifRating: "pg", gifOriginalSize: false, gifFeedback: true, position: "caret" },
+  translate: { mode: "window", rule: "pair", primary: "DE", secondary: "EN-US", fixedTarget: "EN-US", engine: q.get("engine") ?? "deepl", aiProvider: "", aiModel: "claude-sonnet-5-5", formality: "auto", customPrices: {}, correctEngine: "deepl", improveStyle: "", live: true, position: "center" },
   ai: { enabled: true, defaultProvider: "claude", providers: [{ id: "claude", name: "Claude", kind: "anthropic", baseUrl: "https://api.anthropic.com", model: "claude-opus-5-5" }], actions: [{ id: "fix", name: "Korrigieren", prompt: "Fix", provider: "", builtin: true }] },
 };
 

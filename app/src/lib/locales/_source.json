@@ -1350,6 +1350,11 @@
   "en": "Center of active screen"
  },
  {
+  "key": "Am Text-Cursor",
+  "de": "Am Text-Cursor",
+  "en": "At the text cursor"
+ },
+ {
   "key": "An der Maus",
   "de": "An der Maus",
   "en": "At mouse cursor"
@@ -1378,6 +1383,11 @@
   "key": "Das Auswahlfenster für Emojis, GIFs und Sonderzeichen.",
   "de": "Das Auswahlfenster für Emojis, GIFs und Sonderzeichen.",
   "en": "The picker for emoji, GIFs and symbols."
+ },
+ {
+  "key": "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.",
+  "de": "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.",
+  "en": "If the text cursor can't be found in a program, the window opens at the mouse."
  },
  {
   "key": "„Zuletzt verwendet“ zeigt",

@@ -717,6 +717,7 @@ pub fn open_with(app: &AppHandle, text: String, correct: bool) {
 }
 
 fn open_window(app: &AppHandle) {
+    let fg = platform::foreground_window();
     let w = match app.get_webview_window(LABEL) {
         Some(w) => w,
         None => {
@@ -741,6 +742,15 @@ fn open_window(app: &AppHandle) {
             }
         }
     };
+    // Place it only when it opens; an already open window stays where the user put it.
+    if !w.is_visible().unwrap_or(false) || w.is_minimized().unwrap_or(false) {
+        let _ = w.unminimize();
+        let s = w.scale_factor().unwrap_or(1.0);
+        if let Ok(size) = w.inner_size() {
+            let position = app.state::<AppState>().settings.read().translate.position.clone();
+            actions::place_window(app, &w, fg, size.width as f64 / s, size.height as f64 / s, &position);
+        }
+    }
     let _ = w.emit("translate-request", ());
     let _ = w.unminimize();
     let _ = w.show();

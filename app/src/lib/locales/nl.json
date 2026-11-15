@@ -605,5 +605,7 @@
  "Wird geladen …": "Downloaden …",
  "Jetzt aktualisieren": "Nu bijwerken",
  "Kein Update gefunden.": "Geen update gevonden.",
- "Update auf {0} verfügbar…": "Update naar {0} beschikbaar…"
+ "Update auf {0} verfügbar…": "Update naar {0} beschikbaar…",
+ "Am Text-Cursor": "Bij de tekstcursor",
+ "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Als de tekstcursor in een programma niet gevonden wordt, opent het venster bij de muis."
 }

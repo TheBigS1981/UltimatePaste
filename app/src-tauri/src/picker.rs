@@ -112,7 +112,8 @@ pub fn show(app: &AppHandle) {
     platform::set_no_activate(own);
     let target = if fg != own && platform::is_valid_paste_target(fg) { fg } else { 0 };
     app.state::<AppState>().prev_foreground.store(target, Ordering::Release);
-    actions::place_at_caret(app, &w, fg, SIZE.0, SIZE.1);
+    let position = app.state::<AppState>().settings.read().picker.position.clone();
+    actions::place_window(app, &w, fg, SIZE.0, SIZE.1, &position);
     let _ = w.emit("picker-shown", ());
     platform::show_no_activate(own);
     // Tauri doesn't know the window is visible (shown via Win32), so WebView2 may have been put
