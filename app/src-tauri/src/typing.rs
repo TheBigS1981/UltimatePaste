@@ -27,6 +27,10 @@ pub fn refresh(app: &AppHandle) {
     } else {
         Vec::new()
     };
+    if enabled && !keywords.is_empty() {
+        let h = app.clone();
+        let _ = app.run_on_main_thread(move || crate::fill::prewarm(&h));
+    }
     let h = app.clone();
     platform::set_typing(enabled && !keywords.is_empty(), keywords, move |kw, fg| {
         let h = h.clone();

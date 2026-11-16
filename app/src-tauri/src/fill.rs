@@ -45,7 +45,20 @@ pub fn open(app: &AppHandle, body: String, target: isize, keyword_chars: usize) 
     let _ = wv.show();
     crate::picker::set_key_owner(LABEL);
     platform::redirect_keys(own, target);
+    // Should Windows have activated the popup anyway, give the focus back right away.
+    let fg = platform::foreground_window();
+    if fg != target {
+        log::info!("fill: foreground {fg:#x} instead of target {target:#x}, giving it back");
+        platform::set_foreground(target);
+    }
     log::info!("fill: show for a typed snippet");
+}
+
+/// Loads the popup invisibly, so that opening it never creates (and activates) a new window.
+pub fn prewarm(app: &AppHandle) {
+    if let Some(w) = actions::ensure_popup(app, LABEL, SIZE.0, SIZE.1, false) {
+        platform::set_no_activate(actions::hwnd_of(&w));
+    }
 }
 
 /// Hides the popup (key redirection stops first).
@@ -70,12 +83,20 @@ pub fn job() -> Option<Job> {
 /// Removes the keyword and pastes the snippet with the given values.
 pub fn submit(app: &AppHandle, values: HashMap<String, String>) {
     let Some(job) = JOB.lock().take() else { return };
+    // The target must be in front when the popup goes away: if the popup was activated,
+    // Windows would otherwise pass the focus to some other window (e.g. Explorer).
+    if platform::foreground_window() != job.target {
+        platform::set_foreground(job.target);
+    }
     hide(app);
     let app = app.clone();
     std::thread::spawn(move || {
-        if platform::foreground_window() != job.target && !platform::wait_foreground(job.target, 250) {
-            log::info!("fill: target no longer in front, nothing pasted");
-            return;
+        if platform::foreground_window() != job.target {
+            platform::set_foreground(job.target);
+            if !platform::wait_foreground(job.target, 400) {
+                log::info!("fill: target {:#x} not in front ({:#x}), nothing pasted", job.target, platform::foreground_window());
+                return;
+            }
         }
         std::thread::sleep(Duration::from_millis(30));
         platform::send_backspaces(job.keyword_chars);
