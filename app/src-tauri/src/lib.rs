@@ -17,6 +17,7 @@ pub mod search;
 pub mod sensitive;
 pub mod settings;
 pub mod snippets;
+pub mod fill;
 pub mod stats;
 pub mod store;
 pub mod thist;
@@ -601,6 +602,10 @@ pub fn run() {
             commands::finish_tour,
             commands::snippet_fields,
             commands::take_snippet_form,
+            commands::fill_job,
+            commands::fill_submit,
+            commands::fill_cancel,
+            commands::fill_fit,
             commands::clean_link,
             commands::open_external,
             commands::recent_apps,

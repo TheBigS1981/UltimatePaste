@@ -284,6 +284,10 @@ export const api = {
   deleteSnippet: (id: number) => invoke<void>("delete_snippet", { id }),
   pasteSnippet: (id: number, copyOnly = false, values: Record<string, string> | null = null) => invoke<{ delivery: Delivery }>("paste_snippet", { id, copyOnly, values }),
   takeSnippetForm: () => invoke<number | null>("take_snippet_form"),
+  fillJob: () => invoke<{ fields: SnippetField[] } | null>("fill_job"),
+  fillSubmit: (values: Record<string, string>) => invoke<void>("fill_submit", { values }),
+  fillCancel: () => invoke<void>("fill_cancel"),
+  fillFit: (width: number, height: number) => invoke<void>("fill_fit", { width, height }),
   snippetFields: (id: number) => invoke<SnippetField[]>("snippet_fields", { id }),
   settings: () => invoke<Settings>("get_settings"),
   saveSettings: (settings: Settings) =>

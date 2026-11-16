@@ -38,6 +38,7 @@ try {
 const views: Record<string, () => Promise<{ default: Component }>> = {
   settings: () => import("./lib/Settings.svelte"),
   picker: () => import("./lib/Picker.svelte"),
+  fill: () => import("./lib/Fill.svelte"),
   translate: () => import("./lib/Translate.svelte"),
   toast: () => import("./lib/Toast.svelte"),
   notice: () => import("./lib/Notice.svelte"),

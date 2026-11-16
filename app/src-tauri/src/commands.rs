@@ -305,6 +305,26 @@ pub fn take_snippet_form(state: State<AppState>) -> Option<i64> {
 }
 
 #[tauri::command]
+pub fn fill_job() -> Option<crate::fill::Job> {
+    crate::fill::job()
+}
+
+#[tauri::command]
+pub fn fill_submit(app: AppHandle, values: std::collections::HashMap<String, String>) {
+    crate::fill::submit(&app, values);
+}
+
+#[tauri::command]
+pub fn fill_cancel(app: AppHandle) {
+    crate::fill::cancel(&app);
+}
+
+#[tauri::command]
+pub fn fill_fit(app: AppHandle, width: f64, height: f64) {
+    crate::fill::fit(&app, width, height);
+}
+
+#[tauri::command]
 pub fn snippet_fields(state: State<AppState>, id: i64) -> CmdResult<Vec<snippets::Field>> {
     let list = state.store.lock().list_snippets().map_err(err)?;
     Ok(list.into_iter().find(|s| s.id == id).map(|s| snippets::fields(&s.body)).unwrap_or_default())

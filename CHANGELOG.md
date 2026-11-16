@@ -2,6 +2,7 @@
 
 ## 1.1.0
 
+- Snippets while typing: input fields and choices now open a small popup right at the text cursor – choose with the arrow keys, 1–9 or by typing, Enter pastes, Esc keeps the keyword as typed
 - Emoji, symbols and GIFs no longer replace what you copied: after pasting them, the previous clipboard content is put back
 - Window position can be chosen for each window – paste window, emoji picker and translate window: center of the screen, at the text cursor or at the mouse
 - The text cursor is now also found in browsers and apps like Teams, WhatsApp, Slack, VS Code and the new Outlook (via the Windows accessibility interfaces)

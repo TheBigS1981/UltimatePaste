@@ -122,6 +122,8 @@ pub fn show(app: &AppHandle) {
     if let Err(e) = wv.show() {
         log::warn!("picker: webview show failed: {e}");
     }
+    crate::fill::cancel(app);
+    set_key_owner(LABEL);
     platform::redirect_keys(own, fg);
     log::info!("picker: show (not activated), target {target:#x}, foreground {:#x}", platform::foreground_window());
 }
@@ -151,7 +153,15 @@ pub fn prewarm(app: &AppHandle) {
     }
 }
 
-/// Receives key presses from the hook (on its thread) and forwards them to the picker page.
+/// Window that currently receives the redirected keys: the picker or the snippet fields popup.
+static KEY_OWNER: parking_lot::Mutex<&'static str> = parking_lot::Mutex::new(LABEL);
+
+pub fn set_key_owner(label: &'static str) {
+    *KEY_OWNER.lock() = label;
+}
+
+/// Receives key presses from the hook (on its thread) and forwards them to the picker page
+/// (or the snippet fields popup).
 pub fn init_key_redirect(app: &AppHandle) {
     let (tx, rx) = std::sync::mpsc::channel::<platform::RedirKey>();
     let h = app.clone();
@@ -159,15 +169,20 @@ pub fn init_key_redirect(app: &AppHandle) {
         .name("picker-keys".into())
         .spawn(move || {
             for k in rx {
+                let owner = *KEY_OWNER.lock();
                 if k.key == "__blur" {
                     let h2 = h.clone();
-                    let _ = h.run_on_main_thread(move || hide_logged(&h2, "other window in front"));
+                    let _ = h.run_on_main_thread(move || {
+                        if owner == crate::fill::LABEL {
+                            crate::fill::cancel(&h2);
+                        } else {
+                            hide_logged(&h2, "other window in front");
+                        }
+                    });
                     continue;
                 }
-                if let Some(w) = h.get_webview_window(LABEL) {
-                    // Only the picker gets typed keys (emit would broadcast to every window).
-                    let _ = w.emit_to(tauri::EventTarget::webview_window(LABEL), "picker-key", &k);
-                }
+                // Only that window gets typed keys (emit would broadcast to every window).
+                let _ = h.emit_to(tauri::EventTarget::webview_window(owner), "picker-key", &k);
             }
         })
         .expect("spawn picker-keys");

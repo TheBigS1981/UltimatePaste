@@ -607,5 +607,9 @@
  "Kein Update gefunden.": "Không tìm thấy bản cập nhật.",
  "Update auf {0} verfügbar…": "Có bản cập nhật lên {0}…",
  "Am Text-Cursor": "Tại con trỏ văn bản",
- "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Nếu không tìm thấy con trỏ văn bản trong chương trình, cửa sổ sẽ mở tại vị trí chuột."
+ "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Nếu không tìm thấy con trỏ văn bản trong chương trình, cửa sổ sẽ mở tại vị trí chuột.",
+ "wählen": "chọn",
+ "weiter": "tiếp",
+ "zurück": "quay lại",
+ "abbrechen": "hủy"
 }

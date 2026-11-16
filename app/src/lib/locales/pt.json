@@ -607,5 +607,9 @@
  "Kein Update gefunden.": "Nenhuma atualização encontrada.",
  "Update auf {0} verfügbar…": "Atualização para {0} disponível…",
  "Am Text-Cursor": "No cursor de texto",
- "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Se o cursor de texto não for encontrado em um programa, a janela abre junto ao mouse."
+ "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Se o cursor de texto não for encontrado em um programa, a janela abre junto ao mouse.",
+ "wählen": "escolher",
+ "weiter": "próximo",
+ "zurück": "voltar",
+ "abbrechen": "cancelar"
 }

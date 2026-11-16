@@ -46,30 +46,34 @@ fn expand(app: &AppHandle, kw: &str, fg: isize) {
     }
     let Ok(list) = st.store.lock().list_snippets() else { return };
     let Some(snippet) = list.into_iter().find(|s| trigger(&s.keyword).as_deref() == Some(kw)) else { return };
+    if !snippets::fields(&snippet.body).is_empty() {
+        // Ask for the values in a small popup at the caret; the keyword stays until then.
+        log::info!("typed snippet keyword: asking for fields");
+        let (h, body, n) = (app.clone(), snippet.body.clone(), kw.chars().count());
+        let _ = app.run_on_main_thread(move || crate::fill::open(&h, body, fg, n));
+        return;
+    }
     std::thread::sleep(Duration::from_millis(30));
     platform::send_backspaces(kw.chars().count());
     log::info!("typed snippet keyword expanded");
-
-    if !snippets::fields(&snippet.body).is_empty() {
-        // Ask for the values in the paste window, then paste into this program.
-        st.prev_foreground.store(fg, std::sync::atomic::Ordering::Release);
-        *st.snippet_form.lock() = Some(snippet.id);
-        let h = app.clone();
-        let _ = app.run_on_main_thread(move || actions::show_palette_for_form(&h));
-        return;
-    }
     let lang = st.settings.read().language.clone();
     let ex = snippets::expand_with(&snippet.body, chrono::Local::now(), &lang, None, &HashMap::new());
+    paste_keeping_clipboard(app, &ex.text, ex.cursor_back);
+}
+
+/// Pastes `text` via the clipboard into the foreground program, then puts the previous
+/// clipboard content back.
+pub fn paste_keeping_clipboard(app: &AppHandle, text: &str, cursor_back: Option<usize>) {
     let limits = platform::Limits { max_text_bytes: 5 << 20, max_image_bytes: 50 << 20 };
     let before = platform::read_clipboard(limits)
         .map(|c| ClipContent { private: c.excluded, ..c.content })
         .unwrap_or_default();
-    if actions::write_silently(app, &ClipContent::text_only(ex.text)).is_err() {
+    if actions::write_silently(app, &ClipContent::text_only(text.to_string())).is_err() {
         return;
     }
     std::thread::sleep(Duration::from_millis(30));
     platform::send_paste();
-    if let Some(n) = ex.cursor_back {
+    if let Some(n) = cursor_back {
         std::thread::sleep(Duration::from_millis(60));
         platform::send_left(n);
     }

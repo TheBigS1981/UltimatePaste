@@ -2110,6 +2110,26 @@
   "en": "Unlimited"
  },
  {
+  "key": "wählen",
+  "de": "wählen",
+  "en": "choose"
+ },
+ {
+  "key": "weiter",
+  "de": "weiter",
+  "en": "next"
+ },
+ {
+  "key": "zurück",
+  "de": "zurück",
+  "en": "back"
+ },
+ {
+  "key": "abbrechen",
+  "de": "abbrechen",
+  "en": "cancel"
+ },
+ {
   "key": "Die heruntergeladene Datei ist beschädigt (Prüfsumme stimmt nicht). Bitte später erneut versuchen.",
   "de": "Die heruntergeladene Datei ist beschädigt (Prüfsumme stimmt nicht). Bitte später erneut versuchen.",
   "en": "The downloaded file is damaged (checksum mismatch). Please try again later."

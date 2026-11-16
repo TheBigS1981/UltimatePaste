@@ -607,5 +607,9 @@
  "Kein Update gefunden.": "Aucune mise à jour trouvée.",
  "Update auf {0} verfügbar…": "Mise à jour vers {0} disponible…",
  "Am Text-Cursor": "Au curseur de texte",
- "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Si le curseur de texte est introuvable dans un programme, la fenêtre s’ouvre près de la souris."
+ "Wird der Text-Cursor in einem Programm nicht gefunden, öffnet sich das Fenster an der Maus.": "Si le curseur de texte est introuvable dans un programme, la fenêtre s’ouvre près de la souris.",
+ "wählen": "choisir",
+ "weiter": "suivant",
+ "zurück": "retour",
+ "abbrechen": "annuler"
 }
