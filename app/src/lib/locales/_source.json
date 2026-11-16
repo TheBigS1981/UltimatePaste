@@ -1765,9 +1765,9 @@
   "en": "Replace snippets while typing"
  },
  {
-  "key": "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.",
-  "de": "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.",
-  "en": "If you type a snippet's keyword with a leading semicolon anywhere – e.g. “;mfg” –, it is replaced by the text right away. If the snippet has input fields, the form opens first."
+  "key": "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).",
+  "de": "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).",
+  "en": "If you type a snippet's keyword with a leading semicolon anywhere – e.g. “;mfg” –, it is replaced by the text right away. If the snippet has input fields or choices, a small popup at the text cursor asks for them (arrow keys, Enter, Esc)."
  },
  {
   "key": "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.",

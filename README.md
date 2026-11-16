@@ -108,6 +108,10 @@ Press your shortcut (**`Ctrl+Shift+V`** by default, **`Win+V`** recommended). Ev
 
 <p align="center"><img src="docs/images/snippets.png" alt="Snippets tab" width="760" /></p>
 
+If a typed snippet has input fields or choices, a small popup opens **right at your text cursor**. Pick with `↑` `↓` or `1`–`9`, type to filter, and press `Enter` to paste. `Esc` leaves the keyword as you typed it. The program you're typing in keeps the focus, and your clipboard stays untouched.
+
+<p align="center"><img src="docs/images/snippet-fields.png" alt="Snippet choice popup at the text cursor" width="620" /></p>
+
 - **Paste several entries together:** mark them with `Shift+Space` or `Ctrl+click`, then press Enter. The separator (new line, blank line, comma, bullet list or numbered list) is set in the actions menu.
 - **Rules per program:** for example, always plain text in Outlook, or a single line in the terminal.
 - **AI actions** (`Ctrl+Enter`): fix, rephrase, summarize, draft a reply, or your own prompts, using Claude or any OpenAI-compatible endpoint (Ollama, LM Studio, OpenRouter …).
@@ -116,7 +120,7 @@ Press your shortcut (**`Ctrl+Shift+V`** by default, **`Win+V`** recommended). Ev
 
 ## 😊 Emoji, GIF & symbols
 
-Press **`Ctrl+.`** (or take over **`Win+.`**) and the picker opens **right at your text cursor**. It never takes the focus away from the program you're typing in: just keep typing to search.
+Press **`Ctrl+.`** (or take over **`Win+.`**) and the picker opens **right at your text cursor** (or, if you prefer, at the mouse or in the middle of the screen; every window can be placed this way). It never takes the focus away from the program you're typing in: just keep typing to search.
 
 <table>
   <tr>

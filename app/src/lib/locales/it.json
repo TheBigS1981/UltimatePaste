@@ -516,7 +516,6 @@
  "Der gesäuberte Link landet in der Zwischenablage, das Original bleibt im Verlauf. Einzeln geht es auch über „Ohne Tracking einfügen“ im Aktionsmenü.": "Il link ripulito va negli Appunti, l'originale resta nella cronologia. Per singole voci puoi usare anche «Incolla senza tracciamento» nel menu azioni.",
  "Textbausteine legst du im Einfüge-Fenster im Reiter „Snippets“ an (Strg + N). Hier stellst du ein, wie sie sich verhalten.": "Crei gli snippet di testo nella finestra Incolla, scheda «Snippet» (Ctrl + N). Qui imposti come si comportano.",
  "Snippets beim Tippen ersetzen": "Sostituisci gli snippet durante la digitazione",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.": "Se digiti ovunque la parola chiave di uno snippet preceduta da un punto e virgola, ad es. «;mfg», viene subito sostituita dal testo. Se lo snippet ha campi di input, prima si apre il modulo.",
  "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.": "Per questo UltimatePaste tiene in memoria gli ultimi ~40 caratteri digitati: nulla viene salvato o inviato. La funzione è disattivata nei campi password, nei programmi bloccati e nelle finestre di amministratore.",
  "Platzhalter": "Segnaposto",
  "Datum und Uhrzeit": "data e ora",
@@ -615,5 +614,6 @@
  "Ungespeicherte Änderungen verwerfen?": "Scartare le modifiche non salvate?",
  "Weiter bearbeiten": "Continua a modificare",
  "Verwerfen": "Scarta",
- "Deine ungespeicherten Änderungen sind noch da.": "Le tue modifiche non salvate sono ancora qui."
+ "Deine ungespeicherten Änderungen sind noch da.": "Le tue modifiche non salvate sono ancora qui.",
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Se digiti ovunque la parola chiave di uno snippet preceduta da un punto e virgola – ad es. “;mfg” –, viene sostituita subito dal testo. Se lo snippet ha campi di inserimento o una scelta, una piccola finestra al cursore di testo te li chiede (frecce, Invio, Esc)."
 }

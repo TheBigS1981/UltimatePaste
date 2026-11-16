@@ -516,7 +516,6 @@
  "Der gesäuberte Link landet in der Zwischenablage, das Original bleibt im Verlauf. Einzeln geht es auch über „Ohne Tracking einfügen“ im Aktionsmenü.": "Oczyszczony link trafia do schowka, oryginał zostaje w historii. Pojedynczo działa to też przez „Wklej bez śledzenia” w menu akcji.",
  "Textbausteine legst du im Einfüge-Fenster im Reiter „Snippets“ an (Strg + N). Hier stellst du ein, wie sie sich verhalten.": "Fragmenty tekstu tworzysz w oknie wklejania na karcie „Fragmenty” (Ctrl + N). Tutaj ustawiasz, jak działają.",
  "Snippets beim Tippen ersetzen": "Zastępuj fragmenty podczas pisania",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.": "Gdy gdziekolwiek wpiszesz słowo kluczowe fragmentu poprzedzone średnikiem – np. „;mfg” –, zostanie ono od razu zastąpione tekstem. Jeśli fragment ma pola do wypełnienia, najpierw otworzy się formularz.",
  "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.": "W tym celu UltimatePaste zapamiętuje w pamięci roboczej ostatnie ok. 40 wpisanych znaków – nic z tego nie jest zapisywane ani wysyłane. W polach haseł, zablokowanych programach i oknach administratora funkcja jest wyłączona.",
  "Platzhalter": "Symbole zastępcze",
  "Datum und Uhrzeit": "data i godzina",
@@ -615,5 +614,6 @@
  "Ungespeicherte Änderungen verwerfen?": "Odrzucić niezapisane zmiany?",
  "Weiter bearbeiten": "Edytuj dalej",
  "Verwerfen": "Odrzuć",
- "Deine ungespeicherten Änderungen sind noch da.": "Twoje niezapisane zmiany nadal tu są."
+ "Deine ungespeicherten Änderungen sind noch da.": "Twoje niezapisane zmiany nadal tu są.",
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Jeśli gdziekolwiek wpiszesz słowo kluczowe snippetu poprzedzone średnikiem – np. „;mfg” – zostanie ono od razu zastąpione tekstem. Jeśli snippet ma pola lub wybór, małe okno przy kursorze tekstu zapyta o nie (strzałki, Enter, Esc)."
 }

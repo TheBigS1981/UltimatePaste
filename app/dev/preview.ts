@@ -77,7 +77,7 @@ mockIPC((cmd, args: any) => {
       { id: 2, updatedAt: Date.now() - 600000, mode: "correct", text: D("Hallo Tom, können wir das Termin verschieben?", "Hi Tom, could we moved the meeting?"), out: D("Hallo Tom, können wir den Termin verschieben?", "Hi Tom, could we move the meeting?"), source: "DE", target: null, engine: "ai", kind: "correct", style: null },
       { id: 1, updatedAt: Date.now() - 90000000, mode: "translate", text: "Können wir den Termin auf Donnerstag verschieben?", out: "Could we move the meeting to Thursday?", source: "DE", target: "EN-US", engine: "deepl", kind: null, style: null },
     ];
-    case "version_info": return { version: "1.0.0", buildDate: "2026-11-15", portable: false };
+    case "version_info": return { version: "1.1.0", buildDate: "2026-11-16", portable: false };
     case "update_info": return q.get("update") ? { current: "1.0.0", latest: "1.1.0", newer: true, notes: "- New: …\n- Fixed: …", published: "2026-12-01T10:00:00Z", page: "https://github.com/TheBigS1981/UltimatePaste/releases", asset: "x", assetUrl: "x", sumsUrl: "x", installed: true } : null;
     case "stats_get": {
       const days: Record<string, unknown> = {};
@@ -103,6 +103,10 @@ mockIPC((cmd, args: any) => {
     case "list_snippets": return snippets;
     case "app_info": return { version: "1.0.0", dataDir: "C:\\Users\\alex\\AppData\\Local\\UltimatePaste", entries: 128 };
     case "ai_has_key": return args.providerId === "svc:deepl" || (q.get("ptab") === "gif" && String(args.providerId).startsWith("svc:"));
+    case "fill_job": return q.get("fill") === "multi"
+      ? { fields: [{ name: D("Name", "Name"), default: "Tom", options: [] }, { name: D("Anrede", "Greeting"), default: D("Hallo", "Hi"), options: [D("Hallo", "Hi"), D("Liebe Grüße", "Dear")] }] }
+      : { fields: [{ name: D("E-Mail-Adresse", "E-mail address"), default: "alex@northwind.studio", options: ["alex@northwind.studio", "alex.morgan@nordlicht.design", "a.morgan@example.org"] }] };
+    case "fill_fit": return null;
     case "plugin:event|listen": return 1;
     default: return null;
   }
@@ -116,3 +120,35 @@ if (q.get("sel")) {
 }
 // Fake desktop behind the transparent palette window.
 if (win === "main") document.documentElement.style.background = "linear-gradient(135deg, #3d5a8a, #8e6aa8)";
+
+// Snippet fields popup over a fake text editor (release notes / README).
+if (win === "fill") {
+  const de = !EN;
+  const typed = q.get("fill") === "multi" ? ";follow" : ";mail";
+  const line = q.get("fill") === "multi" ? "" : de ? "Hi Tom, schick die Unterlagen bitte an " : "Hi Tom, please send the documents to ";
+  const bg = document.createElement("div");
+  bg.innerHTML = `<div style="position:fixed;inset:0;background:linear-gradient(135deg,#3d5a8a,#8e6aa8);font:15px/1.5 'Segoe UI',system-ui,sans-serif">
+    <div style="position:absolute;left:28px;top:24px;right:28px;bottom:24px;background:#fff;border-radius:10px;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);overflow:hidden">
+      <div style="height:34px;background:#f3f3f6;border-bottom:1px solid #e3e3e8;display:flex;align-items:center;padding:0 14px;font-size:12.5px;color:#666">${de ? "Neue Nachricht" : "New message"}</div>
+      <div style="padding:18px 20px;color:#222">${line}<span style="background:rgba(91,76,240,.14);border-radius:3px;padding:0 2px">${typed}</span><span id="fake-caret" style="display:inline-block;width:1.5px;height:1.15em;background:#222;vertical-align:text-bottom"></span></div>
+    </div></div>`;
+  document.body.prepend(bg);
+  const app = document.getElementById("app")!;
+  // Like the app: the popup's top-left (16 px shadow margin) just below the caret.
+  const r = document.getElementById("fake-caret")!.getBoundingClientRect();
+  Object.assign(app.style, { position: "absolute", left: Math.round(r.left - 24) + "px", top: Math.round(r.bottom - 12) + "px", height: "auto" });
+}
+
+// Snippet editor with unsaved changes after Esc (release notes).
+if (q.get("discard")) {
+  setTimeout(() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "e", ctrlKey: true })), 400);
+  setTimeout(() => {
+    const ta = document.querySelector(".card.editor textarea") as HTMLTextAreaElement | null;
+    if (ta) {
+      ta.value += EN ? "\nP.S. See you on Thursday!" : "\nPS: Bis Donnerstag!";
+      ta.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+  }, 800);
+  setTimeout(() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" })), 1100);
+}
+

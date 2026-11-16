@@ -516,7 +516,6 @@
  "Der gesäuberte Link landet in der Zwischenablage, das Original bleibt im Verlauf. Einzeln geht es auch über „Ohne Tracking einfügen“ im Aktionsmenü.": "O link limpo vai para a área de transferência e o original fica no histórico. Também dá para fazer um por um com “Colar sem rastreamento” no menu de ações.",
  "Textbausteine legst du im Einfüge-Fenster im Reiter „Snippets“ an (Strg + N). Hier stellst du ein, wie sie sich verhalten.": "Você cria trechos de texto na janela de colagem, na aba “Trechos” (Ctrl + N). Aqui você define como eles se comportam.",
  "Snippets beim Tippen ersetzen": "Substituir trechos ao digitar",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.": "Se você digitar em qualquer lugar a palavra-chave de um trecho precedida de ponto e vírgula – por exemplo, “;mfg” –, ela é substituída na hora pelo texto. Se o trecho tiver campos de entrada, o formulário abre antes.",
  "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.": "Para isso, o UltimatePaste guarda na memória os últimos ~40 caracteres digitados – nada disso é salvo ou enviado. A função fica desativada em campos de senha, programas bloqueados e janelas de administrador.",
  "Platzhalter": "Espaços reservados",
  "Datum und Uhrzeit": "data e hora",
@@ -615,5 +614,6 @@
  "Ungespeicherte Änderungen verwerfen?": "Descartar as alterações não salvas?",
  "Weiter bearbeiten": "Continuar editando",
  "Verwerfen": "Descartar",
- "Deine ungespeicherten Änderungen sind noch da.": "Suas alterações não salvas ainda estão aqui."
+ "Deine ungespeicherten Änderungen sind noch da.": "Suas alterações não salvas ainda estão aqui.",
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Se você digitar em qualquer lugar a palavra-chave de um snippet precedida de ponto e vírgula – p. ex. “;mfg” –, ela é substituída na hora pelo texto. Se o snippet tiver campos ou uma escolha, uma pequena janela no cursor de texto pede os valores (setas, Enter, Esc)."
 }

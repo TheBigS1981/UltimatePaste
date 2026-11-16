@@ -516,7 +516,6 @@
  "Der gesäuberte Link landet in der Zwischenablage, das Original bleibt im Verlauf. Einzeln geht es auch über „Ohne Tracking einfügen“ im Aktionsmenü.": "De opgeschoonde link gaat naar het klembord, het origineel blijft in de geschiedenis. Per item kan het ook via “Plakken zonder tracking” in het actiemenu.",
  "Textbausteine legst du im Einfüge-Fenster im Reiter „Snippets“ an (Strg + N). Hier stellst du ein, wie sie sich verhalten.": "Tekstfragmenten maak je in het plakvenster op het tabblad “Fragmenten” (Ctrl + N). Hier stel je in hoe ze werken.",
  "Snippets beim Tippen ersetzen": "Fragmenten vervangen tijdens het typen",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.": "Typ je ergens het trefwoord van een fragment met een puntkomma ervoor – bijv. “;mfg” –, dan wordt het meteen door de tekst vervangen. Heeft het fragment invoervelden, dan opent eerst het formulier.",
  "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.": "Daarvoor onthoudt UltimatePaste de laatste circa 40 getypte tekens in het werkgeheugen – niets daarvan wordt opgeslagen of verzonden. In wachtwoordvelden, geblokkeerde programma's en administratorvensters staat de functie uit.",
  "Platzhalter": "Tijdelijke aanduidingen",
  "Datum und Uhrzeit": "datum en tijd",
@@ -615,5 +614,6 @@
  "Ungespeicherte Änderungen verwerfen?": "Niet-opgeslagen wijzigingen verwerpen?",
  "Weiter bearbeiten": "Verder bewerken",
  "Verwerfen": "Verwerpen",
- "Deine ungespeicherten Änderungen sind noch da.": "Je niet-opgeslagen wijzigingen zijn er nog."
+ "Deine ungespeicherten Änderungen sind noch da.": "Je niet-opgeslagen wijzigingen zijn er nog.",
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Typ je ergens het trefwoord van een snippet met een puntkomma ervoor – bijv. “;mfg” –, dan wordt het meteen door de tekst vervangen. Heeft de snippet invoervelden of een keuze, dan vraagt een klein venster bij de tekstcursor ernaar (pijltjestoetsen, Enter, Esc)."
 }

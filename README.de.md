@@ -108,6 +108,10 @@ Drück dein Kürzel (**`Strg+Umschalt+V`** als Standard, **`Win+V`** empfohlen).
 
 <p align="center"><img src="docs/images/de/snippets.png" alt="Snippets-Reiter" width="760" /></p>
 
+Hat ein getipptes Snippet Eingabefelder oder eine Auswahl, öffnet sich ein kleines Fenster **direkt am Text-Cursor**. Mit `↑` `↓` oder `1`–`9` wählen, Tippen filtert, `Enter` fügt ein. `Esc` lässt das Kürzel so stehen, wie du es getippt hast. Das Programm, in dem du tippst, behält den Fokus, und deine Zwischenablage bleibt unverändert.
+
+<p align="center"><img src="docs/images/de/snippet-fields.png" alt="Snippet-Auswahl am Text-Cursor" width="620" /></p>
+
 - **Mehrere Einträge zusammen einfügen:** mit `Umschalt+Leertaste` oder `Strg+Klick` markieren und Enter drücken. Das Trennzeichen (Zeilenumbruch, Leerzeile, Komma, Aufzählung oder nummerierte Liste) wählst du im Aktionsmenü.
 - **Regeln je Programm:** zum Beispiel in Outlook immer als reiner Text, im Terminal als eine Zeile.
 - **KI-Aktionen** (`Strg+Enter`): korrigieren, umformulieren, zusammenfassen, Antwort entwerfen oder eigene Anweisungen, mit Claude oder jedem OpenAI-kompatiblen Dienst (Ollama, LM Studio, OpenRouter …).
@@ -116,7 +120,7 @@ Drück dein Kürzel (**`Strg+Umschalt+V`** als Standard, **`Win+V`** empfohlen).
 
 ## 😊 Emoji, GIF & Sonderzeichen
 
-Drück **`Strg+.`** (oder übernimm **`Win+.`**), und die Auswahl öffnet sich **direkt am Text-Cursor**. Sie nimmt dem Programm, in dem du tippst, nie den Fokus weg, du tippst einfach weiter, um zu suchen.
+Drück **`Strg+.`** (oder übernimm **`Win+.`**), und die Auswahl öffnet sich **direkt am Text-Cursor** (auf Wunsch auch an der Maus oder in der Bildschirmmitte; das lässt sich für jedes Fenster einstellen). Sie nimmt dem Programm, in dem du tippst, nie den Fokus weg, du tippst einfach weiter, um zu suchen.
 
 <table>
   <tr>

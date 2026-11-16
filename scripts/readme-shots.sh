@@ -21,6 +21,7 @@ docker compose --profile tools run --rm -T shot bash -c '
     shot "$D" palette-drawer 452 760 "layout=drawer&theme=dark&sel=2&lang=$L"
     shot "$D" quick-actions 860 520 "layout=fluent&theme=light&sel=5&lang=$L"
     shot "$D" snippets 860 520 "layout=fluent&theme=dark&tab=snippets&lang=$L"
+    shot "$D" snippet-fields 760 300 "window=fill&layout=fluent&theme=light&lang=$L"
     shot "$D" picker-emoji 452 500 "window=picker&layout=fluent&theme=dark&tone=3&lang=$L"
     shot "$D" picker-gif 452 500 "window=picker&layout=fluent&theme=light&ptab=gif&lang=$L"
     shot "$D" translate 860 480 "window=translate&layout=fluent&theme=light&lang=$L"

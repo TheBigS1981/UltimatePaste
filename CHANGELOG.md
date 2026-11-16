@@ -1,14 +1,18 @@
 # Changelog
 
-## 1.1.0
+## 1.1.0 – Less mouse, more flow
 
-- Editing a snippet or entry: Esc or a click beside the editor now asks before unsaved changes are discarded, and closing the window keeps the draft
+**✨ Snippets with choices, right where you type.** Type `;mail` and a small popup appears directly below your text cursor: pick with `↑` `↓` or `1`–`9`, type to filter, `Enter` pastes, `Esc` keeps the keyword as typed. Several fields come one after the other. The program you type in keeps the focus, and your clipboard stays untouched.
+
+**😊 Emoji no longer eat your clipboard.** After pasting emoji, symbols or GIFs, whatever you copied before is back on the clipboard.
+
+**🎯 Windows open where you want them.** Paste window, emoji picker and translate window: at the text cursor, at the mouse or in the middle of the screen. The text cursor is now also found in browsers, Teams, WhatsApp, Slack, VS Code and the new Outlook.
+
+**🛟 No more lost edits.** `Esc` or a click beside the snippet/entry editor asks before discarding changes, and switching to another program keeps your draft.
+
+**🔧 Smaller things**
+- Autostart heals itself when its entry still pointed to an old copy, a network drive or a deleted file
 - The paste window can be moved by its whole header and its edges again
-- Snippets while typing: input fields and choices now open a small popup right at the text cursor – choose with the arrow keys, 1–9 or by typing, Enter pastes, Esc keeps the keyword as typed
-- Emoji, symbols and GIFs no longer replace what you copied: after pasting them, the previous clipboard content is put back
-- Window position can be chosen for each window – paste window, emoji picker and translate window: center of the screen, at the text cursor or at the mouse
-- The text cursor is now also found in browsers and apps like Teams, WhatsApp, Slack, VS Code and the new Outlook (via the Windows accessibility interfaces)
-- Autostart: an autostart entry that still pointed to another copy of the app (an old portable exe, a network drive or a deleted file) is now corrected, so UltimatePaste starts reliably after a reboot
 
 ## 1.0.1
 

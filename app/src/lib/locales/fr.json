@@ -516,7 +516,6 @@
  "Der gesäuberte Link landet in der Zwischenablage, das Original bleibt im Verlauf. Einzeln geht es auch über „Ohne Tracking einfügen“ im Aktionsmenü.": "Le lien nettoyé va dans le presse-papiers, l’original reste dans l’historique. Tu peux aussi le faire au cas par cas via « Coller sans suivi » dans le menu Actions.",
  "Textbausteine legst du im Einfüge-Fenster im Reiter „Snippets“ an (Strg + N). Hier stellst du ein, wie sie sich verhalten.": "Tu crées des extraits de texte dans la fenêtre de collage, onglet « Extraits » (Ctrl + N). Ici, tu définis leur comportement.",
  "Snippets beim Tippen ersetzen": "Remplacer les extraits pendant la saisie",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder, öffnet sich vorher das Formular.": "Si tu tapes n’importe où le mot-clé d’un extrait précédé d’un point-virgule – p. ex. « ;mfg » –, il est aussitôt remplacé par le texte. Si l’extrait comporte des champs de saisie, le formulaire s’ouvre d’abord.",
  "Dafür merkt sich UltimatePaste die letzten rund 40 getippten Zeichen im Arbeitsspeicher – nichts davon wird gespeichert oder verschickt. In Passwortfeldern, gesperrten Programmen und Administrator-Fenstern ist die Funktion aus.": "Pour cela, UltimatePaste garde en mémoire les quelque 40 derniers caractères saisis – rien n’est enregistré ni envoyé. La fonction est désactivée dans les champs de mot de passe, les programmes bloqués et les fenêtres administrateur.",
  "Platzhalter": "Espaces réservés",
  "Datum und Uhrzeit": "date et heure",
@@ -615,5 +614,6 @@
  "Ungespeicherte Änderungen verwerfen?": "Abandonner les modifications non enregistrées ?",
  "Weiter bearbeiten": "Continuer la modification",
  "Verwerfen": "Abandonner",
- "Deine ungespeicherten Änderungen sind noch da.": "Tes modifications non enregistrées sont toujours là."
+ "Deine ungespeicherten Änderungen sind noch da.": "Tes modifications non enregistrées sont toujours là.",
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Si tu tapes n’importe où le mot-clé d’un snippet précédé d’un point-virgule – p. ex. « ;mfg » –, il est remplacé aussitôt par le texte. Si le snippet contient des champs ou un choix, une petite fenêtre au curseur de texte te les demande (flèches, Entrée, Échap)."
 }
