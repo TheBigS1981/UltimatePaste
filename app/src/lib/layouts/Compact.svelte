@@ -14,7 +14,7 @@
 
 <div class="scene">
   <div class="kp">
-    <div class="q" data-tauri-drag-region>
+    <div class="q" data-tauri-drag-region="deep">
       <b>›</b>
       <input bind:this={searchEl} bind:value={query} oninput={onsearch} placeholder={t("searchShort")} spellcheck="false" autocomplete="off" />
       {#if vm.settings?.paused}<span class="paused">{t("paused")}</span>{/if}

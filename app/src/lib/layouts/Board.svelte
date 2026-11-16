@@ -18,7 +18,7 @@
 
 <div class="frame">
   <div class="pw">
-    <div class="top" data-tauri-drag-region>
+    <div class="top" data-tauri-drag-region="deep">
       <div class="search">
         <Icon name="search" />
         <input bind:this={searchEl} bind:value={query} oninput={onsearch} placeholder={vm.tab === "snippets" ? t("snippetPlaceholder") : t("searchPlaceholder")} spellcheck="false" autocomplete="off" />

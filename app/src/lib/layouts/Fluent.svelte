@@ -14,13 +14,13 @@
 </script>
 
 <div class="fl">
-  <div class="search" data-tauri-drag-region>
+  <div class="search" data-tauri-drag-region="deep">
     <Icon name="search" />
     <input bind:this={searchEl} bind:value={query} oninput={onsearch} placeholder={vm.tab === "snippets" ? t("snippetPlaceholder") : t("searchPlaceholder")} spellcheck="false" autocomplete="off" />
     {#if vm.settings?.paused}<span class="paused">{t("paused")}</span>{/if}
       <button class="gear" tabindex="-1" title={t("settings")} aria-label={t("settings")} onclick={() => act.run("settings")}><Icon name="gear" /></button>
   </div>
-  <nav data-tauri-drag-region>
+  <nav data-tauri-drag-region="deep">
     {#each TABS as tb, ti (tb)}
       <button class:on={vm.tab === tb} tabindex="-1" class:tabbtn={true} onclick={() => act.setTab(tb)}>{tabLabel(tb)}<small class="tabhint">Alt {ti + 1}</small></button>
     {/each}
