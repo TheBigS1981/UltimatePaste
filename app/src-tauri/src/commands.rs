@@ -513,7 +513,8 @@ pub fn picker_state(state: State<AppState>) -> crate::picker::PickerState {
 #[tauri::command]
 pub async fn picker_paste(app: AppHandle, kind: String, items: Vec<String>, copy_only: Option<bool>) -> CmdResult<PasteResult> {
     let state = app.state::<AppState>();
-    let max = state.settings.read().picker.recent_count.clamp(8, 64) as usize;
+    // Keep more than shown: favorites are left out of "recently used", the rest fills up.
+    let max = state.settings.read().picker.recent_count.clamp(8, 64) as usize + 32;
     {
         let mut p = state.picker.lock();
         let list = if kind == "symbol" { &mut p.symbol_recent } else { &mut p.emoji_recent };

@@ -79,7 +79,9 @@
       const out: Section[] = [];
       const fav = pstate.favorites.filter((f) => !isSymbol(f));
       if (fav.length) out.push({ key: "fav", title: tr("Favoriten", "Favorites"), cells: byUse(fav).map(anyCell) });
-      if (pstate.emojiRecent.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: byUse(pstate.emojiRecent.slice(0, recentMax)).map(anyCell) });
+      // Favorites are always on top: not repeated under "recently used".
+      const recentE = pstate.emojiRecent.filter((v) => !pstate.favorites.includes(v)).slice(0, recentMax);
+      if (recentE.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: byUse(recentE).map(anyCell) });
       for (const g of GROUPS) out.push({ key: g.key, title: groupName(g.id), cells: visibleEmoji().filter((e) => e.group === g.id).map((e) => emojiCell(e)) });
       return out;
     }
@@ -88,7 +90,8 @@
       const out: Section[] = [];
       const fav = pstate.favorites.filter((f) => isSymbol(f));
       if (fav.length) out.push({ key: "fav", title: tr("Favoriten", "Favorites"), cells: byUse(fav).map(anyCell) });
-      if (pstate.symbolRecent.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: byUse(pstate.symbolRecent.slice(0, recentMax)).map(anyCell) });
+      const recentS = pstate.symbolRecent.filter((v) => !pstate.favorites.includes(v)).slice(0, recentMax);
+      if (recentS.length) out.push({ key: "recent", title: tr("Zuletzt verwendet", "Recently used"), cells: byUse(recentS).map(anyCell) });
       for (const c of SYMBOL_CATS) out.push({ key: c.key, title: tr(c.de, c.en), cells: SYMBOLS.filter((s) => s.cat === c.key).map((s) => ({ value: s.char, label: deOrEn(s.de || s.en, s.en) })) });
       return out;
     }

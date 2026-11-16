@@ -660,8 +660,9 @@ fn redirect_key(vk: u32, scan: u32, down: bool, ctrl: bool, alt: bool, shift: bo
         REDIRECT_HWND.store(0, AtomicOrdering::Relaxed);
         return false;
     }
-    // Windows shortcuts and app switching stay with Windows.
-    if win || (alt && !ctrl && matches!(vk, 0x09 | 0x73 | 0x1B | 0x20)) {
+    // Windows shortcuts and app switching stay with Windows; so do Print (screenshot tools
+    // like Greenshot) and the media / volume / browser keys.
+    if win || (alt && !ctrl && matches!(vk, 0x09 | 0x73 | 0x1B | 0x20)) || matches!(vk, 0x2C | 0xA6..=0xB7) {
         return false;
     }
     let fg = unsafe { GetForegroundWindow() };
