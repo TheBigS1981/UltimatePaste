@@ -611,5 +611,9 @@
  "wählen": "choisir",
  "weiter": "suivant",
  "zurück": "retour",
- "abbrechen": "annuler"
+ "abbrechen": "annuler",
+ "Ungespeicherte Änderungen verwerfen?": "Abandonner les modifications non enregistrées ?",
+ "Weiter bearbeiten": "Continuer la modification",
+ "Verwerfen": "Abandonner",
+ "Deine ungespeicherten Änderungen sind noch da.": "Tes modifications non enregistrées sont toujours là."
 }

@@ -150,6 +150,26 @@
   "en": "Quick actions"
  },
  {
+  "key": "Deine ungespeicherten Änderungen sind noch da.",
+  "de": "Deine ungespeicherten Änderungen sind noch da.",
+  "en": "Your unsaved changes are still here."
+ },
+ {
+  "key": "Ungespeicherte Änderungen verwerfen?",
+  "de": "Ungespeicherte Änderungen verwerfen?",
+  "en": "Discard unsaved changes?"
+ },
+ {
+  "key": "Weiter bearbeiten",
+  "de": "Weiter bearbeiten",
+  "en": "Keep editing"
+ },
+ {
+  "key": "Verwerfen",
+  "de": "Verwerfen",
+  "en": "Discard"
+ },
+ {
   "key": "Treffer",
   "de": "Treffer",
   "en": "Results"

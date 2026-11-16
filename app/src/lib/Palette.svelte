@@ -14,9 +14,9 @@
   type Action = { id: string; label: string; hint?: string; group?: string; run: () => void | Promise<void> };
   type Overlay =
     | { kind: "actions" }
-    | { kind: "edit"; id: number; text: string }
+    | { kind: "edit"; id: number; text: string; orig: string; ask?: boolean }
     | { kind: "rename"; id: number; title: string }
-    | { kind: "snippet"; snippet: Snippet }
+    | { kind: "snippet"; snippet: Snippet; orig: string; ask?: boolean }
     | { kind: "busy"; label: string }
     | { kind: "confirm"; label: string; run: () => void }
     | { kind: "fields"; id: number; name: string; copy: boolean; fields: SnippetField[]; values: Record<string, string> };
@@ -291,7 +291,8 @@
   async function startEdit() {
     if (!current) return;
     const d = detailCache.get(current.id) ?? (await api.detail(current.id));
-    overlay = { kind: "edit", id: current.id, text: d.text ?? d.files.join("\n") };
+    const text = d.text ?? d.files.join("\n");
+    overlay = { kind: "edit", id: current.id, text, orig: text };
   }
 
   function startRename() {
@@ -299,7 +300,7 @@
   }
 
   function newSnippet(body = "") {
-    overlay = { kind: "snippet", snippet: { id: 0, name: "", keyword: "", body, updatedAt: 0 } };
+    overlay = snippetOverlay({ id: 0, name: "", keyword: "", body, updatedAt: 0 });
   }
 
   async function ocrCopy() {
@@ -346,7 +347,7 @@
       a.push({ id: "paste", label: t("paste"), hint: "↵", run: () => pasteCurrent() });
       a.push({ id: "copy", label: t("copyOnly"), hint: "Alt ↵", run: () => pasteCurrent({ copy: true }) });
       a.push({ id: "edit", label: t("editSnippet"), hint: `${t("ctrlShort")} E`, run: () => {
-        overlay = { kind: "snippet", snippet: { ...currentSnippet! } };
+        overlay = snippetOverlay({ ...currentSnippet! });
       } });
       a.push({ id: "new", label: t("newSnippet"), hint: `${t("ctrlShort")} N`, run: () => newSnippet() });
       a.push({ id: "del", label: t("deleteSnippet"), hint: `${t("ctrlShort")} ${tr("Entf", "Del")}`, run: removeCurrent });
@@ -445,13 +446,45 @@
     refresh();
   }
 
+  const snippetKey = (s: Snippet) => JSON.stringify([s.name, s.keyword, s.body]);
+  function snippetOverlay(snippet: Snippet): Overlay {
+    // The empty "new snippet" counts as unchanged only while nothing was typed.
+    return { kind: "snippet", snippet, orig: snippetKey(snippet) };
+  }
+
+  /** An editor with changes that would be lost when it closes. */
+  function unsaved(o: Overlay | null): boolean {
+    if (o?.kind === "edit") return o.text !== o.orig;
+    if (o?.kind === "snippet") return snippetKey(o.snippet) !== o.orig;
+    return false;
+  }
+
+  let keepBtn = $state<HTMLButtonElement>();
+  /** Closes the overlay; an editor with unsaved changes asks first (Esc, click beside it). */
+  async function closeOverlay() {
+    if (overlay && (overlay.kind === "edit" || overlay.kind === "snippet") && unsaved(overlay)) {
+      overlay.ask = true;
+      await tick();
+      keepBtn?.focus();
+      return;
+    }
+    overlay = null;
+    focusSearch();
+  }
+
+  async function keepEditing() {
+    if (overlay?.kind === "edit" || overlay?.kind === "snippet") overlay.ask = false;
+    await tick();
+    (document.querySelector(".card.editor textarea") as HTMLTextAreaElement | null)?.focus();
+  }
+
   async function focusSearch() {
     await tick();
     searchEl?.focus();
   }
 
   function editCurrent() {
-    if (currentSnippet) overlay = { kind: "snippet", snippet: { ...currentSnippet } };
+    if (currentSnippet) overlay = snippetOverlay({ ...currentSnippet });
     else startEdit();
   }
 
@@ -502,8 +535,8 @@
       if (k === "Escape") {
         e.preventDefault();
         if (overlay.kind === "busy") aiToken++;
-        overlay = null;
-        focusSearch();
+        if ((overlay.kind === "edit" || overlay.kind === "snippet") && overlay.ask) keepEditing();
+        else closeOverlay();
         return;
       }
       if (overlay.kind === "actions") {
@@ -640,7 +673,10 @@
     );
     unlisten.push(
       listen("palette-shown", async () => {
-        overlay = null;
+        // An editor with unsaved changes survives closing the window (e.g. a click into another program).
+        const draft = unsaved(overlay);
+        if (draft && (overlay?.kind === "edit" || overlay?.kind === "snippet")) overlay.ask = false;
+        else overlay = null;
         aiToken++;
         toast = null;
         if (!withinGrace()) {
@@ -650,7 +686,10 @@
           marked = [];
         }
         await refresh();
-        focusSearch();
+        if (draft) {
+          showToast(tr("Deine ungespeicherten Änderungen sind noch da.", "Your unsaved changes are still here."));
+          keepEditing();
+        } else focusSearch();
         // A typed keyword whose snippet has input fields: show the form right away.
         const formId = await api.takeSnippetForm().catch(() => null);
         if (formId != null) {
@@ -689,7 +728,7 @@
 
   {#if overlay}
     <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-    <div class="veil" onclick={(e) => e.target === e.currentTarget && overlay?.kind !== "busy" && ((overlay = null), focusSearch())}>
+    <div class="veil" onclick={(e) => e.target === e.currentTarget && overlay?.kind !== "busy" && closeOverlay()}>
       {#if overlay.kind === "actions"}
         <div class="card actions">
           <!-- svelte-ignore a11y_autofocus -->
@@ -709,6 +748,13 @@
           <h3>{t("edit")}</h3>
           <!-- svelte-ignore a11y_autofocus -->
           <textarea autofocus bind:value={overlay.text} spellcheck="false"></textarea>
+          {#if overlay.ask}
+            <div class="discard" role="alert">
+              <span>{tr("Ungespeicherte Änderungen verwerfen?", "Discard unsaved changes?")}</span>
+              <button bind:this={keepBtn} class="primary" onclick={keepEditing}>{tr("Weiter bearbeiten", "Keep editing")} <kbd>Esc</kbd></button>
+              <button class="danger" onclick={() => ((overlay = null), focusSearch())}>{tr("Verwerfen", "Discard")}</button>
+            </div>
+          {/if}
           <div class="buttons">
             <button onclick={() => ((overlay = null), focusSearch())}>{t("cancel")} <kbd>Esc</kbd></button>
             <button onclick={() => overlay?.kind === "edit" && deliver(api.pasteText(overlay.text, false))}>{t("pasteOnce")}</button>
@@ -732,6 +778,13 @@
           </div>
           <textarea bind:value={overlay.snippet.body} placeholder={t("body")} spellcheck="false"></textarea>
           <p class="help">{t("placeholdersHelp")}</p>
+          {#if overlay.ask}
+            <div class="discard" role="alert">
+              <span>{tr("Ungespeicherte Änderungen verwerfen?", "Discard unsaved changes?")}</span>
+              <button bind:this={keepBtn} class="primary" onclick={keepEditing}>{tr("Weiter bearbeiten", "Keep editing")} <kbd>Esc</kbd></button>
+              <button class="danger" onclick={() => ((overlay = null), focusSearch())}>{tr("Verwerfen", "Discard")}</button>
+            </div>
+          {/if}
           <div class="buttons">
             <button onclick={() => ((overlay = null), focusSearch())}>{t("cancel")} <kbd>Esc</kbd></button>
             <button class="primary" onclick={() => overlay?.kind === "snippet" && saveSnippet(overlay.snippet)}>{t("save")} <kbd>{t("ctrlShort")} S</kbd></button>
@@ -803,6 +856,28 @@
   }
   .card.small {
     width: min(420px, 90%);
+  }
+  .discard {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--danger);
+    background: color-mix(in srgb, var(--danger) 10%, transparent);
+  }
+  .discard span {
+    flex: 1;
+    min-width: 180px;
+    font-weight: 600;
+  }
+  .discard kbd {
+    margin-left: 4px;
+  }
+  .discard button.danger {
+    color: var(--danger);
   }
   .card.editor {
     width: min(720px, 94%);

@@ -611,5 +611,9 @@
  "wählen": "kiezen",
  "weiter": "verder",
  "zurück": "terug",
- "abbrechen": "annuleren"
+ "abbrechen": "annuleren",
+ "Ungespeicherte Änderungen verwerfen?": "Niet-opgeslagen wijzigingen verwerpen?",
+ "Weiter bearbeiten": "Verder bewerken",
+ "Verwerfen": "Verwerpen",
+ "Deine ungespeicherten Änderungen sind noch da.": "Je niet-opgeslagen wijzigingen zijn er nog."
 }

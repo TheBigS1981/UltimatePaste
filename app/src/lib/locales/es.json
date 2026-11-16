@@ -611,5 +611,9 @@
  "wählen": "elegir",
  "weiter": "siguiente",
  "zurück": "atrás",
- "abbrechen": "cancelar"
+ "abbrechen": "cancelar",
+ "Ungespeicherte Änderungen verwerfen?": "¿Descartar los cambios no guardados?",
+ "Weiter bearbeiten": "Seguir editando",
+ "Verwerfen": "Descartar",
+ "Deine ungespeicherten Änderungen sind noch da.": "Tus cambios sin guardar siguen aquí."
 }

@@ -611,5 +611,9 @@
  "wählen": "escolher",
  "weiter": "próximo",
  "zurück": "voltar",
- "abbrechen": "cancelar"
+ "abbrechen": "cancelar",
+ "Ungespeicherte Änderungen verwerfen?": "Descartar as alterações não salvas?",
+ "Weiter bearbeiten": "Continuar editando",
+ "Verwerfen": "Descartar",
+ "Deine ungespeicherten Änderungen sind noch da.": "Suas alterações não salvas ainda estão aqui."
 }

@@ -611,5 +611,9 @@
  "wählen": "scegli",
  "weiter": "avanti",
  "zurück": "indietro",
- "abbrechen": "annulla"
+ "abbrechen": "annulla",
+ "Ungespeicherte Änderungen verwerfen?": "Scartare le modifiche non salvate?",
+ "Weiter bearbeiten": "Continua a modificare",
+ "Verwerfen": "Scarta",
+ "Deine ungespeicherten Änderungen sind noch da.": "Le tue modifiche non salvate sono ancora qui."
 }

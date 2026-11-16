@@ -611,5 +611,9 @@
  "wählen": "wybierz",
  "weiter": "dalej",
  "zurück": "wstecz",
- "abbrechen": "anuluj"
+ "abbrechen": "anuluj",
+ "Ungespeicherte Änderungen verwerfen?": "Odrzucić niezapisane zmiany?",
+ "Weiter bearbeiten": "Edytuj dalej",
+ "Verwerfen": "Odrzuć",
+ "Deine ungespeicherten Änderungen sind noch da.": "Twoje niezapisane zmiany nadal tu są."
 }

@@ -2,6 +2,7 @@
 
 ## 1.1.0
 
+- Editing a snippet or entry: Esc or a click beside the editor now asks before unsaved changes are discarded, and closing the window keeps the draft
 - The paste window can be moved by its whole header and its edges again
 - Snippets while typing: input fields and choices now open a small popup right at the text cursor – choose with the arrow keys, 1–9 or by typing, Enter pastes, Esc keeps the keyword as typed
 - Emoji, symbols and GIFs no longer replace what you copied: after pasting them, the previous clipboard content is put back

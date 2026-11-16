@@ -611,5 +611,9 @@
  "wählen": "chọn",
  "weiter": "tiếp",
  "zurück": "quay lại",
- "abbrechen": "hủy"
+ "abbrechen": "hủy",
+ "Ungespeicherte Änderungen verwerfen?": "Bỏ các thay đổi chưa lưu?",
+ "Weiter bearbeiten": "Tiếp tục chỉnh sửa",
+ "Verwerfen": "Bỏ",
+ "Deine ungespeicherten Änderungen sind noch da.": "Các thay đổi chưa lưu của bạn vẫn còn đây."
 }
