@@ -17,7 +17,7 @@
 </script>
 
 <div class="frame">
-  <div class="pw">
+  <div class="pw" data-tauri-drag-region>
     <div class="top" data-tauri-drag-region="deep">
       <div class="search">
         <Icon name="search" />

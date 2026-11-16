@@ -13,7 +13,7 @@
 </script>
 
 <div class="frame">
-  <aside class="sd">
+  <aside class="sd" data-tauri-drag-region>
     <div class="head" data-tauri-drag-region="deep">
       <div class="title"><span>UltimatePaste</span><span class="tr"><small>{total} {t("entries")}</small><button class="gear" tabindex="-1" title={t("settings")} aria-label={t("settings")} onclick={() => act.run("settings")}><Icon name="gear" /></button></span></div>
       <div class="search">

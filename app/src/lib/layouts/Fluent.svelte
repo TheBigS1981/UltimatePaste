@@ -13,7 +13,7 @@
   const groups = $derived(!vm.query && vm.tab === "all" ? groupByDay(vm.items) : [{ label: "", rows: vm.items.map((it, i) => ({ it, i })) }]);
 </script>
 
-<div class="fl">
+<div class="fl" data-tauri-drag-region>
   <div class="search" data-tauri-drag-region="deep">
     <Icon name="search" />
     <input bind:this={searchEl} bind:value={query} oninput={onsearch} placeholder={vm.tab === "snippets" ? t("snippetPlaceholder") : t("searchPlaceholder")} spellcheck="false" autocomplete="off" />
