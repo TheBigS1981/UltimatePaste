@@ -1042,13 +1042,17 @@ pub fn wait_redirected_keys_released(timeout_ms: u64) -> bool {
     }
 }
 
+/// Sends `n` backspaces one by one with a short pause: script-heavy web forms (suggestion
+/// lists, live validation) drop keys that arrive in a single burst.
 pub fn send_backspaces(n: usize) {
-    let mut v = Vec::with_capacity(n * 2);
-    for _ in 0..n {
-        v.push(key(VIRTUAL_KEY(0x08), false));
-        v.push(key(VIRTUAL_KEY(0x08), true));
+    for i in 0..n {
+        if i > 0 {
+            std::thread::sleep(Duration::from_millis(12));
+        }
+        send(&[key(VIRTUAL_KEY(0x08), false), key(VIRTUAL_KEY(0x08), true)]);
     }
-    send(&v);
+    // Let the program process the last one before the paste follows.
+    std::thread::sleep(Duration::from_millis(20));
 }
 
 /// Opens a web page in the default browser.
