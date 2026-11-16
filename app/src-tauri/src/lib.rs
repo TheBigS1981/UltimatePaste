@@ -90,7 +90,10 @@ fn init_logging(dir: &std::path::Path) {
         let _ = std::fs::remove_file(&path);
     }
     if let Ok(f) = std::fs::OpenOptions::new().create(true).append(true).open(&path) {
-        let _ = simplelog::WriteLogger::init(log::LevelFilter::Info, simplelog::Config::default(), f);
+        // Times in local time (the default would be UTC).
+        let mut cfg = simplelog::ConfigBuilder::new();
+        let _ = cfg.set_time_offset_to_local();
+        let _ = simplelog::WriteLogger::init(log::LevelFilter::Info, cfg.build(), f);
     }
 }
 
