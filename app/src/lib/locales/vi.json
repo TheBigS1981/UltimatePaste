@@ -615,5 +615,9 @@
  "Weiter bearbeiten": "Tiếp tục chỉnh sửa",
  "Verwerfen": "Bỏ",
  "Deine ungespeicherten Änderungen sind noch da.": "Các thay đổi chưa lưu của bạn vẫn còn đây.",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Khi bạn gõ ở bất kỳ đâu từ khóa của một snippet kèm dấu chấm phẩy phía trước – ví dụ “;mfg” –, nó sẽ được thay ngay bằng nội dung. Nếu snippet có ô nhập hoặc lựa chọn, một cửa sổ nhỏ tại con trỏ văn bản sẽ hỏi bạn (phím mũi tên, Enter, Esc)."
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Khi bạn gõ ở bất kỳ đâu từ khóa của một snippet kèm dấu chấm phẩy phía trước – ví dụ “;mfg” –, nó sẽ được thay ngay bằng nội dung. Nếu snippet có ô nhập hoặc lựa chọn, một cửa sổ nhỏ tại con trỏ văn bản sẽ hỏi bạn (phím mũi tên, Enter, Esc).",
+ "Aus Favoriten entfernen": "Xóa khỏi mục yêu thích",
+ "Aus „Zuletzt verwendet“ entfernen": "Xóa khỏi “Dùng gần đây”",
+ "Entfernen": "Xóa",
+ "entfernen": "xóa"
 }

@@ -615,5 +615,9 @@
  "Weiter bearbeiten": "Continuer la modification",
  "Verwerfen": "Abandonner",
  "Deine ungespeicherten Änderungen sind noch da.": "Tes modifications non enregistrées sont toujours là.",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Si tu tapes n’importe où le mot-clé d’un snippet précédé d’un point-virgule – p. ex. « ;mfg » –, il est remplacé aussitôt par le texte. Si le snippet contient des champs ou un choix, une petite fenêtre au curseur de texte te les demande (flèches, Entrée, Échap)."
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Si tu tapes n’importe où le mot-clé d’un snippet précédé d’un point-virgule – p. ex. « ;mfg » –, il est remplacé aussitôt par le texte. Si le snippet contient des champs ou un choix, une petite fenêtre au curseur de texte te les demande (flèches, Entrée, Échap).",
+ "Aus Favoriten entfernen": "Retirer des favoris",
+ "Aus „Zuletzt verwendet“ entfernen": "Retirer de « Utilisés récemment »",
+ "Entfernen": "Retirer",
+ "entfernen": "retirer"
 }

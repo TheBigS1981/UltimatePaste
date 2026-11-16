@@ -301,6 +301,7 @@ export const api = {
   pickerState: () => invoke<PickerState>("picker_state"),
   pickerPaste: (kind: "emoji" | "symbol", items: string[], copyOnly = false) => invoke<PasteResult>("picker_paste", { kind, items, copyOnly }),
   pickerFavorite: (value: string, on: boolean) => invoke<PickerState>("picker_favorite", { value, on }),
+  pickerForget: (kind: "emoji" | "symbol", value: string) => invoke<PickerState>("picker_forget", { kind, value }),
   gifSearch: (provider: string, q: string, sticker: boolean, page: number) => invoke<GifItem[]>("gif_search", { query: { provider, q, sticker, page } }),
   gifRecent: () => invoke<GifItem[]>("gif_recent"),
   gifPaste: (item: GifItem, query: string, copyOnly = false) => invoke<PasteResult>("gif_paste", { item, query, copyOnly }),

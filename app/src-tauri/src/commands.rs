@@ -536,6 +536,16 @@ pub async fn picker_paste(app: AppHandle, kind: String, items: Vec<String>, copy
     Ok(PasteResult { delivery, missing: Vec::new() })
 }
 
+/// Removes an emoji/symbol from "recently used" (its usage count stays).
+#[tauri::command]
+pub fn picker_forget(state: State<AppState>, kind: String, value: String) -> CmdResult<crate::picker::PickerState> {
+    let mut p = state.picker.lock();
+    let list = if kind == "symbol" { &mut p.symbol_recent } else { &mut p.emoji_recent };
+    list.retain(|x| *x != value);
+    p.save(&state.data_dir).map_err(err)?;
+    Ok(p.clone())
+}
+
 #[tauri::command]
 pub fn picker_favorite(state: State<AppState>, value: String, on: bool) -> CmdResult<crate::picker::PickerState> {
     let mut p = state.picker.lock();

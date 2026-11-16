@@ -219,6 +219,26 @@
     notice = "";
   }
 
+  /** Section ("fav", "recent", a category …) of the cell at flat index `i`. */
+  function sectionAt(i: number): string | null {
+    let n = 0;
+    for (const s of sections) {
+      if (i < n + s.cells.length) return s.key;
+      n += s.cells.length;
+    }
+    return null;
+  }
+  const removable = $derived(tab !== "gif" && !query.trim() && ["fav", "recent"].includes(sectionAt(sel) ?? ""));
+
+  /** Entf / ×: unpins a favorite, or takes an entry off "recently used". */
+  async function removeCell(cell: Cell | null, section: string | null) {
+    if (!cell || !section) return;
+    if (section === "fav") pstate = await api.pickerFavorite(cell.value, false);
+    else if (section === "recent") pstate = await api.pickerForget(tab === "symbols" ? "symbol" : "emoji", cell.value);
+    else return;
+    sel = Math.min(sel, Math.max(0, flat.length - 1));
+  }
+
   async function toggleFavorite(cell: Cell | null) {
     if (!cell) return;
     const on = !pstate.favorites.includes(cell.value);
@@ -343,6 +363,7 @@
       else if (e.shiftKey) collect(current);
       else paste(current, e.altKey);
     } else if (e.ctrlKey && k.toLowerCase() === "p" && tab !== "gif") (e.preventDefault(), toggleFavorite(current));
+    else if (k === "Delete" && removable) (e.preventDefault(), removeCell(current, sectionAt(sel)));
   }
 
   /** Left/right edit the search text while the caret can still move inside it. */
@@ -538,7 +559,14 @@
           <div class="cells" class:sym={tab === "symbols"}>
             {#each s.cells as c, ci (s.key + ci)}
               {@const i = offset + ci}
-              <button class="cell" class:on={i === sel} class:fav={pstate.favorites.includes(c.value)} tabindex="-1" title={c.label} onpointerdown={() => (downCell = i)} onclick={(e) => onCellClick(e, c, i)} oncontextmenu={(e) => onCellMenu(e, c, i)}>{c.value.trim() ? c.value : "␣"}</button>
+              {#if s.key === "fav" || s.key === "recent"}
+                <div class="cw">
+                  <button class="cell" class:on={i === sel} class:fav={pstate.favorites.includes(c.value)} tabindex="-1" title={c.label} onpointerdown={() => (downCell = i)} onclick={(e) => onCellClick(e, c, i)} oncontextmenu={(e) => onCellMenu(e, c, i)}>{c.value.trim() ? c.value : "␣"}</button>
+                  <button class="x" tabindex="-1" title={s.key === "fav" ? tr("Aus Favoriten entfernen", "Remove from favorites") : tr("Aus „Zuletzt verwendet“ entfernen", "Remove from “recently used”")} aria-label={tr("Entfernen", "Remove")} onclick={(e) => (e.stopPropagation(), (sel = i), removeCell(c, s.key))}>×</button>
+                </div>
+              {:else}
+                <button class="cell" class:on={i === sel} class:fav={pstate.favorites.includes(c.value)} tabindex="-1" title={c.label} onpointerdown={() => (downCell = i)} onclick={(e) => onCellClick(e, c, i)} oncontextmenu={(e) => onCellMenu(e, c, i)}>{c.value.trim() ? c.value : "␣"}</button>
+              {/if}
             {/each}
           </div>
         {:else}
@@ -571,7 +599,7 @@
       {:else if current}
         <span class="big">{current.value.trim() ? current.value : "␣"}</span>
         <span class="name">{current.label}{#if tab === "symbols"} · <small>{codepoint(current.value)}</small>{/if}</span>
-        <span class="hint"><kbd>⇧↵</kbd> {tr("sammeln", "collect")}{#if current.emoji?.skins} · <kbd>Tab</kbd> {tr("Hautton", "tone")}{/if} · <kbd>{tr("Strg", "Ctrl")} P</kbd> ★</span>
+        <span class="hint"><kbd>⇧↵</kbd> {tr("sammeln", "collect")}{#if current.emoji?.skins} · <kbd>Tab</kbd> {tr("Hautton", "tone")}{/if} · <kbd>{tr("Strg", "Ctrl")} P</kbd> ★{#if removable}{" · "}<kbd>{tr("Entf", "Del")}</kbd> {tr("entfernen", "remove")}{/if}</span>
       {/if}
     </footer>
   </div>
@@ -750,6 +778,36 @@
   }
   .cells.sym .cell {
     font: 19px/1 var(--font), "Segoe UI Symbol";
+  }
+  .cw {
+    position: relative;
+  }
+  .cw .cell {
+    width: 100%;
+  }
+  .x {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 17px;
+    height: 17px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-solid);
+    color: var(--muted);
+    font: 12px/1 var(--font);
+    display: none;
+    place-items: center;
+    cursor: default;
+  }
+  .cw:hover .x {
+    display: grid;
+  }
+  .x:hover {
+    color: var(--on-accent);
+    background: var(--danger);
+    border-color: var(--danger);
   }
   .cell:hover {
     background: var(--kbd);

@@ -582,6 +582,7 @@ pub fn run() {
             commands::picker_state,
             commands::picker_paste,
             commands::picker_favorite,
+            commands::picker_forget,
             commands::gif_search,
             commands::gif_recent,
             commands::gif_paste,

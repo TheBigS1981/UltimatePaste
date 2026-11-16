@@ -615,5 +615,9 @@
  "Weiter bearbeiten": "Seguir editando",
  "Verwerfen": "Descartar",
  "Deine ungespeicherten Änderungen sind noch da.": "Tus cambios sin guardar siguen aquí.",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Si escribes en cualquier lugar la palabra clave de un snippet precedida de punto y coma – p. ej. “;mfg” –, se sustituye al instante por el texto. Si el snippet tiene campos o una selección, una pequeña ventana junto al cursor de texto te los pide (flechas, Intro, Esc)."
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Si escribes en cualquier lugar la palabra clave de un snippet precedida de punto y coma – p. ej. “;mfg” –, se sustituye al instante por el texto. Si el snippet tiene campos o una selección, una pequeña ventana junto al cursor de texto te los pide (flechas, Intro, Esc).",
+ "Aus Favoriten entfernen": "Quitar de favoritos",
+ "Aus „Zuletzt verwendet“ entfernen": "Quitar de “Usados recientemente”",
+ "Entfernen": "Quitar",
+ "entfernen": "quitar"
 }

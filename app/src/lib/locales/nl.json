@@ -615,5 +615,9 @@
  "Weiter bearbeiten": "Verder bewerken",
  "Verwerfen": "Verwerpen",
  "Deine ungespeicherten Änderungen sind noch da.": "Je niet-opgeslagen wijzigingen zijn er nog.",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Typ je ergens het trefwoord van een snippet met een puntkomma ervoor – bijv. “;mfg” –, dan wordt het meteen door de tekst vervangen. Heeft de snippet invoervelden of een keuze, dan vraagt een klein venster bij de tekstcursor ernaar (pijltjestoetsen, Enter, Esc)."
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Typ je ergens het trefwoord van een snippet met een puntkomma ervoor – bijv. “;mfg” –, dan wordt het meteen door de tekst vervangen. Heeft de snippet invoervelden of een keuze, dan vraagt een klein venster bij de tekstcursor ernaar (pijltjestoetsen, Enter, Esc).",
+ "Aus Favoriten entfernen": "Uit favorieten verwijderen",
+ "Aus „Zuletzt verwendet“ entfernen": "Verwijderen uit “Recent gebruikt”",
+ "Entfernen": "Verwijderen",
+ "entfernen": "verwijderen"
 }

@@ -280,6 +280,21 @@
   "en": "Loading …"
  },
  {
+  "key": "Aus Favoriten entfernen",
+  "de": "Aus Favoriten entfernen",
+  "en": "Remove from favorites"
+ },
+ {
+  "key": "Aus „Zuletzt verwendet“ entfernen",
+  "de": "Aus „Zuletzt verwendet“ entfernen",
+  "en": "Remove from “recently used”"
+ },
+ {
+  "key": "Entfernen",
+  "de": "Entfernen",
+  "en": "Remove"
+ },
+ {
   "key": "Hautfarbe wählen",
   "de": "Hautfarbe wählen",
   "en": "Choose skin tone"
@@ -318,6 +333,11 @@
   "key": "Strg",
   "de": "Strg",
   "en": "Ctrl"
+ },
+ {
+  "key": "entfernen",
+  "de": "entfernen",
+  "en": "remove"
  },
  {
   "key": "Willkommen",

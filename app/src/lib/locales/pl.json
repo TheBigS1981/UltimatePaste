@@ -615,5 +615,9 @@
  "Weiter bearbeiten": "Edytuj dalej",
  "Verwerfen": "Odrzuć",
  "Deine ungespeicherten Änderungen sind noch da.": "Twoje niezapisane zmiany nadal tu są.",
- "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Jeśli gdziekolwiek wpiszesz słowo kluczowe snippetu poprzedzone średnikiem – np. „;mfg” – zostanie ono od razu zastąpione tekstem. Jeśli snippet ma pola lub wybór, małe okno przy kursorze tekstu zapyta o nie (strzałki, Enter, Esc)."
+ "Tippst du irgendwo das Kürzel eines Snippets mit vorangestelltem Semikolon – z. B. „;mfg“ –, wird es sofort durch den Text ersetzt. Hat das Snippet Eingabefelder oder eine Auswahl, fragt ein kleines Fenster am Text-Cursor danach (Pfeiltasten, Enter, Esc).": "Jeśli gdziekolwiek wpiszesz słowo kluczowe snippetu poprzedzone średnikiem – np. „;mfg” – zostanie ono od razu zastąpione tekstem. Jeśli snippet ma pola lub wybór, małe okno przy kursorze tekstu zapyta o nie (strzałki, Enter, Esc).",
+ "Aus Favoriten entfernen": "Usuń z ulubionych",
+ "Aus „Zuletzt verwendet“ entfernen": "Usuń z „Ostatnio używane”",
+ "Entfernen": "Usuń",
+ "entfernen": "usuń"
 }
