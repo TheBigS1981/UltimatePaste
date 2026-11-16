@@ -390,6 +390,45 @@ pub fn deliver(app: &AppHandle, content: &ClipContent, mode: PasteMode, cursor_b
     Ok(Delivery::Pasted)
 }
 
+/// Clipboard content to put back after a paste from the picker, while that is still pending.
+static RESTORE: parking_lot::Mutex<Option<ClipContent>> = parking_lot::Mutex::new(None);
+static RESTORE_GEN: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+
+/// Like [`deliver`], but puts the previous clipboard content back `delay_ms` after pasting:
+/// for things picked rather than copied (emoji, symbols, GIFs), so they don't replace what
+/// the user copied. "Copy only" and a paste that fell back to copying keep the new content.
+pub fn deliver_and_restore(app: &AppHandle, content: &ClipContent, mode: PasteMode, delay_ms: u64) -> anyhow::Result<Delivery> {
+    if mode == PasteMode::Copy {
+        RESTORE.lock().take();
+        return deliver(app, content, mode, None);
+    }
+    // Several quick pastes in a row: keep the content from before the first one.
+    let before = RESTORE.lock().take().unwrap_or_else(|| {
+        let limits = platform::Limits { max_text_bytes: 5 << 20, max_image_bytes: 50 << 20 };
+        platform::read_clipboard(limits).map(|c| ClipContent { private: c.excluded, ..c.content }).unwrap_or_default()
+    });
+    let d = deliver(app, content, mode, None)?;
+    if d == Delivery::Pasted && !before.is_empty() {
+        *RESTORE.lock() = Some(before);
+        let gen = RESTORE_GEN.fetch_add(1, Ordering::AcqRel) + 1;
+        let seq = platform::clipboard_seq();
+        let app = app.clone();
+        std::thread::spawn(move || {
+            // Give the program time to read the clipboard.
+            std::thread::sleep(Duration::from_millis(delay_ms));
+            if RESTORE_GEN.load(Ordering::Acquire) != gen {
+                return; // a newer paste takes care of it
+            }
+            let Some(before) = RESTORE.lock().take() else { return };
+            // Only if nothing else was copied in the meantime.
+            if platform::clipboard_seq() == seq {
+                let _ = write_silently(&app, &before);
+            }
+        });
+    }
+    Ok(d)
+}
+
 /// Each press pastes the next older history entry (newest first); restarts after the timeout.
 /// The `seq` mutex is held for the whole press, so quick repeated presses are processed strictly
 /// one after another (no clipboard write can overtake a pending Ctrl+V).

@@ -508,7 +508,7 @@ pub async fn picker_paste(app: AppHandle, kind: String, items: Vec<String>, copy
     let content = ClipContent::text_only(items.concat());
     let mode = if copy_only.unwrap_or(false) { PasteMode::Copy } else { PasteMode::Default };
     log::info!("picker: hide (paste)");
-    let delivery = actions::deliver(&app, &content, mode, None).map_err(err)?;
+    let delivery = actions::deliver_and_restore(&app, &content, mode, 500).map_err(err)?;
     for it in &items {
         crate::stats::record(&app, if kind == "symbol" { crate::stats::Event::Symbol(it) } else { crate::stats::Event::Emoji(it) });
     }
@@ -637,7 +637,8 @@ pub async fn gif_paste(app: AppHandle, item: crate::gif::GifItem, query: String,
     }
     let mode = if copy_only.unwrap_or(false) { PasteMode::Copy } else { PasteMode::Default };
     log::info!("picker: hide (paste)");
-    let delivery = actions::deliver(&app, &content, mode, None).map_err(err)?;
+    // GIFs are pasted as a file: some programs read it a little later.
+    let delivery = actions::deliver_and_restore(&app, &content, mode, 1500).map_err(err)?;
     crate::stats::record(&app, crate::stats::Event::Gif);
     Ok(PasteResult { delivery, missing: Vec::new() })
 }
