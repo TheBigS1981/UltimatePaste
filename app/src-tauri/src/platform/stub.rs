@@ -67,6 +67,10 @@ pub fn send_copy() -> bool {
 }
 pub fn show_no_activate(_hwnd: isize) {}
 
+pub fn wait_redirected_keys_released(_timeout_ms: u64) -> bool {
+    true
+}
+
 pub fn autostart_command(_name: &str) -> Option<String> {
     None
 }

@@ -98,6 +98,10 @@ pub fn submit(app: &AppHandle, values: HashMap<String, String>) {
                 return;
             }
         }
+        // Enter / the digit that confirmed the popup must be up before keys are sent.
+        if !platform::wait_redirected_keys_released(800) {
+            log::info!("fill: confirming key still down after 800 ms");
+        }
         std::thread::sleep(Duration::from_millis(30));
         platform::send_backspaces(job.keyword_chars);
         let st = app.state::<AppState>();

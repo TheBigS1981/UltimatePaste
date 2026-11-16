@@ -641,10 +641,8 @@ fn dom_key(vk: u32, text: &str) -> String {
 
 /// From the hook: true if the key press was handed to the picker (and must be swallowed).
 fn redirect_key(vk: u32, scan: u32, down: bool, ctrl: bool, alt: bool, shift: bool, win: bool) -> bool {
-    let h = REDIRECT_HWND.load(AtomicOrdering::Relaxed);
-    if h == 0 {
-        return false;
-    }
+    // The release of a key whose press went to the popup is swallowed too, even when the popup
+    // closed in between (Enter that confirmed it): web pages react to a stray Enter release.
     if !down {
         if let Ok(mut r) = REDIRECTED.try_lock() {
             if r[(vk & 0xFF) as usize] {
@@ -652,6 +650,10 @@ fn redirect_key(vk: u32, scan: u32, down: bool, ctrl: bool, alt: bool, shift: bo
                 return true;
             }
         }
+        return false;
+    }
+    let h = REDIRECT_HWND.load(AtomicOrdering::Relaxed);
+    if h == 0 {
         return false;
     }
     if !unsafe { windows::Win32::UI::WindowsAndMessaging::IsWindowVisible(hwnd(h)) }.as_bool() {
@@ -1022,6 +1024,24 @@ pub fn focused_is_password(h: isize) -> bool {
 }
 
 /// Sends `n` backspaces (to remove a typed snippet keyword).
+/// Waits until the keys pressed while the popup had the keyboard are released (or the timeout),
+/// so that input sent afterwards isn't mixed with a key still held down.
+pub fn wait_redirected_keys_released(timeout_ms: u64) -> bool {
+    let start = std::time::Instant::now();
+    loop {
+        if REDIRECTED.lock().map(|r| !r.iter().any(|&b| b)).unwrap_or(true) {
+            return true;
+        }
+        if start.elapsed() >= Duration::from_millis(timeout_ms) {
+            if let Ok(mut r) = REDIRECTED.lock() {
+                *r = [false; 256];
+            }
+            return false;
+        }
+        std::thread::sleep(Duration::from_millis(10));
+    }
+}
+
 pub fn send_backspaces(n: usize) {
     let mut v = Vec::with_capacity(n * 2);
     for _ in 0..n {

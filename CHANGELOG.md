@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Snippet popup in browsers (e.g. Firefox): choosing with the arrow keys and `Enter` now replaces the keyword reliably. The `Enter` that confirms the popup no longer reaches the web page, and pasting waits until the key is released. The emoji picker benefits too.
+
 ## 1.1.0 – Less mouse, more flow
 
 **✨ Snippets with choices, right where you type.** Type `;mail` and a small popup appears directly below your text cursor: pick with `↑` `↓` or `1`–`9`, type to filter, `Enter` pastes, `Esc` keeps the keyword as typed. Several fields come one after the other. The program you type in keeps the focus, and your clipboard stays untouched.

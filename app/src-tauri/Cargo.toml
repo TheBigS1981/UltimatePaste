@@ -1,6 +1,6 @@
 [package]
 name = "ultimatepaste"
-version = "1.1.0"
+version = "1.1.1"
 description = "Fast clipboard & paste manager for Windows"
 authors = ["TheBigS1981"]
 license = "MIT"
