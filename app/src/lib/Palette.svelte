@@ -428,10 +428,16 @@
     return q ? all.filter((a) => a.label.toLowerCase().includes(q)) : all;
   });
 
+  let actionEl = $state<HTMLInputElement>();
   async function openActions(filter = "") {
     actionQuery = filter;
     actionSel = 0;
     overlay = { kind: "actions" };
+    // The filter gets the caret, not the history search behind the menu (also after a
+    // pending focusSearch()).
+    await tick();
+    actionEl?.focus();
+    requestAnimationFrame(() => overlay?.kind === "actions" && actionEl?.focus());
   }
 
   async function runAction(a: Action | undefined) {
@@ -480,6 +486,8 @@
 
   async function focusSearch() {
     await tick();
+    // An open menu or editor keeps its own input focused.
+    if (overlay && overlay.kind !== "busy" && overlay.kind !== "confirm") return;
     searchEl?.focus();
   }
 
@@ -732,7 +740,7 @@
       {#if overlay.kind === "actions"}
         <div class="card actions">
           <!-- svelte-ignore a11y_autofocus -->
-          <input autofocus bind:value={actionQuery} oninput={() => (actionSel = 0)} placeholder={t("actionFilter")} spellcheck="false" />
+          <input autofocus bind:this={actionEl} bind:value={actionQuery} oninput={() => (actionSel = 0)} placeholder={t("actionFilter")} spellcheck="false" />
           <div class="alist">
             {#each actions as a, i (a.id)}
               {#if a.group && (i === 0 || actions[i - 1].group !== a.group)}<div class="group">{a.group}</div>{/if}

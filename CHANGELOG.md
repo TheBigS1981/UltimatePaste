@@ -5,6 +5,7 @@
 - Snippet popup in browsers (e.g. Firefox): choosing with the arrow keys and `Enter` now replaces the keyword reliably. The `Enter` that confirms the popup no longer reaches the web page, and pasting waits until the key is released. The emoji picker benefits too.
 - Snippets while typing: the keyword is now removed key by key, so script-heavy web forms no longer leave a stray `;` behind.
 - Emoji & symbols: favorites are no longer repeated under “recently used”, and both lists can be tidied up – `Del` or the small × on hover removes an entry.
+- Paste window: typing in the actions menu (`Ctrl+Enter`) filters the actions again instead of searching the history behind it.
 - Screenshot tools like Greenshot work while the emoji picker is open (Print and the media keys are no longer captured).
 
 ## 1.1.0 – Less mouse, more flow
