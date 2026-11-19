@@ -1179,8 +1179,12 @@ pub fn show_no_activate(h: isize) {
     if w.0.is_null() {
         return;
     }
+    use windows::Win32::UI::WindowsAndMessaging::{SetWindowPos, HWND_TOPMOST, SWP_NOACTIVATE, SWP_NOMOVE, SWP_NOSIZE};
     unsafe {
         let _ = ShowWindow(w, SW_SHOWNOACTIVATE);
+        // Among several "always on top" windows the one raised last wins (WhatsApp, for one, can
+        // be topmost too): put ours at the very top of that band every time it is shown.
+        let _ = SetWindowPos(w, Some(HWND_TOPMOST), 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
     }
 }
 

@@ -8,6 +8,7 @@
 - Paste window: typing in the actions menu (`Ctrl+Enter`) filters the actions again instead of searching the history behind it.
 - The log file shows local time instead of UTC.
 - Screenshot tools like Greenshot work while the emoji picker is open (Print and the media keys are no longer captured).
+- Emoji picker, snippet popup and translate window always appear in front, even over other “always on top” windows such as WhatsApp.
 
 ## 1.1.0 – Less mouse, more flow
 
