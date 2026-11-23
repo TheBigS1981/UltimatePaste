@@ -558,7 +558,7 @@
     overflow: auto;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-    font: 14px/1.5 var(--font);
+    font: 14px/1.7 var(--font);
     padding: 10px 12px;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -583,18 +583,26 @@
   .chg:focus-visible {
     outline: 2px solid var(--accent);
   }
+  /* Removed text: clearly marked red; inserted text: normal color with a green underline. */
   del {
-    color: var(--diff-del, #c62828);
-    background: color-mix(in srgb, var(--diff-del, #c62828) 12%, transparent);
-    text-decoration-thickness: 1.5px;
+    color: var(--diff-del);
+    background: color-mix(in srgb, var(--diff-del) 16%, transparent);
+    text-decoration: line-through 1.5px color-mix(in srgb, var(--diff-del) 75%, transparent);
+    padding: 1px 3px;
+    border-radius: 4px;
+  }
+  del + ins {
+    margin-left: 4px;
   }
   .hide-del del {
     display: none;
   }
   ins {
-    text-decoration: none;
-    color: var(--diff-add, #1b7f3b);
-    background: color-mix(in srgb, var(--diff-add, #1b7f3b) 16%, transparent);
+    color: var(--text);
+    text-decoration: underline 2.5px var(--diff-add);
+    text-underline-offset: 4px;
+    background: color-mix(in srgb, var(--diff-add) 10%, transparent);
+    border-radius: 3px;
   }
   .rej {
     text-decoration: underline dotted var(--faint);

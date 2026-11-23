@@ -19,6 +19,9 @@
   --on-accent: #ffffff;
   --radius: 8px;
   --display: var(--font);
+  /* correction view: removed / inserted text */
+  --diff-del: #c42b1c;
+  --diff-add: #107c41;
 }
 
 /* Theme: system (no attribute) follows Windows; data-theme="light"|"dark" forces one. */
@@ -37,6 +40,8 @@
     --danger: #ff6b81;
     --kbd: rgba(255, 255, 255, 0.08);
     --on-accent: #ffffff;
+    --diff-del: #ff8b80;
+    --diff-add: #6fdc95;
     color-scheme: dark;
   }
 }
@@ -54,6 +59,8 @@
     --danger: #ff6b81;
     --kbd: rgba(255, 255, 255, 0.08);
     --on-accent: #ffffff;
+    --diff-del: #ff8b80;
+    --diff-add: #6fdc95;
     color-scheme: dark;
 }
 :root[data-theme="light"] {
