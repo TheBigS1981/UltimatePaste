@@ -119,6 +119,17 @@ if (q.get("sel")) {
     for (let i = 0; i < Number(q.get("sel")); i++) window.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown" }));
   }, 300);
 }
+// Actions menu (Ctrl+Enter) for the selected entry, optionally filtered (release notes).
+if (q.get("actions") != null) {
+  setTimeout(() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", code: "Enter", ctrlKey: true })), 700);
+  setTimeout(() => {
+    const el = document.activeElement as HTMLInputElement | null;
+    if (el && el.tagName === "INPUT" && q.get("actions")) {
+      el.value = q.get("actions")!;
+      el.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+  }, 1000);
+}
 // Fake desktop behind the transparent palette window.
 if (win === "main") document.documentElement.style.background = "linear-gradient(135deg, #3d5a8a, #8e6aa8)";
 

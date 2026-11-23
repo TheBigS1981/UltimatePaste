@@ -76,7 +76,7 @@ Drück dein Kürzel (**`Strg+Umschalt+V`** als Standard, **`Win+V`** empfohlen).
 - **Sofortige, fehlertolerante Suche** in Text, Titeln, Dateinamen, Quell-Programm und im Text von Screenshots (Texterkennung, läuft lokal)
 - **Einfügen als …** formatiert, reiner Text, HTML oder RTF; `Strg+1…9` fügt einen Eintrag direkt ein
 - Einträge **anheften, umbenennen, bearbeiten**, **nach Zeitraum löschen**, Aufnahme pausieren
-- **Bilder-Reiter mit Texterkennung**: `Strg+T` kopiert den Text eines Screenshots
+- **Bilder-Reiter mit Texterkennung**: `Strg+T` kopiert den Text eines Screenshots, `Strg+O` öffnet ihn im Bildbetrachter
 - **Nacheinander einfügen** (`Strg+Umschalt+Alt+V`): Jeder Druck fügt den nächstälteren Eintrag ein, praktisch für Formulare
 - **Inbox-Export** (`Strg+I`): einen Eintrag als Markdown-Datei in einen Ordner ablegen, etwa in einen Obsidian-Vault
 - Innerhalb von 10 Sekunden wieder geöffnet, geht es dort weiter, wo du warst
@@ -206,6 +206,7 @@ Die **Statistik** zeigt, wie oft du einfügst, übersetzt und korrigierst, deine
 | `Strg+Enter` | Aktionsmenü (einfügen als …, Schnellaktionen, KI, nach Zeitraum löschen …) |
 | `Strg+P` / `F2` / `Strg+E` | anheften / umbenennen / bearbeiten |
 | `Strg+T` / `Strg+I` | Text aus Bild kopieren / in Inbox ablegen |
+| `Strg+O` | Bild im Bildbetrachter öffnen |
 | `Strg+N` / `Strg+Entf` | neues Snippet / löschen |
 | `Strg+,` | Einstellungen |
 | `Esc` | Suche leeren / schließen |

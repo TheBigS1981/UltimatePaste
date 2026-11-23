@@ -76,7 +76,7 @@ Press your shortcut (**`Ctrl+Shift+V`** by default, **`Win+V`** recommended). Ev
 - **Instant, typo-tolerant search** across text, titles, file names, source app and the text inside screenshots (OCR, runs locally)
 - **Paste as…** rich text, plain text, HTML or RTF; `Ctrl+1…9` pastes an entry directly
 - **Pin, rename, edit** entries, **delete by time range**, pause recording
-- **Images tab with OCR**: `Ctrl+T` copies the text of a screenshot
+- **Images tab with OCR**: `Ctrl+T` copies the text of a screenshot, `Ctrl+O` opens it in your image viewer
 - **Paste sequentially** (`Ctrl+Shift+Alt+V`): each press pastes the next older entry, which is handy for filling forms
 - **Inbox export** (`Ctrl+I`): send an entry as a Markdown file to a folder (for example an Obsidian vault)
 - Reopen within 10 seconds and you continue where you left off
@@ -206,6 +206,7 @@ The settings are organized by the three areas, each with its own shortcuts. Conf
 | `Ctrl+Enter` | actions menu (paste as…, quick actions, AI, delete by time …) |
 | `Ctrl+P` / `F2` / `Ctrl+E` | pin / rename / edit |
 | `Ctrl+T` / `Ctrl+I` | copy text from image / send to inbox |
+| `Ctrl+O` | open image in the image viewer |
 | `Ctrl+N` / `Ctrl+Del` | new snippet / delete |
 | `Ctrl+,` | settings |
 | `Esc` | clear search / close |
