@@ -13,7 +13,8 @@
     maxLines = 0,
     quick = [],
     onquick,
-  }: { entry: EntrySummary | null; detail: EntryDetail | null; snippet?: Snippet | null; meta?: boolean; maxLines?: number; quick?: Quick[]; onquick?: (q: Quick) => void } = $props();
+    onimage,
+  }: { entry: EntrySummary | null; detail: EntryDetail | null; snippet?: Snippet | null; meta?: boolean; maxLines?: number; quick?: Quick[]; onquick?: (q: Quick) => void; onimage?: () => void } = $props();
 
   const ready = $derived(!!entry && !!detail && detail.summary.id === entry.id);
   const swatch = $derived(entry ? colorValue(entry) : null);
@@ -30,7 +31,8 @@
   <div class="pv">
     <div class="content">
       {#if detail.image}
-        <img src={detail.image} alt="" />
+        <!-- svelte-ignore a11y_no_noninteractive_element_interactions, a11y_click_events_have_key_events -->
+        <img src={detail.image} alt="" class:zoom={!!onimage} title={onimage ? t("openImage") : undefined} ondblclick={onimage} />
         {#if detail.ocrText && meta}
           <div class="label">{t("recognizedText")}</div>
           <p class="ocr">{detail.ocrText}</p>
@@ -69,6 +71,9 @@
 {/if}
 
 <style>
+  img.zoom {
+    cursor: zoom-in;
+  }
   .pv {
     display: flex;
     flex-direction: column;

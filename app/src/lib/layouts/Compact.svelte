@@ -57,7 +57,7 @@
 
   {#if snippet || (current && vm.detail && vm.detail.summary.id === current.id)}
     <div class="peek">
-      <div class="pbody"><Preview entry={current} detail={vm.detail} {snippet} meta={false} maxLines={12} /></div>
+      <div class="pbody"><Preview entry={current} detail={vm.detail} {snippet} meta={false} maxLines={12} onimage={() => act.run("view-image")} /></div>
       {#if current}<small>{appName(current.sourceApp) || "—"} · {timeOf(current.lastUsedAt)} · {formatsLabel(current.formats)}</small>{/if}
     </div>
   {/if}

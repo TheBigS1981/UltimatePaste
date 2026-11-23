@@ -2705,6 +2705,11 @@
   "en": "Run text recognition"
  },
  {
+  "key": "@openImage",
+  "de": "Im Bildbetrachter öffnen",
+  "en": "Open in image viewer"
+ },
+ {
   "key": "@inbox",
   "de": "In Inbox ablegen",
   "en": "Send to inbox"

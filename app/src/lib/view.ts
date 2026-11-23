@@ -30,7 +30,7 @@ export interface ViewActions {
   select: (i: number, e?: MouseEvent) => void;
   activate: (i: number) => void;
   setTab: (t: ViewTab) => void;
-  run: (id: "paste" | "plain" | "copy" | "pin" | "actions" | "ai" | "settings" | "edit" | "new" | "del") => void;
+  run: (id: "paste" | "plain" | "copy" | "pin" | "actions" | "ai" | "settings" | "edit" | "new" | "del" | "view-image") => void;
   quick: (q: Quick) => void;
 }
 

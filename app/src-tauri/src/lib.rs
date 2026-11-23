@@ -102,6 +102,7 @@ fn build_state() -> anyhow::Result<AppState> {
     std::fs::create_dir_all(&dir)?;
     init_logging(&dir);
     log::info!("UltimatePaste {} starting, data dir {}", env!("CARGO_PKG_VERSION"), dir.display());
+    commands::clean_viewer_dir(std::time::Duration::ZERO);
     let settings = Settings::load(&dir);
     let vault = crypto::Vault::open(&dir)?;
     let store = Store::open(&dir, vault)?;
@@ -569,6 +570,7 @@ pub fn run() {
             commands::bulk_delete,
             commands::copy_ocr,
             commands::run_ocr,
+            commands::open_image,
             commands::export_inbox,
             commands::list_snippets,
             commands::save_snippet,

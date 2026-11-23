@@ -205,6 +205,39 @@ pub async fn run_ocr(app: AppHandle, id: i64) -> CmdResult<String> {
     capture::ocr_entry(&app, id, &png).map_err(err)
 }
 
+/// Folder for images opened in the image viewer (decrypted copies, cleaned up regularly).
+pub fn viewer_dir() -> std::path::PathBuf {
+    std::env::temp_dir().join("UltimatePaste-view")
+}
+
+/// Removes viewer copies older than `max_age` (all of them with zero); files still open fail
+/// silently and go next time.
+pub fn clean_viewer_dir(max_age: std::time::Duration) {
+    let Ok(rd) = std::fs::read_dir(viewer_dir()) else { return };
+    for e in rd.flatten() {
+        let old = e.metadata().and_then(|m| m.modified()).ok().and_then(|t| t.elapsed().ok()).is_none_or(|a| a >= max_age);
+        if old {
+            let _ = std::fs::remove_file(e.path());
+        }
+    }
+}
+
+/// Opens an image entry in the default image viewer. The history is encrypted, so the image is
+/// written as a temporary PNG first; copies are removed after 10 minutes and at app start.
+#[tauri::command]
+pub async fn open_image(app: AppHandle, id: i64) -> CmdResult<()> {
+    let png = load(&app.state::<AppState>(), id)?.image_png.ok_or("no image")?;
+    clean_viewer_dir(std::time::Duration::from_secs(600));
+    let dir = viewer_dir();
+    std::fs::create_dir_all(&dir).map_err(err)?;
+    let stamp = chrono::Local::now().format("%Y-%m-%d %H-%M-%S");
+    let path = dir.join(format!("UltimatePaste {stamp} ({id}).png"));
+    std::fs::write(&path, png).map_err(err)?;
+    platform::open_url(&path.display().to_string()).map_err(err)?;
+    log::info!("image {id} opened in the image viewer");
+    Ok(())
+}
+
 /// Copies the recognized text of an image (running OCR first if needed).
 #[tauri::command]
 pub async fn copy_ocr(app: AppHandle, id: i64) -> CmdResult<String> {

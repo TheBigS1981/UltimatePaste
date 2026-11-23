@@ -278,6 +278,7 @@ export const api = {
   bulkDelete: (minutes: number | null) => invoke<number>("bulk_delete", { minutes }),
   copyOcr: (id: number) => invoke<string>("copy_ocr", { id }),
   runOcr: (id: number) => invoke<string>("run_ocr", { id }),
+  openImage: (id: number) => invoke<void>("open_image", { id }),
   exportInbox: (id: number) => invoke<string[]>("export_inbox", { id }),
   snippets: (query: string) => invoke<Snippet[]>("list_snippets", { query }),
   saveSnippet: (snippet: Snippet) => invoke<number>("save_snippet", { snippet }),

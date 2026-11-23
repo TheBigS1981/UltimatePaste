@@ -58,7 +58,7 @@
       {/if}
     </div>
     <section class="preview">
-      <div class="card"><Preview entry={current} detail={vm.detail} {snippet} quick={vm.quick} onquick={act.quick} /></div>
+      <div class="card"><Preview entry={current} detail={vm.detail} {snippet} quick={vm.quick} onquick={act.quick} onimage={() => act.run("view-image")} /></div>
     </section>
   </main>
   <footer>

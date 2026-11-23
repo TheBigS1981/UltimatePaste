@@ -110,6 +110,7 @@
       else if (id === "plain") pasteCurrent({ mode: "plain" });
       else if (id === "copy") pasteCurrent({ copy: true });
       else if (id === "pin") togglePin();
+      else if (id === "view-image") openImage();
       else if (id === "actions") openActions();
       else if (id === "ai") openActions(`${t("aiPrefix")}:`);
       else if (id === "settings") api.openSettings();
@@ -314,6 +315,16 @@
     }
   }
 
+  async function openImage() {
+    if (!current || current.kind !== "image") return;
+    try {
+      await api.openImage(current.id);
+      api.hide(false);
+    } catch (e) {
+      showToast(errText(e));
+    }
+  }
+
   async function inbox() {
     if (!current) return;
     try {
@@ -373,6 +384,7 @@
       a.push({ id: "rename", label: t("rename"), hint: "F2", run: startRename });
       if (c.kind !== "image") a.push({ id: "edit", label: t("edit"), hint: `${t("ctrlShort")} E`, run: startEdit });
       if (c.kind === "image") {
+        a.push({ id: "view-image", label: t("openImage"), hint: `${t("ctrlShort")} O`, run: openImage });
         a.push({ id: "ocr", label: t("ocrCopy"), hint: `${t("ctrlShort")} T`, run: ocrCopy });
         a.push({
           id: "ocr-run",
@@ -647,6 +659,7 @@
     else if (ctrl && k.toLowerCase() === "e") (e.preventDefault(), editCurrent()); else if (k === "F2" || (ctrl && k.toLowerCase() === "r")) (e.preventDefault(), startRename());
     else if (ctrl && k.toLowerCase() === "n") (e.preventDefault(), newSnippet());
     else if (ctrl && k.toLowerCase() === "t") (e.preventDefault(), ocrCopy());
+    else if (ctrl && k.toLowerCase() === "o") (e.preventDefault(), openImage());
     else if (ctrl && k.toLowerCase() === "i") (e.preventDefault(), inbox());
     else if (ctrl && k === ",") (e.preventDefault(), api.openSettings());
     else if (ctrl && !query && (k === "Delete" || k === "Backspace")) (e.preventDefault(), removeCurrent());
