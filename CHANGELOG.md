@@ -1,10 +1,15 @@
 # Changelog
 
+## 1.1.2
+
+- Named entries are easier to tell apart: the list shows the name together with the start of the content. `F2` puts the caret straight into the name field, with the old name selected.
+- Pasting only goes to windows you can see. A program hidden in the tray (e.g. Slack) could still count as the active window and receive the paste; now the content just stays on the clipboard. Right before pasting, UltimatePaste checks again that the target is still in front.
+- Snippets while typing in terminals (Windows Terminal, WezTerm, PuTTY, …): the `;` of the keyword is no longer left behind, especially with remote shells.
+
 ## 1.1.1
 
 - Images from the history open in your default image viewer: `Ctrl+O`, the actions menu, or a double-click on the preview. The viewer gets a temporary copy that is deleted after 10 minutes and at the next start.
 - Correction view: changes are much easier to read, especially in dark designs. Removed text is marked red and struck through, inserted text is underlined in green.
-- Images from the history open in your default image viewer: `Ctrl+O`, the actions menu, or a double-click on the preview. The viewer gets a temporary copy that is deleted after 10 minutes and at the next start.
 - Snippet popup in browsers (e.g. Firefox): choosing with the arrow keys and `Enter` now replaces the keyword reliably. The `Enter` that confirms the popup no longer reaches the web page, and pasting waits until the key is released. The emoji picker benefits too.
 - Snippets while typing: the keyword is now removed key by key, so script-heavy web forms no longer leave a stray `;` behind.
 - Emoji & symbols: favorites are no longer repeated under “recently used”, and both lists can be tidied up – `Del` or the small × on hover removes an entry.
