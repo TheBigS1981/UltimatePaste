@@ -296,8 +296,19 @@
     overlay = { kind: "edit", id: current.id, text, orig: text };
   }
 
-  function startRename() {
-    if (current) overlay = { kind: "rename", id: current.id, title: current.title ?? "" };
+  let renameEl = $state<HTMLInputElement>();
+  async function startRename() {
+    if (!current) return;
+    overlay = { kind: "rename", id: current.id, title: current.title ?? "" };
+    // The name field gets the caret (not the search behind it), with the old name selected.
+    const grab = () => {
+      if (overlay?.kind !== "rename" || !renameEl || document.activeElement === renameEl) return;
+      renameEl.focus();
+      renameEl.select();
+    };
+    await tick();
+    grab();
+    requestAnimationFrame(grab);
   }
 
   function newSnippet(body = "") {
@@ -787,7 +798,7 @@
         <div class="card small">
           <h3>{t("rename")}</h3>
           <!-- svelte-ignore a11y_autofocus -->
-          <input autofocus bind:value={overlay.title} placeholder={t("title")} spellcheck="false" />
+          <input autofocus bind:this={renameEl} bind:value={overlay.title} placeholder={t("title")} spellcheck="false" />
         </div>
       {:else if overlay.kind === "snippet"}
         <div class="card editor">

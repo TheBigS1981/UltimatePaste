@@ -96,7 +96,11 @@ export function appInitial(exe: string | null): string {
 }
 
 export function entryLabel(it: EntrySummary): string {
-  if (it.title) return it.title;
+  return it.title || contentLabel(it);
+}
+
+/** What the entry contains, ignoring a name the user gave it. */
+export function contentLabel(it: EntrySummary): string {
   if (it.kind === "image") return `${t("image")} ${it.imageW ?? "?"} × ${it.imageH ?? "?"}`;
   return it.preview || "—";
 }

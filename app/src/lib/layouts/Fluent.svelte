@@ -2,7 +2,7 @@
   // Variant A – Windows 11 style: Mica, underline tabs, day groups, command bar.
   import Icon from "../Icon.svelte";
   import { t, tr } from "../i18n.svelte";
-  import { appName, entryLabel, groupByDay, tabLabel, TABS, timeOf, type ViewActions, type ViewModel, shortcutLabel } from "../view";
+  import { appName, entryLabel, contentLabel, groupByDay, tabLabel, TABS, timeOf, type ViewActions, type ViewModel, shortcutLabel } from "../view";
   import Avatar from "./Avatar.svelte";
   import Preview from "./Preview.svelte";
 
@@ -46,7 +46,7 @@
             <div class="row" class:on={i === vm.sel} class:gone={vm.missing[it.id]} class:marked={vm.marked.includes(it.id)} data-mark={vm.marked.includes(it.id) ? vm.marked.indexOf(it.id) + 1 : null} title={vm.missing[it.id] ? t("fileGone") : undefined} role="option" tabindex="-1" aria-selected={i === vm.sel} onclick={(e) => act.select(i, e)} ondblclick={() => act.activate(i)}>
               <Avatar entry={it} thumb={vm.thumbs[it.id]} />
               <div class="txt">
-                <div class="line" class:titled={!!it.title}>{entryLabel(it)}</div>
+                <div class="line">{#if it.title}<b>{it.title}</b><span class="rest"> · {contentLabel(it)}</span>{:else}{entryLabel(it)}{/if}</div>
                 <small>{#if it.pinned}<span class="pin">★</span>{/if}{appName(it.sourceApp) || "—"} · {timeOf(it.lastUsedAt)}</small>
               </div>
               {#if i < 9}<span class="key">{t("ctrlShort")} {i + 1}</span>{/if}
@@ -211,9 +211,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .line.titled {
-    font-weight: 600;
-  }
   small {
     font-size: 12px;
     color: var(--muted);
@@ -294,5 +291,8 @@
   .gone :global(.line),
   .gone :global(.body) {
     text-decoration: line-through;
+  }
+  .line .rest {
+    color: var(--muted);
   }
 </style>

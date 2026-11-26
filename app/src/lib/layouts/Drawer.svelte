@@ -3,7 +3,7 @@
   // the selected entry expands in place with its actions.
   import Icon from "../Icon.svelte";
   import { t, tr } from "../i18n.svelte";
-  import { appColor, appName, entryLabel, formatsLabel, groupByDay, tabLabel, TABS, timeOf, type ViewActions, type ViewModel, shortcutLabel } from "../view";
+  import { appColor, appName, entryLabel, contentLabel, formatsLabel, groupByDay, tabLabel, TABS, timeOf, type ViewActions, type ViewModel, shortcutLabel } from "../view";
   import Preview from "./Preview.svelte";
 
   let { vm, act, query = $bindable(), searchEl = $bindable(), onsearch }: { vm: ViewModel; act: ViewActions; query: string; searchEl?: HTMLInputElement; onsearch: () => void } = $props();
@@ -73,7 +73,7 @@
                     <button tabindex="-1" onclick={() => act.run("actions")}>{t("more")}</button>
                   </div>
                 {:else}
-                  <div class="line" class:strong={!!it.title}>{entryLabel(it)}</div>
+                  <div class="line">{#if it.title}<b>{it.title}</b><span class="rest"> · {contentLabel(it)}</span>{:else}{entryLabel(it)}{/if}</div>
                   <small>{#if it.pinned}<span class="pin">★</span>{/if}{appName(it.sourceApp) || "—"}</small>
                 {/if}
               </div>
@@ -326,5 +326,8 @@
   .gone :global(.line),
   .gone :global(.body) {
     text-decoration: line-through;
+  }
+  .line .rest {
+    color: var(--muted);
   }
 </style>

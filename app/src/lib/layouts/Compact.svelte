@@ -2,7 +2,7 @@
   // Variant D – compact popup at the text caret with a floating peek preview.
   import Icon from "../Icon.svelte";
   import { t, tr } from "../i18n.svelte";
-  import { appName, entryLabel, formatsLabel, timeOf, TABS, tabLabel, type ViewActions, type ViewModel, shortcutLabel } from "../view";
+  import { appName, entryLabel, contentLabel, formatsLabel, timeOf, TABS, tabLabel, type ViewActions, type ViewModel, shortcutLabel } from "../view";
   import Preview from "./Preview.svelte";
 
   let { vm, act, query = $bindable(), searchEl = $bindable(), onsearch }: { vm: ViewModel; act: ViewActions; query: string; searchEl?: HTMLInputElement; onsearch: () => void } = $props();
@@ -42,7 +42,7 @@
           <!-- svelte-ignore a11y_click_events_have_key_events -->
           <div class="row" class:on={i === vm.sel} class:gone={vm.missing[it.id]} class:marked={vm.marked.includes(it.id)} data-mark={vm.marked.includes(it.id) ? vm.marked.indexOf(it.id) + 1 : null} title={vm.missing[it.id] ? t("fileGone") : undefined} role="option" tabindex="-1" aria-selected={i === vm.sel} onclick={(e) => act.select(i, e)} ondblclick={() => act.activate(i)}>
             <span class="n">{#if i < 9}{i + 1}{:else if it.kind === "image"}<Icon name="image" />{/if}</span>
-            <div class="line" class:strong={!!it.title}>{#if it.pinned}<span class="pin">★ </span>{/if}{entryLabel(it)}</div>
+            <div class="line">{#if it.pinned}<span class="pin">★ </span>{/if}{#if it.title}<b>{it.title}</b><span class="rest"> · {contentLabel(it)}</span>{:else}{entryLabel(it)}{/if}</div>
             <small>{appName(it.sourceApp)}</small>
           </div>
         {:else}
@@ -176,9 +176,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .strong {
-    font-weight: 600;
-  }
   .pin {
     color: var(--accent);
   }
@@ -231,5 +228,8 @@
   .gone :global(.line),
   .gone :global(.body) {
     text-decoration: line-through;
+  }
+  .line .rest {
+    color: var(--muted);
   }
 </style>
