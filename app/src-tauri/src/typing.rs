@@ -58,16 +58,44 @@ fn expand(app: &AppHandle, kw: &str, fg: isize) {
         return;
     }
     std::thread::sleep(Duration::from_millis(30));
-    platform::send_backspaces(kw.chars().count());
-    log::info!("typed snippet keyword expanded");
+    if platform::foreground_window() != fg {
+        log::info!("typed snippet keyword: another window came to the front, nothing replaced");
+        return;
+    }
     let lang = st.settings.read().language.clone();
     let ex = snippets::expand_with(&snippet.body, chrono::Local::now(), &lang, None, &HashMap::new());
-    paste_keeping_clipboard(app, &ex.text, ex.cursor_back);
+    replace_keyword(app, fg, kw.chars().count(), &ex.text, ex.cursor_back);
+    log::info!("typed snippet keyword expanded ({})", exe.as_deref().unwrap_or("?"));
 }
 
-/// Pastes `text` via the clipboard into the foreground program, then puts the previous
-/// clipboard content back.
-pub fn paste_keeping_clipboard(app: &AppHandle, text: &str, cursor_back: Option<usize>) {
+/// Terminals (often with a remote shell or a TUI behind them) get their input in chunks: a
+/// backspace that arrives in the same chunk as the pasted text can get lost, leaving the
+/// first character of the keyword (";") behind. They get slower backspaces and a pause.
+pub fn is_terminal(exe: Option<&str>) -> bool {
+    const TERMINALS: [&str; 16] = [
+        "windowsterminal", "openconsole", "conhost", "cmd", "powershell", "pwsh", "wezterm-gui", "alacritty", "mintty",
+        "putty", "kitty", "tabby", "hyper", "warp", "termius", "mobaxterm",
+    ];
+    let Some(exe) = exe else { return false };
+    let name = exe.to_lowercase();
+    let name = name.trim_end_matches(".exe");
+    TERMINALS.contains(&name)
+}
+
+/// Deletes the typed keyword (`keyword_chars` characters) in window `target` and pastes `text`
+/// in its place. Stops if `target` is no longer in front.
+pub fn replace_keyword(app: &AppHandle, target: isize, keyword_chars: usize, text: &str, cursor_back: Option<usize>) {
+    let terminal = is_terminal(platform::exe_of_window(target).as_deref());
+    let (gap, settle) = if terminal { (25, 150) } else { (12, 20) };
+    platform::send_backspaces(keyword_chars, gap);
+    // Let the program process the last backspace before the paste follows.
+    std::thread::sleep(Duration::from_millis(settle));
+    paste_keeping_clipboard(app, target, text, cursor_back);
+}
+
+/// Pastes `text` via the clipboard into window `target` (if it is still in front), then puts
+/// the previous clipboard content back.
+pub fn paste_keeping_clipboard(app: &AppHandle, target: isize, text: &str, cursor_back: Option<usize>) {
     let limits = platform::Limits { max_text_bytes: 5 << 20, max_image_bytes: 50 << 20 };
     let before = platform::read_clipboard(limits)
         .map(|c| ClipContent { private: c.excluded, ..c.content })
@@ -76,6 +104,13 @@ pub fn paste_keeping_clipboard(app: &AppHandle, text: &str, cursor_back: Option<
         return;
     }
     std::thread::sleep(Duration::from_millis(30));
+    if platform::foreground_window() != target {
+        log::info!("snippet paste: target {target:#x} no longer in front ({:#x}), nothing pasted", platform::foreground_window());
+        if !before.is_empty() {
+            let _ = actions::write_silently(app, &before);
+        }
+        return;
+    }
     platform::send_paste();
     if let Some(n) = cursor_back {
         std::thread::sleep(Duration::from_millis(60));
@@ -98,5 +133,13 @@ mod tests {
         assert_eq!(trigger("MfG").as_deref(), Some(";mfg"));
         assert_eq!(trigger("//sig").as_deref(), Some("//sig"));
         assert_eq!(trigger("  "), None);
+    }
+
+    #[test]
+    fn terminals() {
+        assert!(is_terminal(Some("WindowsTerminal.exe")));
+        assert!(is_terminal(Some("wezterm-gui.exe")));
+        assert!(!is_terminal(Some("slack.exe")));
+        assert!(!is_terminal(None));
     }
 }

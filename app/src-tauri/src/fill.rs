@@ -103,13 +103,12 @@ pub fn submit(app: &AppHandle, values: HashMap<String, String>) {
             log::info!("fill: confirming key still down after 800 ms");
         }
         std::thread::sleep(Duration::from_millis(30));
-        platform::send_backspaces(job.keyword_chars);
         let st = app.state::<AppState>();
         let lang = st.settings.read().language.clone();
         let limits = platform::Limits { max_text_bytes: 5 << 20, max_image_bytes: 50 << 20 };
         let clip = platform::read_clipboard(limits).ok().and_then(|c| if c.excluded { None } else { c.content.text });
         let ex = snippets::expand_with(&job.body, chrono::Local::now(), &lang, clip.as_deref(), &values);
-        crate::typing::paste_keeping_clipboard(&app, &ex.text, ex.cursor_back);
+        crate::typing::replace_keyword(&app, job.target, job.keyword_chars, &ex.text, ex.cursor_back);
     });
 }
 

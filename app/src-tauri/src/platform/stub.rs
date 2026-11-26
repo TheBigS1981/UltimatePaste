@@ -94,7 +94,10 @@ pub fn set_typing<F: Fn(String, isize) + Send + Sync + 'static>(_enabled: bool, 
 pub fn focused_is_password(_h: isize) -> bool {
     false
 }
-pub fn send_backspaces(_n: usize) {}
+pub fn send_backspaces(_n: usize, _gap_ms: u64) {}
+pub fn is_window_on_screen(_h: isize) -> bool {
+    false
+}
 pub fn exe_on_network_drive() -> bool {
     false
 }

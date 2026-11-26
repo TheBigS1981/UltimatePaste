@@ -368,12 +368,36 @@ pub fn foreground_window() -> isize {
     unsafe { GetForegroundWindow() }.0 as isize
 }
 
-/// Windows that must never receive our Ctrl+V: our own windows, the taskbar and tray overflow.
-pub fn is_valid_paste_target(h: isize) -> bool {
+/// True if window `h` is shown on the current desktop: visible, not minimized-away-and-hidden
+/// and not cloaked (DWM hides windows of other virtual desktops and suspended apps that way).
+pub fn is_window_on_screen(h: isize) -> bool {
     let w = hwnd(h);
     if w.0.is_null() || !unsafe { IsWindow(Some(w)) }.as_bool() {
         return false;
     }
+    if !unsafe { windows::Win32::UI::WindowsAndMessaging::IsWindowVisible(w) }.as_bool() {
+        return false;
+    }
+    let mut cloaked = 0u32;
+    let r = unsafe {
+        windows::Win32::Graphics::Dwm::DwmGetWindowAttribute(
+            w,
+            windows::Win32::Graphics::Dwm::DWMWA_CLOAKED,
+            &mut cloaked as *mut u32 as *mut c_void,
+            std::mem::size_of::<u32>() as u32,
+        )
+    };
+    r.is_err() || cloaked == 0
+}
+
+/// Windows that must never receive our Ctrl+V: our own windows, the taskbar and tray overflow,
+/// and windows that aren't shown at all. A program that hid itself to the tray (Slack, Teams,
+/// …) can stay "foreground" while invisible; pasting there would land in its hidden text box.
+pub fn is_valid_paste_target(h: isize) -> bool {
+    if !is_window_on_screen(h) {
+        return false;
+    }
+    let w = hwnd(h);
     if pid_of_window(w) == Some(unsafe { GetCurrentProcessId() }) {
         return false;
     }
@@ -1043,17 +1067,15 @@ pub fn wait_redirected_keys_released(timeout_ms: u64) -> bool {
     }
 }
 
-/// Sends `n` backspaces one by one with a short pause: script-heavy web forms (suggestion
-/// lists, live validation) drop keys that arrive in a single burst.
-pub fn send_backspaces(n: usize) {
+/// Sends `n` backspaces one by one, `gap_ms` apart: script-heavy web forms (suggestion lists,
+/// live validation) drop keys that arrive in a single burst.
+pub fn send_backspaces(n: usize, gap_ms: u64) {
     for i in 0..n {
         if i > 0 {
-            std::thread::sleep(Duration::from_millis(12));
+            std::thread::sleep(Duration::from_millis(gap_ms));
         }
         send(&[key(VIRTUAL_KEY(0x08), false), key(VIRTUAL_KEY(0x08), true)]);
     }
-    // Let the program process the last one before the paste follows.
-    std::thread::sleep(Duration::from_millis(20));
 }
 
 /// Opens a web page in the default browser.

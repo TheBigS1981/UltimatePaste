@@ -63,6 +63,7 @@ pub fn show_palette(app: &AppHandle, toggle: bool) {
     // Opened from the tray, there is no target: paste then just copies.
     let target = if fg != own_hwnd(&w) && platform::is_valid_paste_target(fg) { fg } else { 0 };
     st.prev_foreground.store(target, Ordering::Release);
+    log::info!("palette: show, target {target:#x} ({}), foreground {fg:#x}", platform::exe_of_window(target).as_deref().unwrap_or("-"));
     let (layout, position) = {
         let s = st.settings.read();
         (s.layout.clone(), s.position.clone())
@@ -363,7 +364,8 @@ pub fn deliver(app: &AppHandle, content: &ClipContent, mode: PasteMode, cursor_b
         hide_palette(app, true);
         return Ok(Delivery::Copied);
     }
-    if target == 0 {
+    // The target may have been hidden (closed to the tray) while the palette was open.
+    if target == 0 || !platform::is_valid_paste_target(target) {
         hide_palette(app, false);
         return Ok(Delivery::Copied);
     }
@@ -379,6 +381,13 @@ pub fn deliver(app: &AppHandle, content: &ClipContent, mode: PasteMode, cursor_b
         return Ok(Delivery::Copied);
     }
     std::thread::sleep(Duration::from_millis(40));
+    // Something else may have come to the front in the meantime (a notification, a program
+    // that grabs the focus): then rather leave it on the clipboard than paste there.
+    if platform::foreground_window() != target {
+        log::info!("paste target lost the focus again ({:#x} in front); content left on the clipboard", platform::foreground_window());
+        return Ok(Delivery::Copied);
+    }
+    log::info!("paste into {}", platform::exe_of_window(target).as_deref().unwrap_or("?"));
     if !platform::send_paste() {
         return Ok(Delivery::Copied);
     }
